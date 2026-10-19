@@ -20,7 +20,7 @@ export function ComboCard({ combo }: { combo: (typeof combos)[number] }) {
           <Pack key={id} product={findProduct(id)!} />
         ))}
         <span className="combo-discount">
-          {price.percent}%<small>DEMO SAVINGS</small>
+          {price.percent}%<small>COMBO SAVINGS</small>
         </span>
       </div>
       <div className="combo-card-copy">
@@ -48,7 +48,7 @@ export function ComboCard({ combo }: { combo: (typeof combos)[number] }) {
         <div className="combo-card-price">
           <strong>{money(price.total)}</strong>
           <del>{money(price.subtotal)}</del>
-          <small>Demo combo price</small>
+          <small>Combo price</small>
         </div>
         <button className="button full" onClick={() => addToCart(items, combo.name)}>
           Add combo to bag <Plus size={16} />
@@ -74,8 +74,7 @@ export function Combos() {
         ))}
       </div>
       <p className="demo-footnote">
-        All prices and discounts are examples. 2 eligible units: 5%; 3–8 eligible units: 10%. No
-        checkout.
+        Pair any 2 products to save 5%, or 3 to 8 products to save 10%.
       </p>
     </main>
   )
@@ -204,7 +203,8 @@ export function ComboBuilder() {
                 <div>
                   <strong>{p.title}</strong>
                   <small>
-                    {v.size} · {v.flavor ?? 'Standard'}
+                    {v.size}
+                    {v.flavor && ` · ${v.flavor}`}
                   </small>
                   <Quantity
                     value={i.quantity}
@@ -228,11 +228,11 @@ export function ComboBuilder() {
             <span className={count >= 3 ? 'achieved' : ''}>3+ items · 10% off</span>
           </div>
           <div className="summary-line">
-            <span>Original demo price</span>
+            <span>Price</span>
             <b>{money(price.subtotal)}</b>
           </div>
           <div className="summary-line">
-            <span>Example discount</span>
+            <span>Combo discount</span>
             <b>−{money(price.discount)}</b>
           </div>
           <div className="summary-line total">
@@ -249,7 +249,7 @@ export function ComboBuilder() {
             Add combo to bag <ArrowUpRight size={17} />
           </button>
           <small className="demo-footnote">
-            {price.valid ? 'Demo pricing only. No payments or orders.' : price.error}
+            {price.valid ? 'Your saving is applied in the bag.' : price.error}
           </small>
         </aside>
       </div>
@@ -296,7 +296,7 @@ function BuilderProduct({
         >
           {product.variants.map((v) => (
             <option key={v.id} value={v.id} disabled={!v.available}>
-              {v.size} {v.flavor} {!v.available ? '(unavailable)' : ''}
+              {v.size} {v.flavor} {!v.available ? '(sold out)' : ''}
             </option>
           ))}
         </select>
@@ -311,7 +311,6 @@ function BuilderProduct({
             <Plus size={17} />
           </button>
         </div>
-        <small>Demo price</small>
       </div>
     </article>
   )

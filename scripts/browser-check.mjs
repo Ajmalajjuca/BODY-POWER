@@ -18,7 +18,8 @@ for (const width of [360, 390, 768, 1024, 1440]) {
     '/',
     '/shop',
     '/build-your-combo',
-    '/products/gold-standard-100-whey',
+    '/products/optimum-nutrition-gold-standard-100-whey',
+    '/collections/whey-protein',
     '/combos',
     '/brands',
     '/about',
@@ -34,6 +35,18 @@ for (const width of [360, 390, 768, 1024, 1440]) {
   }
   console.log('Checked width', width)
 }
+await page.goto('http://localhost:5173/shop', { waitUntil: 'networkidle' })
+await page.evaluate(async () => {
+  for (const img of document.querySelectorAll('img')) {
+    img.loading = 'eager'
+    img.scrollIntoView()
+    await img.decode().catch(() => {})
+  }
+})
+const brokenImages = await page.evaluate(() =>
+  [...document.querySelectorAll('img')].filter((i) => !i.naturalWidth).map((i) => i.src),
+)
+if (brokenImages.length) errors.push(`Broken images: ${brokenImages.join(', ')}`)
 await page.setViewportSize({ width: 390, height: 844 })
 await page.goto('http://localhost:5173/')
 await page.screenshot({ path: '/tmp/bpn-mobile.png', fullPage: true })
@@ -54,8 +67,8 @@ await page.getByRole('button', { name: 'Open Design Studio', exact: false }).cli
 await page.getByRole('button', { name: 'versions', exact: true }).click()
 await expect(page.getByText('Performance review', { exact: true })).toBeVisible()
 await page.getByRole('button', { name: 'Close Design Studio' }).click()
-await page.goto('http://localhost:5173/products/gold-standard-100-whey')
-await page.getByRole('button', { name: 'Add to demo bag' }).click()
+await page.goto('http://localhost:5173/products/optimum-nutrition-gold-standard-100-whey')
+await page.getByRole('button', { name: 'Add to bag' }).click()
 await expect(page.getByRole('dialog')).toBeVisible()
 await page.keyboard.press('Escape')
 await page.goto('http://localhost:5173/cart')

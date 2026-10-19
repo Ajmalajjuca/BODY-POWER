@@ -118,7 +118,7 @@ const copy: Partial<Record<Section['type'], [string, string]>> = {
     'Your brands. Your goals. Your perfect combination.',
   ],
   goals: ['A little closer to your goals.', 'Find the right place to start.'],
-  deals: ['More for your everyday.', 'Considered combos. Example savings.'],
+  deals: ['More for your everyday.', 'Ready-made combos. Up to 10% off.'],
   newsletter: ['A stronger inbox.', 'New arrivals, thoughtful picks and a little inspiration.'],
 }
 export function makeSection(type: Section['type'], id: string = crypto.randomUUID()): Section {

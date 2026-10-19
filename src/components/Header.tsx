@@ -25,7 +25,7 @@ export function Header({ centered = false }: { centered?: boolean }) {
       <div className="announcement">
         <span>A little more power. A little more possibility.</span>
         <Link to="/combos">
-          Explore demo combos <ArrowUpRight size={13} />
+          Shop combos <ArrowUpRight size={13} />
         </Link>
       </div>
       <header className={`header ${centered ? 'header-centered' : ''}`}>
@@ -134,7 +134,7 @@ export function Header({ centered = false }: { centered?: boolean }) {
           <Link to="/brands" onClick={() => setMenu(false)}>
             Our brands
           </Link>
-          <Link to="/collections/suppx-best-seller" onClick={() => setMenu(false)}>
+          <Link to="/shop?sort=bestsellers" onClick={() => setMenu(false)}>
             Bestsellers
           </Link>
           <Link to="/combos" onClick={() => setMenu(false)}>

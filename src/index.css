@@ -911,7 +911,7 @@ footer,
 }
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 24px 0;
@@ -926,41 +926,25 @@ footer,
   position: relative;
   text-align: center;
 }
-.brand-wordmark strong {
-  font-size: 17px;
-  font-style: italic;
-  letter-spacing: -0.7px;
-  font-weight: 900;
-  line-height: 1;
+.brand-logo {
+  display: block;
+  width: calc(var(--logo-size, 40px) * var(--logo-w));
+  height: calc(var(--logo-size, 40px) * var(--logo-h));
+  max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+  transition: color 0.2s ease;
 }
-.brand-0 strong {
-  font-size: 9px;
-  max-width: 55px;
-  text-align: left;
-  letter-spacing: -0.2px;
+.brand-wordmark {
+  color: var(--text);
 }
-.brand-wordmark .on-symbol {
-  font-size: 35px;
-  font-style: italic;
-  letter-spacing: -5px;
-  line-height: 1;
+.brand-wordmark:hover {
+  color: var(--accent);
 }
-.brand-2 strong {
-  letter-spacing: -1.3px;
-}
-.brand-3 strong {
-  font-size: 32px;
-  letter-spacing: -1px;
-  color: #a92a39;
-}
-.brand-4 strong {
-  font-size: 23px;
-  text-transform: uppercase;
-}
-.brand-5 strong {
-  font-size: 23px;
-}
-.brand-wordmark > span {
+.brand-explore {
   opacity: 0;
   position: absolute;
   bottom: -14px;
@@ -969,7 +953,7 @@ footer,
   align-items: center;
   gap: 5px;
 }
-.brand-wordmark:hover > span {
+.brand-wordmark:hover .brand-explore {
   opacity: 1;
 }
 .section-bestsellers,
@@ -1811,7 +1795,7 @@ input[type='range'] {
 }
 .brands-page-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 .brands-page-grid > a {
@@ -1827,11 +1811,10 @@ input[type='range'] {
   justify-content: center;
   background: #f1e9e7;
   color: #800020;
-  font-size: 40px;
-  font-weight: 900;
-  font-style: italic;
   height: 130px;
   margin-bottom: 25px;
+  padding: 0 24px;
+  --logo-size: 72px;
 }
 .brands-page-grid h2 {
   font-size: 23px;
@@ -3437,22 +3420,6 @@ input[type='range'] {
   .variant-note {
     font-size: 8px;
   }
-  .brand-wordmark strong {
-    font-size: 15px;
-  }
-  .brand-0 strong {
-    font-size: 8px;
-  }
-  .brand-wordmark .on-symbol {
-    font-size: 30px;
-  }
-  .brand-3 strong {
-    font-size: 27px;
-  }
-  .brand-4 strong,
-  .brand-5 strong {
-    font-size: 18px;
-  }
   .goals-grid {
     gap: 12px;
   }
@@ -3721,17 +3688,8 @@ input[type='range'] {
     font-size: 9px;
   }
   .brand-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 25px;
-  }
-  .brand-wordmark strong {
-    font-size: 19px;
-  }
-  .brand-0 strong {
-    font-size: 9px;
-  }
-  .brand-3 strong {
-    font-size: 30px;
   }
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4431,22 +4389,7 @@ input[type='range'] {
   }
   .brand-wordmark {
     min-height: 40px;
-  }
-  .brand-wordmark strong {
-    font-size: 16px;
-  }
-  .brand-0 strong {
-    font-size: 7px;
-  }
-  .brand-wordmark .on-symbol {
-    font-size: 25px;
-  }
-  .brand-3 strong {
-    font-size: 27px;
-  }
-  .brand-4 strong,
-  .brand-5 strong {
-    font-size: 18px;
+    --logo-size: 30px;
   }
   .product-grid {
     gap: 12px;
@@ -4975,8 +4918,12 @@ input[type='range'] {
     gap: 10px;
   }
   .brands-page-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 13px;
+  }
+  .brand-monogram {
+    --logo-size: 40px;
+    padding: 0 12px;
   }
   .brands-page-grid > a {
     padding: 15px;

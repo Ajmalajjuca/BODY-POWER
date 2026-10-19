@@ -1,0 +1,1869 @@
+{
+  "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+  "sources": [
+    {
+      "name": "Kapoor Medical Hall",
+      "base": "https://kapoormedicalhall.com"
+    },
+    {
+      "name": "Guardian",
+      "base": "https://www.guardian.in"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c1",
+      "name": "Whey Protein",
+      "handle": "whey-protein",
+      "tagline": "Make every scoop count"
+    },
+    {
+      "id": "c2",
+      "name": "Creatine",
+      "handle": "creatine",
+      "tagline": "Your daily essential"
+    },
+    {
+      "id": "c3",
+      "name": "Pre-Workout",
+      "handle": "pre-workout",
+      "tagline": "Find your focus"
+    },
+    {
+      "id": "c4",
+      "name": "Mass Gainer",
+      "handle": "mass-gainer",
+      "tagline": "More in every serving"
+    },
+    {
+      "id": "c5",
+      "name": "Vitamins & Wellness",
+      "handle": "wellness",
+      "tagline": "Your everyday foundation"
+    },
+    {
+      "id": "c6",
+      "name": "Omega-3 & Fish Oil",
+      "handle": "omega-3",
+      "tagline": "Small softgel. Big routine."
+    }
+  ],
+  "brands": [
+    {
+      "id": "optimum-nutrition",
+      "name": "Optimum Nutrition",
+      "short": "ON",
+      "color": "#1f2a44",
+      "logo": "/brands/optimum-nutrition.svg",
+      "logoAspect": 4.738
+    },
+    {
+      "id": "muscletech",
+      "name": "MuscleTech",
+      "short": "MT",
+      "color": "#b82830",
+      "logo": "/brands/muscletech.png",
+      "logoAspect": 2.11
+    },
+    {
+      "id": "dymatize",
+      "name": "Dymatize",
+      "short": "DYM",
+      "color": "#285c89",
+      "logo": "/brands/dymatize.svg",
+      "logoAspect": 5.553
+    },
+    {
+      "id": "gnc",
+      "name": "GNC",
+      "short": "GNC",
+      "color": "#b72132",
+      "logo": "/brands/gnc.svg",
+      "logoAspect": 5.265
+    },
+    {
+      "id": "rule1",
+      "name": "Rule 1",
+      "short": "R1",
+      "color": "#242526",
+      "logo": "/brands/rule1.svg",
+      "logoAspect": 0.782
+    },
+    {
+      "id": "applied-nutrition",
+      "name": "Applied Nutrition",
+      "short": "AN",
+      "color": "#1d4f91",
+      "logo": "/brands/applied-nutrition.png",
+      "logoAspect": 3.297
+    },
+    {
+      "id": "ghost",
+      "name": "GHOST",
+      "short": "GH",
+      "color": "#111111",
+      "logo": "/brands/ghost.png",
+      "logoAspect": 2.227
+    }
+  ],
+  "hero": [
+    {
+      "src": "/products/hero-1.webp",
+      "productId": "optimum-nutrition-gold-standard-100-whey",
+      "alt": "Gold Standard 100% Whey"
+    },
+    {
+      "src": "/products/hero-2.webp",
+      "productId": "muscletech-nitro-tech-whey-protein",
+      "alt": "Nitro-Tech Whey Protein"
+    }
+  ],
+  "products": [
+    {
+      "id": "optimum-nutrition-gold-standard-100-whey",
+      "handle": "optimum-nutrition-gold-standard-100-whey",
+      "title": "Gold Standard 100% Whey",
+      "brandId": "optimum-nutrition",
+      "categoryId": "c1",
+      "description": "Optimum Nutrition (ON) Gold Standard 100% Whey – Made in India\nOptimum Nutrition (ON) Gold Standard 100% Whey is a premium-quality whey protein powder that helps fitness enthusiasts and athletes achieve their goals. With Optimum Nutrition Gold Standard, you receive a high-performance formula made in India that adheres to strict quality standards. This product packs essential nutrients and contains BCAA amino acids, which play a crucial role in muscle recovery and growth. Additionally, it includes glutamine and glutamic acid to support muscle repair and boost immune function. Most importantly, the formula contains zero added sugar, making it an excellent choice for those who want to build muscle without unnecessary calories.\nWhy Choose Optimum Nutrition Gold Standard 100% Whey?\nRich in BCAA Amino Acids\nEach serving is packed with naturally occurring BCAAs (Branched Chain Amino Acids) that actively promote muscle recovery, reduce fatigue, and enhance endurance during intense workouts.\nGlutamine and Glutamic Acid\nThe formula contains glutamine and glutamic acid, which play a key role in muscle recovery and immune system support. These ingredients help you recover more quickly after your toughest training sessions.\nZero Added Sugar\nWith zero added sugar, this clean protein option helps you build muscle without compromising your health or adding unwanted calories.\nFast-Absorbing Whey Protein Blend\nThe advanced blend of whey protein isolate, concentrate, and hydrolysate ensures your muscles receive the nutrients they need for growth and repair, promoting rapid absorption.\nHow to Use?\nMix one rounded scoop (30g) of Gold Standard 100% Whey with 180-240ml of water, milk, or your favorite beverage. Consume it post-workout or anytime during the day to meet your daily protein requirements.\nBenefits:\nIt effectively builds lean muscle mass, helping you achieve your fitness goals.\nAdditionally, it supports muscle recovery and enhances performance, allowing you to push through intense workouts.\nFurthermore, it works well for weight management and suits active lifestyles, making it a versatile addition to your routine.\nFor more information about the Health Benefits of Whey protein, check out this blog.\nExplore also our Optimum Nutrition (ON) Creatine Monohydrate Micronised product on our website.",
+      "images": [
+        "/products/optimum-nutrition-gold-standard-100-whey-1.webp",
+        "/products/optimum-nutrition-gold-standard-100-whey-2.webp",
+        "/products/optimum-nutrition-gold-standard-100-whey-3.webp",
+        "/products/optimum-nutrition-gold-standard-100-whey-4.webp"
+      ],
+      "tags": [
+        "Whey Protein",
+        "Optimum Nutrition"
+      ],
+      "basePrice": 449900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "optimum-nutrition-gold-standard-100-whey-21928",
+          "SKU": "",
+          "size": "907 g",
+          "price": 449900,
+          "available": true,
+          "flavor": "Double Rich Chocolate",
+          "compareAtPrice": 507900
+        },
+        {
+          "id": "optimum-nutrition-gold-standard-100-whey-21929",
+          "SKU": "",
+          "size": "907 g",
+          "price": 449900,
+          "available": true,
+          "flavor": "Vanilla Ice Cream",
+          "compareAtPrice": 507900
+        },
+        {
+          "id": "optimum-nutrition-gold-standard-100-whey-22469",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 1019900,
+          "available": true,
+          "flavor": "Vanilla Ice Cream",
+          "compareAtPrice": 1132900
+        },
+        {
+          "id": "optimum-nutrition-gold-standard-100-whey-21925",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 1019900,
+          "available": true,
+          "flavor": "Double Rich Chocolate",
+          "compareAtPrice": 1132900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 7,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/optimum-nutrition-on-gold-standard-whey-made-in-india/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/DRC.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/1115039_2.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/1115039_8.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/1115039_11.png"
+        ]
+      },
+      "compareAtPrice": 507900
+    },
+    {
+      "id": "muscletech-nitro-tech-whey-protein",
+      "handle": "muscletech-nitro-tech-whey-protein",
+      "title": "Nitro-Tech Whey Protein",
+      "brandId": "muscletech",
+      "categoryId": "c1",
+      "description": "Muscletech Nitrotech Whey Protein: Maximize Your Performance\nMuscletech Nitrotech Whey Protein is a high-quality supplement designed to support your fitness goals by increase strength and performance. Packed with fast-absorbing whey protein, this powder helps improve recovery, promotes muscle growth, and boosts overall athletic performance. Additionally, it is formulated to easily digest, ensuring that your body quickly absorbs the nutrients it needs to perform at its best. Whether you are an athlete, bodybuilder, or fitness enthusiast, It is the ideal choice to fuel your body and elevate your workouts to the next level.\nKey Features:\nIncrease Strength & Performance: The advanced formula of Muscletech Nitrotech significantly boosts strength and endurance. This helps you push harder during workouts and perform better overall.\nWhey Protein Powder for Optimal Results: This protein powder contains high-quality whey protein isolates, known for their rapid digestion and absorption. As a result, your body receives the nutrients it needs for muscle repair and growth.\nEasily Digest: It is designed for quick absorption. This allows your body to utilize the nutrients efficiently, speeding up muscle recovery and supporting performance.\nImprove Recovery: The amino acid matrix in Nitrotech Whey Protein accelerates muscle repair after intense exercise. This enables you to recover faster and reduce muscle soreness, helping you get back to training sooner.\nWhy Choose Muscletech Nitrotech Whey Protein?\nMuscletech is a well-known, trusted brand in the fitness supplement industry, offering scientifically backed products. Nitrotech Whey Protein is specially formulated to help athletes and fitness enthusiasts optimize muscle growth and performance. Whether you aim for improved recovery or a significant boost in strength, this protein powder provides everything you need.\nThe combination of whey protein isolates and peptides allows your body to easily digest and absorb the protein, helping you reach your fitness goals more effectively. Additionally, the powerful amino acid matrix in the formula enhances protein synthesis and reduces muscle breakdown, enabling you to see faster results from your training.\nHow to Use?\nTo experience the full benefits of Muscletech Nitrotech Whey Protein, mix one scoop with 6-8 ounces of water or milk. For best results, consume it post-workout to support muscle recovery or enjoy it as a convenient protein boost throughout the day.\nBenefits of Muscletech Nitrotech Whey Protein:\nFast digestion for rapid recovery: The quick absorption of this protein helps speed up muscle repair after intense workouts.\nPromotes muscle growth and repair: By providing high-quality whey protein isolates, it supports the growth and recovery of lean muscle tissue.\nHelps improve strength and endurance: Regular use enhances your strength and endurance, allowing you to perform better during workouts.\nGreat-tasting, easy-to-mix formula: Enjoy a delicious protein shake that mixes effortlessly, making it easy to incorporate into your daily routine.\nCheck out Muscletech Nitrotech 100% Whey Gold product from our website.\nFor more information about The Anatomy and Physiology of Muscle & Growth Factors, on this blog.",
+      "images": [
+        "/products/muscletech-nitro-tech-whey-protein-1.webp",
+        "/products/muscletech-nitro-tech-whey-protein-2.webp",
+        "/products/muscletech-nitro-tech-whey-protein-3.webp",
+        "/products/muscletech-nitro-tech-whey-protein-4.webp"
+      ],
+      "tags": [
+        "Whey Protein",
+        "MuscleTech"
+      ],
+      "basePrice": 349900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "muscletech-nitro-tech-whey-protein-24460",
+          "SKU": "",
+          "size": "907 g",
+          "price": 349900,
+          "available": true,
+          "flavor": "Cappuccino",
+          "compareAtPrice": 409900
+        },
+        {
+          "id": "muscletech-nitro-tech-whey-protein-23658",
+          "SKU": "",
+          "size": "907 g",
+          "price": 349900,
+          "available": true,
+          "flavor": "Milk Chocolate",
+          "compareAtPrice": 409900
+        },
+        {
+          "id": "muscletech-nitro-tech-whey-protein-23751",
+          "SKU": "",
+          "size": "1.72 kg",
+          "price": 699900,
+          "available": true,
+          "flavor": "Vanilla Cream",
+          "compareAtPrice": 899900
+        },
+        {
+          "id": "muscletech-nitro-tech-whey-protein-23752",
+          "SKU": "",
+          "size": "1.72 kg",
+          "price": 699900,
+          "available": true,
+          "flavor": "Cappuccino",
+          "compareAtPrice": 899900
+        },
+        {
+          "id": "muscletech-nitro-tech-whey-protein-23753",
+          "SKU": "",
+          "size": "1.72 kg",
+          "price": 699900,
+          "available": true,
+          "flavor": "Cookies & Creme",
+          "compareAtPrice": 899900
+        },
+        {
+          "id": "muscletech-nitro-tech-whey-protein-21891",
+          "SKU": "",
+          "size": "1.72 kg",
+          "price": 699900,
+          "available": true,
+          "flavor": "Milk Chocolate",
+          "compareAtPrice": 899900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 9,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/muscletech-nitrotech-whey-protein-boost-strength-performance/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/61BwgtQByfL._SL1500_.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/81PSzuqAd8L._SL1500_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/71AO6qurBxL._SL1500_.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/71qPxvH5YhL._SL1500_.webp"
+        ]
+      },
+      "compareAtPrice": 409900
+    },
+    {
+      "id": "dymatize-iso-100-hydrolyzed-whey-protein",
+      "handle": "dymatize-iso-100-hydrolyzed-whey-protein",
+      "title": "ISO 100 Hydrolyzed Whey Protein",
+      "brandId": "dymatize",
+      "categoryId": "c1",
+      "description": "Fuel Your Muscle Growth with Dymatize ISO100\nDymatize ISO 100 is a premium hydrolyzed whey protein, specifically designed for athletes, bodybuilders, and anyone serious about building lean muscle. This fast-digesting protein isolate provides the perfect support for muscle growth and volume, helping you achieve your fitness goals faster. Moreover, it significantly decreases muscle soreness, allowing for quicker recovery after intense workouts. With its gluten and lactose-free formula, Dymatize ISO100 stands as an ideal choice for those seeking clean, high-quality protein to support their nutrition plan. Whether you’re looking to enhance muscle mass or improve recovery, this supplement has you covered.\nWhy Choose Dymatize ISO100?\nHydrolyzed Whey Protein – ISO100 features hydrolyzed whey protein, which ensures quick absorption, maximizing muscle recovery right after a workout.\nMuscle Growth & Volume – Packed with 25g of protein per serving, ISO100 helps build muscle mass while improving strength and volume.\nReduces Muscle Soreness – This formula decreases muscle soreness, allowing you to recover faster and get back to training sooner.\nGluten & Lactose Free – Perfect for individuals with dietary sensitivities, this protein is both gluten-free and lactose-free, ensuring it’s easy on the stomach.\nDelicious Flavors – Enjoy the great taste of ISO100 in flavors like Chocolate and Vanilla, making your protein shake enjoyable after every workout.\nHow to Use?\nMix 1 scoop (30g) with 200-250ml of water or milk.\nShake well and consume post-workout or anytime you need a high-quality source of protein.\nFor best results, use daily as part of your muscle recovery and growth routine.\nExplore Mutant Iso Surge Triple Chocolate supplement on our website and find the perfect protein for your fitness needs.\nLearn the difference between Whey and Whey Isolate in this informative blog.",
+      "images": [
+        "/products/dymatize-iso-100-hydrolyzed-whey-protein-1.webp",
+        "/products/dymatize-iso-100-hydrolyzed-whey-protein-2.webp",
+        "/products/dymatize-iso-100-hydrolyzed-whey-protein-3.webp",
+        "/products/dymatize-iso-100-hydrolyzed-whey-protein-4.webp"
+      ],
+      "tags": [
+        "Whey Protein",
+        "Dymatize"
+      ],
+      "basePrice": 1619900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-24011",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Cinnamon Churos",
+          "compareAtPrice": 1999900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-24010",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Chocolate Peanut Butter",
+          "compareAtPrice": 2399900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-23878",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Strawberry",
+          "compareAtPrice": 2399900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-23531",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Cocoa Pebbles",
+          "compareAtPrice": 2399900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-22571",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Gourmet Vanilla",
+          "compareAtPrice": 2399900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-22429",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Fruity Pebbles Flavour",
+          "compareAtPrice": 2399900
+        },
+        {
+          "id": "dymatize-iso-100-hydrolyzed-whey-protein-22430",
+          "SKU": "",
+          "size": "2.3 kg",
+          "price": 1619900,
+          "available": true,
+          "flavor": "Gourmet Chocolate Flavour",
+          "compareAtPrice": 2399900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 13,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/dymatize-iso-100-2-3kg-hydrolyzed-whey-protein-for-growth-usa-made/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/Birthday-cake-scaled-1.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/51tFuy7dZoL._SL1080_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/61zPjmciFZL._SL1080_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/611CpaByaFL._SL1080_.jpg"
+        ]
+      },
+      "compareAtPrice": 1999900
+    },
+    {
+      "id": "rule-1-whey-blend-protein",
+      "handle": "rule-1-whey-blend-protein",
+      "title": "Whey Blend Protein",
+      "brandId": "rule1",
+      "categoryId": "c1",
+      "description": "Rule1 Whey Blend – Fast-Acting Protein for Muscle Growth\nIf you’re looking for a high-quality protein blend to fuel your muscle growth and recovery, Rule1 Whey Blend is the perfect choice. This formula combines whey isolate, whey concentrate, and hydrolyzed whey protein to provide a balanced mix of fast and slow-digesting proteins, ensuring you get both immediate and sustained benefits. Packed with BCAA, EAA, and glutamine, it actively supports muscle repair and reduces muscle breakdown, promoting optimal recovery. Additionally, as a fast-acting protein, it helps your muscles recover quickly after intense workouts. Plus, the indulgent chocolate fudge flavor makes each serving not only effective but also delicious.\nWhy Choose Rule1 Whey Blend?\nFast-Acting Protein – The combination of whey isolate and hydrolysate ensures rapid absorption and fast delivery of amino acids to muscles.\nSupports Muscle Growth – Packed with BCAA, EAA, and glutamine, this blend fuels muscle protein synthesis and helps with muscle recovery.\nChocolate Fudge Flavor – A rich and satisfying flavor that will make your post-workout shake something to look forward to.\nClean & Effective – Free from unnecessary fillers, so you get only the nutrients your muscles need for recovery and growth.\nBenefits:\n1. Promotes Muscle Growth & Recovery\nWith its blend of whey isolate, concentrate, and hydrolyzed whey protein, this formula supports muscle growth by providing essential amino acids and enhancing muscle protein synthesis. Whether you’re lifting heavy or just starting out, this protein helps keep your muscles in an optimal state for recovery.\n2. Loaded with BCAA, EAA, and Glutamine\nBCAA, EAA, and glutamine are crucial for muscle repair and recovery. This whey blend delivers these important nutrients, helping to reduce muscle breakdown and enhance overall recovery after intense workouts.\n3. Fast-Acting & Easy on the Stomach\nThe fast-acting protein in Rule1 Whey Blend is easy on your digestive system, ensuring quick absorption. This makes it ideal for post-workout nutrition when your muscles need to be replenished.\nHow to Use?\nTo get the best results, simply mix one scoop (30g) of Rule1 Whey Blend with 200-250ml of water or milk. Then, shake well to ensure a smooth, lump-free shake. You can enjoy it post-workout to kickstart your muscle recovery, or use it as a meal replacement to meet your daily protein needs.\nConclusion\nIf you’re serious about muscle growth and fast recovery, Rule1 Whey Blend is the perfect protein supplement. With a perfect blend of whey isolate, concentrate, and hydrolyzed whey, it provides rapid digestion and superior amino acid delivery, all while supporting your muscle growth and recovery. Plus, its indulgent chocolate fudge flavor makes it a treat after every workout.\nCheck out Rule1 Whey Isolate product for a pure, fast-digesting protein on our website.\nLearn more about the Glutamine vs BCAAs: Which one is better for recovery? on this blog.",
+      "images": [
+        "/products/rule-1-whey-blend-protein-1.webp",
+        "/products/rule-1-whey-blend-protein-2.webp"
+      ],
+      "tags": [
+        "Whey Protein",
+        "Rule 1"
+      ],
+      "basePrice": 929900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "rule-1-whey-blend-protein-24709",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Cookies & Creme",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-24624",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Pistachio Ice Cream",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-24626",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Campfire Smores",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-24085",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Strawberry Banana",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-23917",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Vanilla Ice Cream",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-23918",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Cafe Mocha",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-23919",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Birthday Cake",
+          "compareAtPrice": 1307000
+        },
+        {
+          "id": "rule-1-whey-blend-protein-21910",
+          "SKU": "",
+          "size": "2.27 kg",
+          "price": 929900,
+          "available": true,
+          "flavor": "Chocolate Fudge",
+          "compareAtPrice": 1307000
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 10,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/rule1-whey-blend-fast-acting-protein-for-muscle-growth-usa-made/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/CF.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/06/whey-protein_5lb_strawberry-banana_right.png"
+        ]
+      },
+      "compareAtPrice": 1307000
+    },
+    {
+      "id": "gnc-pro-performance-100-whey",
+      "handle": "gnc-pro-performance-100-whey",
+      "title": "Pro Performance 100% Whey",
+      "brandId": "gnc",
+      "categoryId": "c1",
+      "description": "GNC Pro Performance 100% Whey Protein is made to support your daily workouts, faster recovery, and steady muscle progress, without feeling heavy on your stomach. It uses a pure whey protein blend that naturally provides all nine essential amino acids (EAAs), critical for muscle repair, growth, and maintenance after training. The formulation is low in carbohydrates, with just 4.51g per serving, and contains zero added sugar, zero maltodextrin, no artificial colors or flavors, and is gluten-free, non-GMO, and 100% vegetarian.\nBoosts Muscle Growth & Repair, Improves Strength & Stamina, Levels Up Workout Performance, Speeds Up Lean Muscle Recovery, Reduces Muscle Fatigue & Soreness, and includes DigeZyme® for easy digestion and reduced bloating.\nMix 1 scoop with 200-250 ml of water (for light & quick absorption) or milk (for creamier texture & added calories). You can also blend 1 scoop with chilled milk, a banana, and ice cubes for a protein smoothie. Recommended consumption times include post-workout (within 30 minutes), as morning fuel, between-meal bridge, rest day recovery, or for night repair mode.\nFaster Recovery & Lean Muscle GainsInformed Choice Certified. DigeZyme® breaks down protein 3x faster than regular protein, ensuring nutrients hit your muscles when they need it most -- not hours later when the opportunity is gone. While others leave you bloated, GNC leaves you ready for more.",
+      "images": [
+        "/products/gnc-pro-performance-100-whey-1.webp",
+        "/products/gnc-pro-performance-100-whey-2.webp",
+        "/products/gnc-pro-performance-100-whey-3.webp",
+        "/products/gnc-pro-performance-100-whey-4.webp"
+      ],
+      "tags": [
+        "Whey Protein",
+        "GNC"
+      ],
+      "basePrice": 689900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "gnc-pro-performance-100-whey-52305473274087",
+          "SKU": "90200785",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Chocolate Fudge",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473306855",
+          "SKU": "90200793",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Chocolate Supreme",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473339623",
+          "SKU": "90200770",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Mawa Kulfi",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473372391",
+          "SKU": "90200781",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Mango Smoothie",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473405159",
+          "SKU": "90200799",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Café Mocha",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473437927",
+          "SKU": "90200777",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Kesar Pista",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473470695",
+          "SKU": "90200779",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Vanilla Cream",
+          "compareAtPrice": 799900
+        },
+        {
+          "id": "gnc-pro-performance-100-whey-52305473503463",
+          "SKU": "90200773",
+          "size": "4 lbs",
+          "price": 689900,
+          "available": true,
+          "flavor": "Creamy Strawberry",
+          "compareAtPrice": 799900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-pro-performance-100-whey-new-formulation-4lbs",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/4lbs_chocolatge_fudge_4_b6abbe11-d9f7-4ebd-a072-e16bee675582.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/4lbs_chocolate_supreme_4_f8d62b56-7039-4cec-ac37-76939f00456c.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/4lbs_mawa_kulfi_4_e82c76af-eb44-4a87-87c1-8e230f948df0.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/4lbs_mango_4_e5b90e5a-2ca0-4cd3-8113-914ac9e5aa68.jpg"
+        ]
+      },
+      "compareAtPrice": 799900
+    },
+    {
+      "id": "optimum-nutrition-micronised-creatine-monohydrate",
+      "handle": "optimum-nutrition-micronised-creatine-monohydrate",
+      "title": "Micronised Creatine Monohydrate",
+      "brandId": "optimum-nutrition",
+      "categoryId": "c2",
+      "description": "Optimum Nutrition (ON) Creatine Monohydrate Micronised\nOptimum Nutrition Creatine Monohydrate Micronised is a premium, zero-calories supplement specifically designed to support athletic performance and help you achieve your fitness goals. With its pure and high-quality creatine monohydrate formula, it actively strengthens muscles, increases energy levels, and enhances overall endurance. Furthermore, this supplement seamlessly integrates into your workout regimen, making it an essential addition for anyone looking to maximize results and maintain peak performance.\nWhy Choose Optimum Nutrition Creatine Monohydrate?\n1. Pure Creatine Monohydrate\nEach serving contains pure, micronized creatine monohydrate, ensuring rapid absorption and delivering better effectiveness. Moreover, this powerful ingredient actively supports muscle strength and energy production, giving you a competitive edge during high-intensity workouts.\n2. Support Athletic Performance\nIn addition to boosting energy, it helps improve overall performance by increasing both strength and stamina. This makes it the perfect choice for weightlifting, sprinting, or any other high-intensity activities that demand peak performance.\n3. Strengthens Muscles\nCreatine works by boosting the production of ATP (adenosine triphosphate), the primary energy source for muscle contractions. Consequently, it enables you to lift heavier weights, push through tough sets, and consistently improve your strength.\n4. Zero Calories, Clean Formula\nWith its zero-calorie formula, this supplement fits seamlessly into your diet without adding unnecessary calories. Furthermore, it offers a clean and effective solution tailored for athletes and fitness enthusiasts who want results without compromise.\n5. Micronized for Better Absorption\nThe micronized texture dissolves effortlessly in water, significantly improving mixability and ensuring rapid absorption into your muscles. As a result, you experience immediate benefits and optimal performance during your workouts.\nHow to Use?\nTo get the most out of Optimum Nutrition Creatine Monohydrate, simply mix one rounded teaspoon (approximately 5g) with 250-300ml of water or your favorite beverage. For best results, consume it daily, preferably post-workout, as this is when your body needs to replenish muscle energy the most. Additionally, incorporating it into your routine consistently helps optimize recovery and supports your fitness goals more effectively.\nExperience Superior Quality\nOptimum Nutrition, one of the world’s most trusted sports nutrition brands, ensures every batch of creatine meets the highest standards of quality and purity.\nFor more information about the Health Benefits of Creatine Monohydrate-on this blog.",
+      "images": [
+        "/products/optimum-nutrition-micronised-creatine-monohydrate-1.webp",
+        "/products/optimum-nutrition-micronised-creatine-monohydrate-2.webp",
+        "/products/optimum-nutrition-micronised-creatine-monohydrate-3.webp"
+      ],
+      "tags": [
+        "Creatine",
+        "Optimum Nutrition"
+      ],
+      "basePrice": 44900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "optimum-nutrition-micronised-creatine-monohydrate-21959",
+          "SKU": "",
+          "size": "100g",
+          "price": 44900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 68900
+        },
+        {
+          "id": "optimum-nutrition-micronised-creatine-monohydrate-24784",
+          "SKU": "",
+          "size": "250g",
+          "price": 79900,
+          "available": true,
+          "flavor": "Citrus Orange",
+          "compareAtPrice": 147900
+        },
+        {
+          "id": "optimum-nutrition-micronised-creatine-monohydrate-21960",
+          "SKU": "",
+          "size": "250g",
+          "price": 79900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 147900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 1,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/optimum-nutrition-creatine-monohydrate-micronised/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/61JFD-8sa-L._SL1200_.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81rFs-tza7L._SL1500_.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81FpF2t2L._SL1500_-1.webp"
+        ]
+      },
+      "compareAtPrice": 68900
+    },
+    {
+      "id": "muscletech-platinum-creatine-monohydrate",
+      "handle": "muscletech-platinum-creatine-monohydrate",
+      "title": "Platinum Creatine Monohydrate",
+      "brandId": "muscletech",
+      "categoryId": "c2",
+      "description": "Muscletech Creatine Monohydrate – Pure & Potent for Strength\nIf you’re looking to increase muscle power and boost strength, Muscletech Creatine Monohydrate is the ideal supplement for your fitness goals. As a pure, potent & versatile creatine powder, it is designed to enhance your workout performance and help you achieve optimal results. Whether you’re a bodybuilder, athlete, or fitness enthusiast, this versatile creatine powder can be used for a variety of training regimens to push your limits. Additionally, its pure and potent formula ensures that you get the most out of every scoop, making it a valuable addition to your fitness routine.\nWhy Choose Muscletech Creatine Monohydrate?\nIncrease Muscle Power – Creatine is widely known for increasing muscle energy during high-intensity exercises, which makes it easier to push harder and longer, ultimately improving performance.\nBoost Strength – Consistent use helps enhance your strength, allowing you to lift heavier and complete more reps.\nPure & Potent Formula – This creatine is pure, potent & versatile, free from additives, ensuring that you’re getting the most effective and clean form of creatine available for optimal results.\nVersatile Use – Whether you’re in the gym, on the field, or just looking to improve overall muscle performance, this creatine powder fits all needs.\nImport Quality – Imported and trusted for its quality, Muscletech offers a reliable product for serious athletes.\nHow Does Muscletech Creatine Monohydrate Work?\nCreatine boosts ATP production, the body’s main energy molecule, enhancing performance in high-intensity activities like weightlifting, sprinting, and HIIT. By increasing creatine stores in muscles, Muscletech Creatine Monohydrate promotes faster recovery and improved strength. It provides the most bioavailable and effective form of creatine for optimal results.\nBenefits:\n1. Increased Muscle Power and Performance\nCreatine increases the availability of energy during intense physical activity, making it easier to lift heavier weights, perform more reps, and improve overall training performance.\n2. Boosts Strength\nRegular use helps you progressively build strength, enabling you to push yourself further in each workout.\n3. Pure, High-Quality Formula\nMuscletech’s creatine is 100% pure, ensuring you receive the most effective, additive-free product.\n4. Enhanced Muscle Recovery\nCreatine also promotes faster muscle recovery, helping you train harder without as much fatigue.\nHow to Use?\nMix one scoop (5g) of Muscletech Creatine Monohydrate with 200-250ml of water or your favorite beverage. Consume it pre- or post-workout for maximum results. For best results, use it consistently over time, as creatine’s benefits are most noticeable after a loading phase.\nConclusion\nFor anyone looking to increase muscle power, boost strength, and enhance workout performance, Muscletech Creatine Monohydrate is a must-have. This pure and potent creatine powder will take your training to the next level, helping you achieve your fitness goals faster. Whether you’re new to supplementation or an experienced athlete, it’s an essential addition to any regimen.\nExplore our Rule1 Whey Blend product for a high-quality blend that supports muscle growth and recovery.\nlearn about the Creatine Monohydrate vs Creatine: Which should you choose? check out in this blog.",
+      "images": [
+        "/products/muscletech-platinum-creatine-monohydrate-1.webp",
+        "/products/muscletech-platinum-creatine-monohydrate-2.webp",
+        "/products/muscletech-platinum-creatine-monohydrate-3.webp"
+      ],
+      "tags": [
+        "Creatine",
+        "MuscleTech"
+      ],
+      "basePrice": 79900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "muscletech-platinum-creatine-monohydrate-24753",
+          "SKU": "",
+          "size": "83 Servings",
+          "price": 79900,
+          "available": true,
+          "flavor": "Tropical Tango",
+          "compareAtPrice": 139900
+        },
+        {
+          "id": "muscletech-platinum-creatine-monohydrate-24557",
+          "SKU": "",
+          "size": "83 Servings",
+          "price": 79900,
+          "available": true,
+          "flavor": "Citrus Blast",
+          "compareAtPrice": 139900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 1,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/muscletech-creatine-monohydrate-boost-strength-power/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/creatine-250-g-main.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/b2-2.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/back1-3.png"
+        ]
+      },
+      "compareAtPrice": 139900
+    },
+    {
+      "id": "applied-nutrition-creatine-monohydrate",
+      "handle": "applied-nutrition-creatine-monohydrate",
+      "title": "Creatine Monohydrate",
+      "brandId": "applied-nutrition",
+      "categoryId": "c2",
+      "description": "Applied Nutrition Creatine Monohydrate | 50 Servings | Made in UK\nApplied Nutrition Creatine is a powdered dietary supplement featuring Creatine Monohydrate as its listed creatine ingredient.\nThe powder can be mixed with water, juice or another suitable beverage according to the product instructions. The container provides 50 servings, making it a convenient powder format for following the recommended serving instructions.\nApplied Nutrition manufactures this product in the UK. This product page focuses on the formula, format, quantity and product information without making claims about physical performance, strength, endurance or other personal outcomes.\nAlways check the current product packaging for the latest ingredient information, serving size and directions.\nKey Features of Applied Nutrition Creatine\nCreatine Monohydrate formula\nPowder format\n50 servings per container\nMade in the UK\nEasy-to-mix powder\nSuitable for mixing with water or another beverage\nApplied Nutrition product\nFollow current product label for usage\nStorage Information\nStore Applied Nutrition Creatine according to the instructions provided on the product packaging.\nKeep the container tightly closed and protect the powder from moisture.\nStore in a cool, dry place away from direct sunlight.\nKeep out of reach of children.\nImportant Information\nProduct formulations, ingredient quantities and serving instructions may change. Always check the current product label before use.\nThis product page provides factual product information and does not make claims about diagnosing, treating, curing or preventing any medical condition.\nIf you are pregnant, breastfeeding, taking medication or have a medical condition, consult an appropriate healthcare professional before using dietary supplements.\nAbout Applied Nutrition Creatine Monohydrate\nApplied Nutrition Creatine Monohydrate is a powdered dietary supplement made in the UK. The product contains Creatine Monohydrate and is supplied in a container providing 50 servings.\nIts powder format allows the stated serving to be mixed with a suitable beverage. The product page focuses on its ingredient, format, serving quantity and manufacturer information.\nFor general information about creatine, read Healthline – Creatine.\nYou can also explore our Creatine Supplements collection.",
+      "images": [
+        "/products/applied-nutrition-creatine-monohydrate-1.webp",
+        "/products/applied-nutrition-creatine-monohydrate-2.webp",
+        "/products/applied-nutrition-creatine-monohydrate-3.webp",
+        "/products/applied-nutrition-creatine-monohydrate-4.webp"
+      ],
+      "tags": [
+        "Creatine",
+        "Applied Nutrition"
+      ],
+      "basePrice": 149900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "applied-nutrition-creatine-monohydrate-23507",
+          "SKU": "",
+          "size": "250 g",
+          "price": 149900,
+          "available": true,
+          "flavor": "Strawberry & Raspberry",
+          "compareAtPrice": 349900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 2,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/applied-nutrition-creatine-monohydrate-50-servings-made-in-uk/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/711xo6iiqcL._AC_SL1500_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81x9D6pl2dL._AC_SL1500_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/714U3dBJXDL._AC_SL1500_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81tvbPyOfL._AC_SL1500_.jpg"
+        ]
+      },
+      "compareAtPrice": 349900
+    },
+    {
+      "id": "gnc-pro-performance-creatine-monohydrate",
+      "handle": "gnc-pro-performance-creatine-monohydrate",
+      "title": "Pro Performance Creatine Monohydrate",
+      "brandId": "gnc",
+      "categoryId": "c2",
+      "description": "GNC Pro Performance Creatine Monohydrate\nKey Features\nEach serving of GNC Pro Performance Creatine Monohydrate delivers 3 g of creatine monohydrate\nAvailable as an unflavored powder, so add it to your favorite beverage and get all the benefits\nGNC Creatine supplement improves athletic performance, builds strength, and enhances stamina\nCan be used as pre-workout drink or post workout supplement\nIt is Informed Choice Certified and free from any harmful banned substances\nProduct Description\nIf you are looking for a pre-workout supplement that’ll help you power through your intense workouts and provide various benefits, then do check out GNC Pro Performance Creatine Monohydrate. It is a common misconception that creatine is only used for bulking. But that isn’t true. GNC Pro Performance Creatine Monohydrate is used for muscular energy which supports power, stamina, and performance. You can use it in conjugation with extra calories and optimal resistance training to build muscles.\nIntroduction\nGNC Pro Performance Creatine Monohydrate is one of the top selling creating supplements. GNC is known for it amazing quality and the supplements are completely safe to consume. GNC creatine supplements are most helpful in improving exercise performance and increasing muscle mass.\nIt is a great pre-workout supplement for athletes and fitness enthusiasts who want to push through their intense workouts and maximize their muscle gain. It comes in an unflavored powder form and each serving provides 3 g of high quality creatine monohydrate.\nBenefits of Creatine Monohydrate\nIn the body, creatine is converted to creatine phosphate which helps fuel skeletal muscles. It is also helpful in providing immediate energy production, especially during intense workouts.GNC creatine supplement helps promote cellular hydration when taken on a regular basis.Creatine is known to improve athletic performance and enhances stamina as well.\nIn the body, creatine is converted to creatine phosphate, which helps to fuel skeletal muscles and provides support for immediate energy production during high-intensity workouts.\nCreatine supplementation may help to promote cellular hydration.\nCreatine has also been shown in numerous studies to help improve athletically performance.\nNutritional Information\nServing Size: 3g\nServings Per Container: 83\nNutrients |\nAmount Per Serving |\n%RDA*\n|\nEnergy |\n0 kcal |\n0% |\nCarbohydrates |\n0 g |\n** |\nSugar |\n0 g |\n** |\nProtein |\n0 g |\n** |\nFat |\n0 g |\n** |\nOther Ingredients |\nCreatine Monohydrate |\n3000 mg |\n** |\n* % RDA Values established as per ICMR guidelines\n** % RDA values not established\nDid you know?\nDrinking plenty of water is key when supplementing with creatine. Creatine will not work if they body is not properly hydrated.\nHow and When to Consume GNC Creatine Supplement?\nHow and When to Consume GNC Creatine Supplement?\nGNC Pro Performance can be had as a pre-workout drink or post workout drink. It is best that you ask your trainer and depending upon your fitness goals and workout routine, take GNC creatine supplement accordingly.\nMix 3g creatine monohydrate supplement with 200 ml water or any other beverage of your choice – juice, smoothie, shake etc. and have it before or after your workout. It is available in an unflavored powder form, so will not alter the taste of your beverage, but give you all the benefits of creatine. Creatine supplements may cause dehydration, therefore, keep in mind to drink plenty of water.\nWho ShouldConsume GNC Pro Performance creatine monohydrate?\nGNC Pro Performance Creatine Monohydrate is ideal for – bodybuilders, for fitness enthusiasts who want extra support for intense workouts, and people who want to improve their athletic performance, strength, and stamina.\nSupports Intense Sports Exercise\nFor athletes, improves performance and fuels muscles\nFor Body Builder\nWhere to buy GNC Pro Performance Creatine Monohydrate 250 g pack?\nAll the product details are mentioned so that you know all about the product. You can also read customer reviews and ratings and avail festive deals and discounts. Choose from a wide variety of payment methods and get the products delivered right at your doorstep without any hassle.\nFrequently Asked Questions (FAQs)\nWhat is creatine monohydrate and how does it work for the body?\nCreatine is a substance that’s naturally found in muscle cells. It helps your muscles produce energy during intense workouts. Whether you use it as a pre-workout supplement or a post workout drink, it is important to know the importance of GNC creatine and then include it in your routine. It is ideal for professional athletes, bodybuilders, and weight lifters.\nCreatine supplements are known to improve athletic performance, support intense workouts, promote cellular hydration, and increase muscle mass. If your fitness goal is any of these, then you should start taking GNC creatine in conjugation with a high quality whey protein supplement and complement it with the right diet and optimal workout.\nWhat are some things to keep in mind when buying creatine supplements online?\nWhenever you are buying supplements online it is recommended that you buy them from a genuine website only. GNC products available on the website are 100% original and safe. It is also important that you consult your doctor and take a supplement depending upon your overall health, fitness goals, and lifestyle. Just because your friend or colleague has started taking a particular supplement, doesn’t mean the same supplement will suit you.\nSupplements are available in various forms – unflavored powder, tablets, capsules, flavored powder etc. Make sure you choose a form that you are most comfortable with. Before making the final purchase, make sure you read the ingredients list carefully to avoid any allergic reactions or side effects.\nWhat are the advantages of GNC creatine monohydrate supplement?\nA lot of people don’t know the importance of creatine, but still include creatine supplements in their fitness routine. GNC Pro Performance Creatine Monohydrate is one of the top selling creatine supplements in India. It is known for its amazing results and is complete value for money. Some of the main advantages of including a creatine supplement in your fitness routine are –\nHelps muscle cells produce more energy\nReduces tiredness and muscle soreness\nSpeeds up muscle growth\nHelps with quick and sustained recovery\nMay lower blood sugar levels and fight diabetes\nMay improve brain function\nImproves athletic performance for high intensity workouts\nHelps to add optimal muscle mass\nAre there any side effects of creatine monohydrate?\nGNC Pro Performance Creatine Monohydrate is 100% authentic and completely safe. But we still recommend that you consult your doctor before including any GNC creatine supplement in your routine. It is also important to go through the ingredients list carefully. There can be a certain ingredient that might trigger an allergic reaction. In such a case, ask your doctor for an alternative.\nAlso make sure to stick to the mentioned dosage on the package to avoid any side effects. Some of the main side effects of creatine monohydrate are –\nHeadache\nDehydration\nVomiting\nMuscle cramps\nWeight gain\nDizziness\nNausea\nStomach pain\nBloating\nWater retention\nIf you are pregnant, lactating mother, or have medications for any health condition, then avoid this supplement, unless recommended by your doctor. If you notice any allergic reaction, seek medical help immediately. Discontinue use 2 weeks prior to any surgery.\nScience Facts\nResearch has confirmed that creatine monohydrate taken in an appropriate manner can improve strength advances from weight training by 5 – 10% on an average. (Rawson et.al, 2003) This explains the function of creatine in cellular energy production.",
+      "images": [
+        "/products/gnc-pro-performance-creatine-monohydrate-1.webp",
+        "/products/gnc-pro-performance-creatine-monohydrate-2.webp",
+        "/products/gnc-pro-performance-creatine-monohydrate-3.webp",
+        "/products/gnc-pro-performance-creatine-monohydrate-4.webp"
+      ],
+      "tags": [
+        "Creatine",
+        "GNC"
+      ],
+      "basePrice": 37900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533532903",
+          "SKU": "90200544",
+          "size": "100 gms",
+          "price": 37900,
+          "available": true,
+          "flavor": "Orange",
+          "compareAtPrice": 89900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533565671",
+          "SKU": "90200423",
+          "size": "100 gms",
+          "price": 37900,
+          "available": true,
+          "flavor": "Blueberry",
+          "compareAtPrice": 89900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533598439",
+          "SKU": "90200424",
+          "size": "100 gms",
+          "price": 37900,
+          "available": true,
+          "flavor": "Cranberry",
+          "compareAtPrice": 89900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533500135",
+          "SKU": "90200177",
+          "size": "100 gms",
+          "price": 39900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 69900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533631207",
+          "SKU": "90200177-2",
+          "size": "200 gms (100 gms x 2)",
+          "price": 69900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 159800
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533795047",
+          "SKU": "90200544-2",
+          "size": "200 gms (100 gms x 2)",
+          "price": 69900,
+          "available": true,
+          "flavor": "Orange",
+          "compareAtPrice": 159800
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533827815",
+          "SKU": "90200423-2",
+          "size": "200 gms (100 gms x 2)",
+          "price": 69900,
+          "available": true,
+          "flavor": "Blueberry",
+          "compareAtPrice": 159800
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533860583",
+          "SKU": "90200424-2",
+          "size": "200 gms (100 gms x 2)",
+          "price": 69900,
+          "available": true,
+          "flavor": "Cranberry",
+          "compareAtPrice": 159800
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533401831",
+          "SKU": "90200543",
+          "size": "250 gms",
+          "price": 75900,
+          "available": true,
+          "flavor": "Orange",
+          "compareAtPrice": 179900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533434599",
+          "SKU": "90200446",
+          "size": "250 gms",
+          "price": 75900,
+          "available": true,
+          "flavor": "Blueberry",
+          "compareAtPrice": 179900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533467367",
+          "SKU": "90200447",
+          "size": "250 gms",
+          "price": 75900,
+          "available": true,
+          "flavor": "Cranberry",
+          "compareAtPrice": 179900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533369063",
+          "SKU": "90200027",
+          "size": "250 gms",
+          "price": 79900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 139900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533663975",
+          "SKU": "90200450",
+          "size": "400 gms",
+          "price": 129900,
+          "available": true,
+          "flavor": "Unflavoured",
+          "compareAtPrice": 269900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533696743",
+          "SKU": "90200545",
+          "size": "400 gms",
+          "price": 129900,
+          "available": true,
+          "flavor": "Orange",
+          "compareAtPrice": 269900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533729511",
+          "SKU": "90200554",
+          "size": "400 gms",
+          "price": 129900,
+          "available": true,
+          "flavor": "Blueberry",
+          "compareAtPrice": 269900
+        },
+        {
+          "id": "gnc-pro-performance-creatine-monohydrate-50712533762279",
+          "SKU": "90200553",
+          "size": "400 gms",
+          "price": 129900,
+          "available": true,
+          "flavor": "Cranberry",
+          "compareAtPrice": 269900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-pro-performance-creatine-monohydrate-10",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/1-90200027_72da27ec-0468-48ae-94bf-fd6e7346fb99.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/3-90200027.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/5-90200027_bff85134-2baa-4ae8-b236-d6f0c5e237eb.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/1-90200027.jpg"
+        ]
+      },
+      "compareAtPrice": 89900
+    },
+    {
+      "id": "ghost-legend-pre-workout",
+      "handle": "ghost-legend-pre-workout",
+      "title": "Legend Pre-Workout",
+      "brandId": "ghost",
+      "categoryId": "c3",
+      "description": "GHOST Legend Pre Workout is a powdered food supplement combining amino acids, nutritional ingredients, botanical components and caffeine in a single formulation. It is presented in a powder format for adults who include pre-workout products within their regular sports nutrition routine.\nThe formulation includes L-Citrulline, Beta-Alanine, Betaine Anhydrous, L-Tyrosine and Taurine, together with additional branded ingredients specified as part of the product formula. The combination of ingredients provides a multi-component option for customers who prefer several nutritional compounds in one pre-workout product.\nGHOST Legend is available in selected flavour options, with availability depending on the particular product variant. The powder format can be incorporated into a regular supplementation routine according to the instructions provided on the current manufacturer packaging.\nThe product contains caffeine. Customers should review the current label for the stated caffeine content, ingredient quantities, serving information and applicable product warnings, particularly when considering caffeine intake from other sources.\nAccording to the supplied product information, GHOST Legend Pre Workout is made in the USA.\nFor complete ingredient details, nutritional information, serving instructions, preparation details, storage conditions, allergen information and product warnings, please refer to the relevant sections on this product page and the latest manufacturer packaging.\nProduct formulation, flavour options, packaging and specifications may vary between product versions or markets. Always check the current manufacturer label for the most accurate information.\nThis product is a food supplement and should be used as part of a varied, balanced diet and healthy lifestyle.",
+      "images": [
+        "/products/ghost-legend-pre-workout-1.webp",
+        "/products/ghost-legend-pre-workout-2.webp"
+      ],
+      "tags": [
+        "Pre-Workout",
+        "GHOST"
+      ],
+      "basePrice": 549900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "ghost-legend-pre-workout-27785",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 549900,
+          "available": true,
+          "flavor": "Blue Raspberry",
+          "compareAtPrice": 1099900
+        },
+        {
+          "id": "ghost-legend-pre-workout-27787",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 549900,
+          "available": true,
+          "flavor": "Orange Cream",
+          "compareAtPrice": 1099900
+        },
+        {
+          "id": "ghost-legend-pre-workout-27788",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 549900,
+          "available": true,
+          "flavor": "Sour Strips Rainbow",
+          "compareAtPrice": 1099900
+        },
+        {
+          "id": "ghost-legend-pre-workout-27789",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 549900,
+          "available": true,
+          "flavor": "Sour Watermelon",
+          "compareAtPrice": 1099900
+        },
+        {
+          "id": "ghost-legend-pre-workout-27790",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 549900,
+          "available": true,
+          "flavor": "Welch’s Grape",
+          "compareAtPrice": 1099900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/ghost-legend-pre-workout-30-servings/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/08/LegendOrangeCream.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/08/LegendOrangeCreamBack.webp"
+        ]
+      },
+      "compareAtPrice": 1099900
+    },
+    {
+      "id": "dymatize-energyze-pre-workout",
+      "handle": "dymatize-energyze-pre-workout",
+      "title": "Energyze Pre-Workout",
+      "brandId": "dymatize",
+      "categoryId": "c3",
+      "description": "Dymatize Energyze Pre-Workout is a powdered Pre Workout Supplement formulated with BCAAs, L-Citrulline, L-Tyrosine, L-Theanine, Green Coffee Berry Extract and Caffeine.\nThe formula provides a stated 13.3g serving size and comes in a convenient 400g container with approximately 30 servings. Its powder format makes it suitable for customers who include Pre Workout Supplements and Sports Supplements in their regular fitness and nutrition routine.\nAccording to the supplied product information, each stated serving contains 5g BCAAs, 4g L-Citrulline, 500mg L-Tyrosine, 500mg L-Theanine, 157mg Green Coffee Berry Extract and 150mg Caffeine.\nDymatize Energyze Pre-Workout contains caffeine. Customers should review the current product packaging for the complete ingredient list, serving information, preparation instructions and applicable warnings before use.\nProduct Highlights:\nBrand: Dymatize\nProduct: Energyze Pre-Workout\nCategory: Pre Workout Supplement\nNet Weight: 400g\nServing Size: 13.3g\nServings: Approximately 30\nPowder format\nContains BCAAs and L-Citrulline\nContains Caffeine\nFor complete ingredient quantities, nutritional values, serving size, preparation instructions, storage information and product warnings, please refer to the dedicated sections on this product page.\nExplore our range of Pre Workout Supplements, Whey Protein, Protein Supplements, Creatine Monohydrate, Amino Acids and Sports Supplements.",
+      "images": [
+        "/products/dymatize-energyze-pre-workout-1.webp",
+        "/products/dymatize-energyze-pre-workout-2.webp",
+        "/products/dymatize-energyze-pre-workout-3.webp"
+      ],
+      "tags": [
+        "Pre-Workout",
+        "Dymatize"
+      ],
+      "basePrice": 369900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "dymatize-energyze-pre-workout-24260",
+          "SKU": "",
+          "size": "400 g",
+          "price": 369900,
+          "available": true,
+          "flavor": "Strawberry lemonade",
+          "compareAtPrice": 549900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 2,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/dymatize-energyze-pre-workout-400g-30-servings-made-in-usa/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81QK2av0bqL._SX679_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/91Wz1ZRgXnL._SX679_.jpg",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81roct98RPL._SX679_.jpg"
+        ]
+      },
+      "compareAtPrice": 549900
+    },
+    {
+      "id": "muscletech-vapor-x5-pre-workout",
+      "handle": "muscletech-vapor-x5-pre-workout",
+      "title": "Vapor X5 Pre-Workout",
+      "brandId": "muscletech",
+      "categoryId": "c3",
+      "description": "MuscleTech VaporX5 Pre Workout is a powdered food supplement featuring amino acids, creatine, caffeine, vitamins and other nutritional ingredients in a multi-ingredient blend.\nThe formula includes Beta-Alanine, Creatine Monohydrate, Betaine Anhydrous and L-Citrulline, along with caffeine, choline, Theobroma Cacao and selected B vitamins. This combination offers a broad ingredient profile for adults who include pre-workout supplements in their sports nutrition routine.\nVaporX5 is available in selected flavours, including Blue Razz Freeze and Fruit Punch, depending on the product variant and current availability. The product is supplied in a 270g container with approximately 30 servings based on the stated serving size.\nFor complete ingredient quantities, nutritional values, serving information, preparation instructions and product warnings, please refer to the relevant sections on this product page and the latest manufacturer packaging.\nProduct formulation, flavour options, packaging and specifications may vary between different versions or markets. Always check the current label for accurate information.\nThis product is a food supplement and should be used as part of a varied, balanced diet and healthy lifestyle.",
+      "images": [
+        "/products/muscletech-vapor-x5-pre-workout-1.webp",
+        "/products/muscletech-vapor-x5-pre-workout-2.webp",
+        "/products/muscletech-vapor-x5-pre-workout-3.webp",
+        "/products/muscletech-vapor-x5-pre-workout-4.webp"
+      ],
+      "tags": [
+        "Pre-Workout",
+        "MuscleTech"
+      ],
+      "basePrice": 134900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "muscletech-vapor-x5-pre-workout-23659",
+          "SKU": "",
+          "size": "270 g",
+          "price": 134900,
+          "available": true,
+          "flavor": "Blue Razz Freeze",
+          "compareAtPrice": 319900
+        },
+        {
+          "id": "muscletech-vapor-x5-pre-workout-23660",
+          "SKU": "",
+          "size": "270 g",
+          "price": 134900,
+          "available": true,
+          "flavor": "Fruit Punch Blast",
+          "compareAtPrice": 319900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/muscletech-mt-vaporx5-pre-workout-30-servings/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/blue.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/info-9.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/info-2-3.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/81tX0CXG2eL._SL1500_.jpg"
+        ]
+      },
+      "compareAtPrice": 319900
+    },
+    {
+      "id": "rule-1-prelift-pre-workout",
+      "handle": "rule-1-prelift-pre-workout",
+      "title": "PreLift Pre-Workout",
+      "brandId": "rule1",
+      "categoryId": "c3",
+      "description": "Rule1 PreLift Pre Workout is a powdered Pre Workout Supplement formulated with a combination of nutritional ingredients, amino acids, botanical ingredients and caffeine.\nThe product is presented in a convenient powder format for adults who include pre-workout products as part of their regular fitness and sports nutrition routine. Its multi-ingredient formulation combines selected ingredients in a single supplement.\nRule1 PreLift is available in multiple flavour options, including Acai Berry, Orange Pineapple, Blue Raspberry, Black Cherry Limeade, Snow Cone, Fruit Punch, Wild Grape and Mandarin Mango, depending on the selected variant and availability.\nThe product contains caffeine. Customers should follow the current product label for complete ingredient information, serving instructions and applicable warnings.\nAccording to the supplied product information, Rule1 PreLift is Made in USA.\nFor complete ingredient quantities, nutritional information, serving details, preparation instructions, storage information and product warnings, please refer to the dedicated sections on this product page and the current product packaging.\nExplore our range of Pre Workout Supplements, Creatine Supplements, Protein Supplements, Amino Acids and Sports Supplements.",
+      "images": [
+        "/products/rule-1-prelift-pre-workout-1.webp",
+        "/products/rule-1-prelift-pre-workout-2.webp",
+        "/products/rule-1-prelift-pre-workout-3.webp",
+        "/products/rule-1-prelift-pre-workout-4.webp"
+      ],
+      "tags": [
+        "Pre-Workout",
+        "Rule 1"
+      ],
+      "basePrice": 269900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "rule-1-prelift-pre-workout-24447",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Mandarin Mango",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-27994",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Star Pop",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24121",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Acai Berry",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24122",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Black Cherry Limeade",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24123",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Blue Raspberry",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24124",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Fruit Punch",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24125",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Orange Pineapple",
+          "compareAtPrice": 539900
+        },
+        {
+          "id": "rule-1-prelift-pre-workout-24126",
+          "SKU": "",
+          "size": "30 Servings",
+          "price": 269900,
+          "available": true,
+          "flavor": "Snow Cone",
+          "compareAtPrice": 539900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/rule1-prelift-pre-workout-30-servings-made-in-usa/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/fruit-punch.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/back1.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/back2.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/nutval-prelift.webp"
+        ]
+      },
+      "compareAtPrice": 539900
+    },
+    {
+      "id": "optimum-nutrition-serious-mass-gainer",
+      "handle": "optimum-nutrition-serious-mass-gainer",
+      "title": "Serious Mass Gainer",
+      "brandId": "optimum-nutrition",
+      "categoryId": "c4",
+      "description": "Optimum Nutrition (ON) Serious Mass – The Ultimate Mass Gainer\nLooking to fuel your muscle-building goals? Optimum Nutrition Serious Mass is here to help you maintain muscle and achieve optimal results. Packed with high-quality protein, glutamine, carbs, vitamins, and minerals, this mass gainer is specifically designed to support muscle maintenance, growth, and recovery. Whether you’re aiming to gain size, improve strength, or recover faster, Serious Mass provides the perfect solution. Moreover, the inclusion of glutamine and carbs ensures faster muscle recovery and sustained energy, making it the ideal supplement to reach your fitness objectives.\nWhy Choose Optimum Nutrition Serious Mass?\nHelps Maintain Muscle\nOptimum Nutrition Serious Mass provides the necessary nutrients to help maintain muscle mass, ensuring you stay on track with your muscle-building goals. The powerful protein blend, combined with a substantial amount of calories and essential nutrients, ensures that your muscles stay fueled and strong, regardless of the intensity of your workouts. This makes Serious Mass an ideal supplement for consistent muscle growth.\nVitamins & Minerals for Optimal Health\nEach serving of Serious Mass contains a blend of vitamins and minerals that support your overall health and fitness journey. These essential nutrients work synergistically to promote better muscle recovery and boost immune function. By incorporating these vital nutrients, Serious Mass helps you stay at your best while achieving your muscle-building goals.\nGlutamine for Faster Recovery\nGlutamine plays a key role in muscle recovery, and Serious Mass includes it to help reduce muscle soreness after intense workouts. With glutamine, this supplement accelerates the recovery process, allowing you to get back to training sooner and more effectively. As a result, you’ll be able to push yourself harder in each session, continually advancing toward your muscle-building goals.\nPacked with Carbs for Energy\nThe combination of complex and simple carbs in Serious Mass ensures you have a steady stream of energy for both workouts and daily activities. Carbs help replenish glycogen stores, providing you with the endurance needed to push through tough training sessions and accelerate your muscle-building progress. This makes Serious Mass a reliable source of energy to fuel your workouts and promote optimal muscle recovery.\nHow to Use?\nTo make your mass gainer shake, mix 2½ scoops (approx. 334g) of Serious Mass with 710-950ml of water or milk. Shake well for a smooth, creamy consistency and enjoy! For best results, consume 1-2 servings per day, preferably post-workout or between meals, to meet your calorie and protein goals.\nFor more information about How to Maintain Your Muscle Strength Training at any Age? on this blog.",
+      "images": [
+        "/products/optimum-nutrition-serious-mass-gainer-1.webp",
+        "/products/optimum-nutrition-serious-mass-gainer-2.webp",
+        "/products/optimum-nutrition-serious-mass-gainer-3.webp",
+        "/products/optimum-nutrition-serious-mass-gainer-4.webp"
+      ],
+      "tags": [
+        "Mass Gainer",
+        "Optimum Nutrition"
+      ],
+      "basePrice": 379900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "optimum-nutrition-serious-mass-gainer-21965",
+          "SKU": "",
+          "size": "3 kg",
+          "price": 379900,
+          "available": true,
+          "flavor": "Chocolate",
+          "compareAtPrice": 503900
+        },
+        {
+          "id": "optimum-nutrition-serious-mass-gainer-21966",
+          "SKU": "",
+          "size": "3 kg",
+          "price": 379900,
+          "available": true,
+          "flavor": "Vanilla",
+          "compareAtPrice": 503900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 2,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/optimum-nutrition-serious-mass-support-muscle-building-goals/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_8890.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_8892.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_8893.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_8891.webp"
+        ]
+      },
+      "compareAtPrice": 503900
+    },
+    {
+      "id": "muscletech-mass-tech-extreme-2000",
+      "handle": "muscletech-mass-tech-extreme-2000",
+      "title": "Mass-Tech Extreme 2000",
+      "brandId": "muscletech",
+      "categoryId": "c4",
+      "description": "Muscletech Mass Tech Extreme 2000 – The Ultimate Mass Gainer\nFor those struggling to gain size and strength, Muscletech Mass Tech Extreme 2000 provides the perfect formula to fuel your body effectively. Packed with high-protein food, kcal energy, vitamins & minerals, this advanced mass gainer not only supports muscle growth but also enhances recovery and peak performance. Whether you’re a hard gainer or an athlete looking to bulk up, Mass Tech Extreme 2000 consistently delivers the right nutrients to help you achieve your goals faster.\nWhy Choose Muscletech Mass Tech Extreme 2000?\n1. High-Protein Formula for Maximum Growth\nEvery serving provides a premium protein blend that helps repair and build muscles efficiently. This high-protein food ensures your body gets the essential nutrients needed to maximize muscle gains.\n2. High-Calorie Intake for Serious Gains\nWith a calorie-dense composition, this mass gainer supplies the energy required to sustain intense training sessions. It also helps you achieve your weight gain goals more effectively.\n3. Packed with Vitamins & Minerals\nTo support overall well-being, this advanced formula includes a wide range of vitamins & minerals. These essential nutrients enhance absorption, ensuring your body functions at its peak performance.\n4. Kcal Energy to Power Your Workouts\nDesigned to deliver sustained kcal energy, Muscletech Mass Tech keeps you fueled and prepared for even the most demanding workout sessions. This makes it easier to train harder and push your limits.\n5. Support Muscle Growth & Recovery\nWith a precise blend of protein, carbohydrates, and key nutrients, this formula not only promotes muscle growth but also accelerates recovery. This ensures you stay strong and ready for your next session.\nHow to Use?\nMix one serving (about 6 scoops) with 16-20 oz of water or milk until fully blended for a smooth and delicious shake.\nFor the best results, consume it post-workout to fuel muscle recovery or between meals to support continuous muscle growth.\nIf you need more calories, gradually increase the serving size based on your fitness goals and daily nutritional needs.\nBoost Your workouts with Muscletech VaporX5 Pre Workout- visit our website.\nLearn more about The Protein-Rich Foods: High Protein Food Items To Include In Your Diet For A Healthy Body, on this blog.",
+      "images": [
+        "/products/muscletech-mass-tech-extreme-2000-1.webp",
+        "/products/muscletech-mass-tech-extreme-2000-2.webp",
+        "/products/muscletech-mass-tech-extreme-2000-3.webp"
+      ],
+      "tags": [
+        "Mass Gainer",
+        "MuscleTech"
+      ],
+      "basePrice": 359900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "muscletech-mass-tech-extreme-2000-22601",
+          "SKU": "",
+          "size": "3 kg",
+          "price": 359900,
+          "available": true,
+          "flavor": "Vanilla Milkshake",
+          "compareAtPrice": 443900
+        },
+        {
+          "id": "muscletech-mass-tech-extreme-2000-21905",
+          "SKU": "",
+          "size": "3 kg",
+          "price": 359900,
+          "available": true,
+          "flavor": "Triple Chocolate Brownie",
+          "compareAtPrice": 443900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 3,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/muscletech-mass-tech-extreme-2000-high-protein-mass-gainer/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/main-4.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/b2.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/b1.png"
+        ]
+      },
+      "compareAtPrice": 443900
+    },
+    {
+      "id": "rule-1-mass-gainer",
+      "handle": "rule-1-mass-gainer",
+      "title": "Mass Gainer",
+      "brandId": "rule1",
+      "categoryId": "c4",
+      "description": "Rule1 Mass Gainer 5.2 Kg & 2.6 Kg, Chocolate Fudge – Your Ultimate Bulking Partner\nRule1 Mass Gainer is a premium supplement specifically designed to help you not only achieve your weight-gain but also muscle-building goals. Moreover, each serving delivers a whopping 40g of protein, 200g of quality carbs, and a 1000-calories. Therefore, it becomes the perfect addition to your bulking phase, ensuring you stay on track with your fitness journey.\nKey Features of Rule1 Mass Gainer:\nHigh-Quality Protein: First and foremost, it provides 40g of fast-digesting whey protein isolates and concentrates, which are essential to fuel muscle repair and growth effectively.\nHigh-Calorie Formula: Additionally, this mass gainer serves as a meal replacement with a 1000 calories, ensuring you get the necessary energy to support muscle mass gain.\nRich Carbohydrate Blend: Furthermore, it includes 200g of easily digestible carbs, which contribute to sustained energy levels and efficient glycogen replenishment after intense workouts.\nDelicious Flavor: On top of that, you can enjoy the decadent Chocolate Fudge taste in every scoop, making it a treat for your taste buds while staying on track with your fitness goals.\nLow Sugar Content: Lastly, its low sugar content makes it ideal for lean gains, allowing you to build muscle without the worry of excess fat storage.\nBenefits:\nSupports faster muscle recovery after intense workouts.\nHelps achieve daily calorie and protein requirements effortlessly.\nIdeal for hard gainers and athletes aiming to bulk up.\nMixes easily and can be enjoyed as a shake or meal replacement.\nHow to Use?\nFor best results, mix 2-3 scoops with 24-30 ounces of cold water or milk. Consume post-workout or between meals for maximum calorie and nutrient intake.\nBrand: Rule One Proteins\nProduct: Rule 1 Mass Gainer\nManufactured By: Nutrivo\n1785 Edgelawn Dr, Aurora, IL 60506, U.S.A\nMade in: USA\nRSM Nutraceuticals Pvt. Ltd.\nWhy Choose Rule1 Mass Gainer?\nRule1 is a trusted brand among fitness enthusiasts and athletes worldwide. With its scientifically crafted formula, this mass gainer ensures you’re not just adding calories but quality nutrients to your diet.\nLooking for more supplements to optimize your gains? Check out our Carbohydrate Powder collection on our website.\nLearn more about How to Gain muscle and Lose Fat , check this blog.",
+      "images": [
+        "/products/rule-1-mass-gainer-1.webp",
+        "/products/rule-1-mass-gainer-2.webp",
+        "/products/rule-1-mass-gainer-3.webp"
+      ],
+      "tags": [
+        "Mass Gainer",
+        "Rule 1"
+      ],
+      "basePrice": 449900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "rule-1-mass-gainer-24295",
+          "SKU": "",
+          "size": "2.6 kg",
+          "price": 449900,
+          "available": true,
+          "compareAtPrice": 699900
+        },
+        {
+          "id": "rule-1-mass-gainer-24296",
+          "SKU": "",
+          "size": "5.2 kg",
+          "price": 679900,
+          "available": true,
+          "compareAtPrice": 1199900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 4,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/rule1-mass-gainer-5-2-kg-2-6-kg-chocolate-fudge-40g-protein-1000-calories-usa-made/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/Amazon-ProductImage-R1MassGainer-12lb-Chocolate.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/mg-choc-back.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/mass-gainer_5lb_chocolate-fudge_right.png"
+        ]
+      },
+      "compareAtPrice": 699900
+    },
+    {
+      "id": "gnc-amp-amplified-mass-xxx",
+      "handle": "gnc-amp-amplified-mass-xxx",
+      "title": "AMP Amplified Mass XXX",
+      "brandId": "gnc",
+      "categoryId": "c4",
+      "description": "GNC AMP Amplified Mass XXX\nKey Features\nGNC AMP Amplified Mass XXX provides an optimal balance of carbohydrates and fats\nIt is the best lean mass gainer for athletes, professional bodybuilders, and fitness enthusiasts\nEach serving provides 50 g of fast, medium, and slow-digesting proteins, along with 10 g of BCAA, and 748 kcal.\nIt has 3 g creatine which helps in improving training results and supports muscle protein synthesis.\nEnriched with the goodness of Micronized amino acids that help fuel muscles and support growth and repair of muscles\nGNC AMP Mass XXX has no added sugar and is gluten-free\nProduct Description\nGNC AMP Amplified Mass XXX is one of the best mass gainer proteins to help you accomplish your fitness goals. For those who are slow gainers and have a super-fast metabolism, one of the biggest challenges is to gain weight. The idea is to add muscle mass to your body and not fat, and for this, you need a dedicated lean mass gainer. GNC AMP Amplified Mass XXX is the choice of many and is known for its superb quality and amazing results.\nGNC lean mass gainer is formulated with advanced ingredients that are proven to help increase muscle mass, weight, stamina, and endurance.\nIntroduction\nIt is time to get extra out of every workout with GNC AMP Amplified Mass XXX. It is an advanced formula backed by science that is enriched with creatine. If your fitness goal is to gain muscle mass and also give a push to your workouts with the right blend of nutrients, then this is the perfect GNC mass gainer protein for you.\nAll GNC mass gainer supplements are World Anti-Doping Agency (WADA) approved. Products bearing this logo have been tested for banned substances and you can be assured of their premium quality.\nFlavors\nGNC AMP Amplified Mass XXX is available in 2 classic flavours –\nChocolate Vanilla\nBenefits of GNC AMP Amplified Mass XXX\nThe main benefits of GNC AMP Amplified Mass XXX are –\nIt delivers a balance of nutrients that help accelerate muscle growth and also help improve athletic performance.\nIt has the goodness of micronized amino acids that are broken into smaller particles for quick absorption in the body. The faster the absorption of amino acids, the better muscle fuel it becomes.\nGNC AMP Mass XXX mass gainer is enriched with key amino acids like glutamine, leucine, and arginine. All of this support muscle protein synthesis and play a pivotal role in various other processes in the body.\nThe additional 3 g creatine in each serving makes it a targeted lean mass gainer for optimal recovery, especially after intense workouts. It also helps improve muscle gains.\nWhy GNC?\nThe GNC Difference\nTrusted quality since 1935\nGNC provides superior health solutions backed by best-in-class quality & expertise. For more than 80 years, we deliver products customers can trust for results you cant find anywhere else.\nExpertise\nProduct Quality\nScience Innovation\nExceptional Customer Experience\n*Products bearing this logo have been tested for banned substances\nWho should consume GNC lean mass gainer supplements?\nGNC AMP Amplified Mass XXX or any other lean mass gainer is ideal for those who want to gain weight without adding fat to their body. It has a highly advanced formula that works great for people who want maximum gains and want to improve their overall athletic performance as well.\nHow to consume GNC Mass XXX lean mass gainer?\nMixed 4 heaped scoops (approximately 205 g) in 450 – 500 ml in cold water or milk and make a smooth shake. You can also add it to various breakfast and dessert recipes. Make delicious smoothies by mixing it with fruit, frozen berries, and nuts.\nShake\nMix 1-2 scoops GNC whey protein powder with water, milk, or any other beverage of your choice to make a shake.\nBlend\nBlend it with Greek yogurt or a smoothie to get the goodness of protein in every sip\nEat\nYou can add it to dessert and breakfast recipes to get the goodness of taste and benefit of protein without any guilt of binge eating.\nWhen to consume GNC AMP Amplified Mass XXX?\nYou can consume GNC Mass XXX any time of the day. For best results refer to the dosage details mentioned on the package.\nBreakfast – Add it to your breakfast recipes like pancakes, oatmeal etc. to get a powerful start to the day.\nIn-between meals – You can have 1 shake in between meals to cut down cravings and get a high calorie supplement.\nBefore bed – You can make GNC AMP Amplified Mass XXX a part of your night time routine. Have it 30 – 45 minutes before bed time to boost recovery and reduce muscle soreness.\nWhere to buy the best mass gainer supplements online?\nIt is really easy to shop from the website. You can be assured that with GNC you’ll get the promise of quality. You can avail of great deals and festive discounts and get your favourite GNC products delivered right at your doorstep with all safety precautions taken care of.\nIngredients\nMaltodextrin, Whey Protein Concentrate, Cocoa Powder, Calcium Caseinate, Soya Protein Isolate, MCT Fat Powder,Creatine Monohydrate, Minerals (Potassium Chloride, Sodium Chloride), Amino Acids (L-Leucine, L-Glutamine,L-Valine,L-Isoleucine,L-Arginine), Sweeteners (INS 955,INS 950)\nWarning\nConsult a licensed, qualified healthcare professional if you experience any adverse reaction to this product. Not for use by women who are pregnant, nursing, or trying to become pregnant. This contains sucralose and acesulfame potassium.\nStorage\nStore in a cool, dry place. Keep out of reach of children. Do not use if safety seal is broken or missing. Contents sold by weight, not volume. Some settling may occur.\nBenefits of Adding Maltodextrin\nMaltodextrin (MDs) is used worldwide by many endurance athletes or sportspeople. It has been shown that a combination of MDs with protein and/or amino acids can promote enhanced glycogen recovery and stimulate muscle protein synthesis following an intense exercise protocol. Thus, this carbohydrate provides the body with an easily digested quick supply of glycogen. Hence, acts as an ideal source of energy for intra and post-workouts. (D. L. HOFMAN et.al, 2019, Costill and Hargreaves, 1992; Shi et al., 1995; Brouns, 2003; Kerksick et al., 2008).\nGlycogen replenishment can happen better when carbohydrates are consumed along with protein with amino acids. Recommendations for adequate post-exercise carbohydrate consumption are to consume 0.6–1.0 g/kg carbohydrate within 30 min of cessation of the exercise and again every 2 h for the next 4–6 h. Carbohydrate consumption of 1.2 g/kg every 30 min over 3.5 h also resulted in maximal glycogen replenishment. In cases of suboptimal post-exercise carbohydrate consumption, the addition of protein can improve glycogen replenishment and decrease symptoms of muscle damage.\nPossible Health Concerns\nThe article in Critical Reviews in Food Science and Nutrition acknowledges no direct link between maltodextrin consumption and negative health effects. These same researchers also conclude that there should not be the overconsumption of foods containing maltodextrin. (D.L Hoffman et. al, 2016)\nIt is a high GI carbohydrate and thus can spike up the blood sugar level. Hence, should be avoided by people suffering from hyperglycemia, pre-diabetes or type 2 diabetes. Or we recommend consulting your doctor before consuming products containing maltodextrin.\nFrequently Asked Questions (FAQs)\nWhat is GNC AMP Mass XXX Gainer Powder?\nThis rock solid GNC AMP Mass XXX gainer is engineered with the ingredients proven to help increase lean muscle mass, weight, strength and endurance.\nHow long will it take to get the results from GNC AMP Mass XXX?\nTo get the result, you need to try the GNC AMP Mass XXX Gainer Powder for 3 months.\nWhy should I consume GNC AMP Mass XXX Gainer Powder?\nGNC Amplified Mass XXX is science based sports nutrition. The science doesn’t lie - without enough of the right carbs, quality protein and healthy fats to complement your training - you wont achieve maximum gains. You can get even more out of every workout session when you make GNC AMP Mass XXX™ a part of your exercise routine. This rock solid GNC AMP Mass XXX gainer is engineered with the ingredients proven to help increase lean muscle mass, weight, strength and endurance.\nWhat are the major ingredients used in the GNC AMP Mass XXX Gainer Powder?\nThe ingredients used are 50g of fast, medium and slow digesting proteins, along with 10g of BCAA, 748 kcal, plus carbohydrates and healthy fats for science-based nutrition. The addition of 3g of Creatine may help improve training results and supports muscle protein synthesis. Micronized amino acids help fuel muscles and might support key processes crucial to the growth and repair of muscles.\nWhy Maltodextrin is used in the product? Is it dangerous?\nMaltodextrins are part of the carbohydrates food group. They have a calorific value of 4 kcal/g. Carbohydrates support a number of the body’s basic metabolic processes and should form 50-55% of the body’s total energy intake. The EFSA has confirmed that the consumption of carbohydrates, including maltodextrins, supports the normal functioning of the brain and muscles. (EFSA, 2014)\nMaltodextrins (MDs) are a class of carbohydrates (CHOs) extracted from a range of botanical sources. They are industrially produced by enzymatic or acid hydrolysis of the starch, followed by purification and spray drying.\nAlong with EFSA, even the Food and Drug Administration has labeled maltodextrin as GRAS — generally regarded as safe.\nWhat is a mass gainer supplement and how does it work for your body?\nIf you are planning to include a mass gainer supplement in your routine, it is best to know what these are and how do they affect your body. A mass gainer supplement has the right balance of carbohydrates, protein, fat, and other nutrients needed by the body. It is a high calorie supplement that promotes lean muscle mass without adding extra fat to your body. Mass gainer protein is for people who find it difficult to gain weight even after eating a high calorie diet. An important thing to note is that even the best mass gainer wouldn’t show results if you don’t complement it with the right workout and a healthy diet. GNC AMP Mass XXX is one of the best lean mass gainers, do check it out.\nShould I take mass gainer or whey protein?\nOne question that beginner-level fitness enthusiasts often ask is – should I take whey protein or mass gainer? There is no right answer to this, as it all depends on personal fitness goals. If your aim is to build muscle mass, give your workouts that edge, and have optimal nutrition for sustained recovery, then a high-quality whey protein supplement would be ideal. On the other hand, if you want to gain weight in a healthy way then do consider including lean mass gainer in your fitness routine. These provide the right nutrients and extra calories to help you gain muscle mass instead of adding fat to your body. Ask your trainer and doctor to know the best mass gainer to suit your personal fitness needs.\nWhat are the advantages of including a lean mass gainer in your routine?\nIt is a common myth that a mass gainer supplement will only help you gain weight. This isn’t true. There are various other advantages of including GNC lean mass gainer supplements in your routine.\nSome of the main advantages are –\nThey help in building lean muscle mass\nGNC mass gainers are enriched with various essential nutrients including vitamins and minerals to help perform different functions in the body\nHave high fiber content to keep you satiated for longer and help with digestion as well\nThey help meet your daily calorie requirement\nProvide a balance of protein and carbohydrates to keep you energized and also help with post-workout recovery\nThere are so many mass gainer supplements available that choosing the best mass gainer can be quite difficult. Make sure you read the ingredient list carefully. The mass gainer shouldn’t contain any harmful substances and if you are allergic to gluten or soy, then it is advised that you choose a lean mass gainer without these.\nAre GNC mass gainer protein powders safe? Do they have any side effects?\nGNC mass gainer protein supplements are completely safe and when you buy them directly from the website you get 100% genuine products. But we highly recommend that you always consult your doctor before including any new mass gainer powder. Your doctor knows your medical history and will warn you against any allergies or potential side effects.\nSome of the most common side effects include –\nInsomnia\nDigestive problems – constipation, gas, nausea, diarrhoea\nVomiting\nKidney and liver problems\nGaining fat instead of muscle mass\nPregnant ladies, lactating mothers, and people with chronic medical conditions should stay away from any kind of mass gainer supplements unless recommended specifically by their doctor. If you notice any of these symptoms, stop use immediately and seek medical help.",
+      "images": [
+        "/products/gnc-amp-amplified-mass-xxx-1.webp",
+        "/products/gnc-amp-amplified-mass-xxx-2.webp"
+      ],
+      "tags": [
+        "Mass Gainer",
+        "GNC"
+      ],
+      "basePrice": 384600,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "gnc-amp-amplified-mass-xxx-44869399249127",
+          "SKU": "90200180",
+          "size": "2 KG",
+          "price": 384600,
+          "available": true,
+          "flavor": "Vanilla",
+          "compareAtPrice": 519900
+        },
+        {
+          "id": "gnc-amp-amplified-mass-xxx-44869399281895",
+          "SKU": "90200161",
+          "size": "2 KG",
+          "price": 384600,
+          "available": true,
+          "flavor": "Chocolate",
+          "compareAtPrice": 529900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-amp-amplified-mass-xxx",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_bf0a687c-7250-449c-970c-71b0f9792668.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_84fea17d-a7e0-4bba-b4a4-620e8e77456b.jpg"
+        ]
+      },
+      "compareAtPrice": 519900
+    },
+    {
+      "id": "gnc-mega-men-one-daily-multivitamin",
+      "handle": "gnc-mega-men-one-daily-multivitamin",
+      "title": "Mega Men One Daily Multivitamin",
+      "brandId": "gnc",
+      "categoryId": "c5",
+      "description": "GNC Mega Men One Daily Multivitamin is a highly concentrated and effective tablet packed with the goodness of 32 essential nutrients. It provides most of the vitamins and minerals at 100% daily value, which means taking one tablet in the morning will keep you sorted and your health in check.",
+      "images": [
+        "/products/gnc-mega-men-one-daily-multivitamin-1.webp",
+        "/products/gnc-mega-men-one-daily-multivitamin-2.webp"
+      ],
+      "tags": [
+        "Vitamins & Wellness",
+        "GNC"
+      ],
+      "basePrice": 34900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "gnc-mega-men-one-daily-multivitamin-45993552117991",
+          "SKU": "90200168",
+          "size": "30 Tablets",
+          "price": 34900,
+          "available": true,
+          "compareAtPrice": 64900
+        },
+        {
+          "id": "gnc-mega-men-one-daily-multivitamin-45993552085223",
+          "SKU": "90200073",
+          "size": "60 Tablets",
+          "price": 54900,
+          "available": true,
+          "compareAtPrice": 109900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-mega-men-one-daily-multivitamin-1",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_6859f609-6048-452d-b11d-229cedaad3eb.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_7ea2c319-d3eb-48af-9cbb-9e14fc8dcc6d.jpg"
+        ]
+      },
+      "compareAtPrice": 64900
+    },
+    {
+      "id": "gnc-womens-one-daily-multivitamin",
+      "handle": "gnc-womens-one-daily-multivitamin",
+      "title": "Women's One Daily Multivitamin",
+      "brandId": "gnc",
+      "categoryId": "c5",
+      "description": "GNC Women’s One Daily Multivitamin is one of the top selling multivitamins for women. It supports their hectic lifestyle with 32 premium ingredients. If you want a multivitamin that is packed with all essential nutrients and will help in boosting immunity and gives healthy glowing skin, then GNC Women’s One Daily Multivitamin is the perfect solution.",
+      "images": [
+        "/products/gnc-womens-one-daily-multivitamin-1.webp",
+        "/products/gnc-womens-one-daily-multivitamin-2.webp"
+      ],
+      "tags": [
+        "Vitamins & Wellness",
+        "GNC"
+      ],
+      "basePrice": 41900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "gnc-womens-one-daily-multivitamin-44151741448423",
+          "SKU": "90200170",
+          "size": "30 Tablets",
+          "price": 41900,
+          "available": true,
+          "compareAtPrice": 69900
+        },
+        {
+          "id": "gnc-womens-one-daily-multivitamin-43468447252711",
+          "SKU": "90200085",
+          "size": "60 Tablets",
+          "price": 65900,
+          "available": true,
+          "compareAtPrice": 119900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-womens-one-daily-multivitamin-supports-immune-health-and-healthy-skin-60-tablets",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_17e051a0-5b79-43f1-af24-f63046e3b6ad.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/Artboard1_5804e832-367d-4bbd-a2d7-cf144caf2ce0.jpg"
+        ]
+      },
+      "compareAtPrice": 69900
+    },
+    {
+      "id": "rule-1-mens-multi-vitamin",
+      "handle": "rule-1-mens-multi-vitamin",
+      "title": "Men's Multi-Vitamin",
+      "brandId": "rule1",
+      "categoryId": "c5",
+      "description": "Your Daily Dose of Wellness Starts Here\nIf you’re serious about your health, Rule1 Men’s Multi Vitamin – 90 Tablets is a must-have in your daily routine. This comprehensive multivitamin is scientifically formulated to meet the nutritional needs of active men. It includes a powerful blend of essential micronutrients, vitamins, minerals, and antioxidants to support energy production, immune health, and muscle recovery, It’s one of the best multivitamin for men.\nKey Benefits of Rule1 Men’s Multi Vitamin\n💪 Performance Support – Designed to enhance stamina, physical strength, and post-workout recovery.\n⚡ Daily Energy Boost – Packed with B-vitamins that help convert food into fuel for lasting energy.\n🛡️ Immune Defense – Strengthens your body’s defense mechanism with vital immunity-boosting ingredients.\n🧠 Mental Clarity – Helps maintain cognitive function and mental focus throughout the day.\n❤️ Cardiovascular Health – Contains heart-supporting nutrients such as magnesium, vitamin D3, and zinc.\n🔬 High Absorption Formula – Carefully balanced to ensure bioavailability and effective nutrient absorption.\nWhy Choose Rule1 Men’s Multivitamin?\nUnlike generic supplements, this formula is tailored specifically for the male body. Whether you’re a gym-goer, professional athlete, or just someone who prioritizes health, Rule1’s multivitamin helps you stay strong from the inside out. Additionally, it’s gluten-free and suitable for most lifestyles.\nReady to Take Control of Your Health?\nFor a complete nutritional upgrade, explore our full Whey Protein category and discover more products like Rule1 Men’s Multi Vitamin.\nWant to learn more about the science behind multivitamins? Read this expert blog on men’s essential micronutrients and boost your knowledge.\n🌿 Optimize Your Vitality with Daily Nutrition\nAdding Rule1 Men’s Multi Vitamin to your daily health stack is one of the smartest ways to ensure you’re getting consistent nutrition support. With a broad spectrum of vitamins and essential micronutrients, it helps fill dietary gaps, supports hormonal balance, and keeps your metabolism running efficiently—empowering you to perform better in every area of life.",
+      "images": [
+        "/products/rule-1-mens-multi-vitamin-1.webp",
+        "/products/rule-1-mens-multi-vitamin-2.webp",
+        "/products/rule-1-mens-multi-vitamin-3.webp",
+        "/products/rule-1-mens-multi-vitamin-4.webp"
+      ],
+      "tags": [
+        "Vitamins & Wellness",
+        "Rule 1"
+      ],
+      "basePrice": 159900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "rule-1-mens-multi-vitamin-23368",
+          "SKU": "",
+          "size": "90 Tablets",
+          "price": 159900,
+          "available": true,
+          "compareAtPrice": 269900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 1,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/rule1-mens-multi-vitamin-best-multivitamin-for-men-90-tablets-made-in-usa/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/MensMulti_90ct0001.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/MensMulti_90ct0002.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/MensMulti_90ct0003.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/MensMulti_90ct0004.webp"
+        ]
+      },
+      "compareAtPrice": 269900
+    },
+    {
+      "id": "applied-nutrition-multivitamin-complex",
+      "handle": "applied-nutrition-multivitamin-complex",
+      "title": "Multivitamin Complex",
+      "brandId": "applied-nutrition",
+      "categoryId": "c5",
+      "description": "Applied Multivitamin Complex | Daily Vitamins & Minerals for Active Lifestyles\nApplied Multivitamin Complex is a comprehensive UK-made multivitamin supplement created to support daily nutrition, energy levels, immunity, and overall wellbeing. From the first serving, Applied Multivitamin Complex helps fill common nutrient gaps caused by modern diets while supporting consistent performance throughout the day.\nDeveloped by Applied Nutrition, this advanced formula delivers over 30 essential vitamins and minerals in highly bioavailable forms. As a result, your body absorbs and utilizes nutrients more efficiently. Moreover, the blend supports energy metabolism, cognitive health, muscle function, and immune system strength.\nApplied Multivitamin Complex works especially well for athletes, gym-goers, professionals, and anyone with a busy routine. Therefore, many active individuals use it daily to help reduce fatigue and maintain long-term health. In addition, the product is tested for athletes, ensuring quality, safety, and compliance with professional standards.\nVitamins and minerals play a key role in supporting immunity and metabolism. You can learn more about how vitamins work in the body.\nWhy Choose Applied Multivitamin Complex?\nContains 30+ essential vitamins and minerals\nSupports daily energy and metabolism\nHelps maintain a strong immune system\nSupports overall health and vitality\nUses highly bioavailable ingredients\nTested for athletes\nIdeal for everyday supplementation\nFurthermore, each bottle provides 90 capsules (30 servings), making it convenient for consistent daily use. Manufactured under strict quality control standards in the United Kingdom, Applied Multivitamin Complex delivers reliable nutrition you can trust.\nMoreover, many people combine Applied Multivitamin Complex with other daily health supplements to improve recovery, immunity, and overall vitality. Therefore, adding complementary products like omega oils or protein can further support an active lifestyle. You can explore our full range of daily health supplements.\nProduct Highlights – Applied Multivitamin Complex\nBrand: Applied Nutrition\nProduct: Multivitamin Complex\nCapsules: 90 (30 Servings)\nForm: Capsules\nMade in: United Kingdom\nIdeal For\nDaily nutritional support\nActive individuals and athletes\nEnergy, immunity, and metabolism goals\nPeople with busy lifestyles\nOverall, Applied Multivitamin Complex works best when paired with balanced meals, hydration, and regular activity. Consequently, it becomes a dependable choice for anyone looking to support everyday health and performance.",
+      "images": [
+        "/products/applied-nutrition-multivitamin-complex-1.webp",
+        "/products/applied-nutrition-multivitamin-complex-2.webp"
+      ],
+      "tags": [
+        "Vitamins & Wellness",
+        "Applied Nutrition"
+      ],
+      "basePrice": 149900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "applied-nutrition-multivitamin-complex-24219",
+          "SKU": "",
+          "size": "90 Capsules",
+          "price": 149900,
+          "available": true,
+          "compareAtPrice": 249900
+        }
+      ],
+      "rating": {
+        "value": 5.0,
+        "count": 3,
+        "scale": 5
+      },
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/applied-nutrition-multivitamin-complex-90-capsules-made-in-uk/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/Multivitamin_Complex_Capsules.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/Multi-Vitamin-Capsules-Nutritionals-1000x1000_1.webp"
+        ]
+      },
+      "compareAtPrice": 249900
+    },
+    {
+      "id": "gnc-triple-strength-fish-oil",
+      "handle": "gnc-triple-strength-fish-oil",
+      "title": "Triple Strength Fish Oil",
+      "brandId": "gnc",
+      "categoryId": "c6",
+      "description": "Fish oil is one of the richest sources of essential Omega-3 fatty acids. Regular intake of Omega-3 is highly recommended and beneficial in every stage of life. They can prevent serious health problems and complications and are also necessary for proper fetal brain and neurological development hence its intake is significant during pregnancy.",
+      "images": [
+        "/products/gnc-triple-strength-fish-oil-1.webp",
+        "/products/gnc-triple-strength-fish-oil-2.webp",
+        "/products/gnc-triple-strength-fish-oil-3.webp",
+        "/products/gnc-triple-strength-fish-oil-4.webp"
+      ],
+      "tags": [
+        "Omega-3 & Fish Oil",
+        "GNC"
+      ],
+      "basePrice": 45900,
+      "currency": "INR",
+      "featured": true,
+      "bestseller": true,
+      "variants": [
+        {
+          "id": "gnc-triple-strength-fish-oil-46913928495335",
+          "SKU": "90200285",
+          "size": "30 Softgels",
+          "price": 45900,
+          "available": true,
+          "compareAtPrice": 139900
+        },
+        {
+          "id": "gnc-triple-strength-fish-oil-42659514482919",
+          "SKU": "90200030",
+          "size": "60 Softgels",
+          "price": 79900,
+          "available": true,
+          "compareAtPrice": 239900
+        },
+        {
+          "id": "gnc-triple-strength-fish-oil-44201217917159",
+          "SKU": "90200218",
+          "size": "240 Softgels",
+          "price": 299900,
+          "available": true,
+          "compareAtPrice": 869900
+        },
+        {
+          "id": "gnc-triple-strength-fish-oil-42659514417383",
+          "SKU": "90200029",
+          "size": "120 Softgels",
+          "price": 159900,
+          "available": false,
+          "compareAtPrice": 212900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Guardian",
+        "url": "https://www.guardian.in/products/gnc-triple-strength-fish-oil",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/TSFO_30N-1_5762806d-653a-44cc-bdcc-b179356c5420.jpg",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/TSFO_60N-1_3b2015ef-c6df-4c1a-8fa1-7b61c15ad946.png",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/120-1_3f3431b3-a211-46f7-9315-c8ebe934a41d.png",
+          "https://cdn.shopify.com/s/files/1/0623/9010/8391/files/240-1.jpg"
+        ]
+      },
+      "compareAtPrice": 139900
+    },
+    {
+      "id": "muscletech-platinum-omega-fish-oil",
+      "handle": "muscletech-platinum-omega-fish-oil",
+      "title": "Platinum Omega Fish Oil",
+      "brandId": "muscletech",
+      "categoryId": "c6",
+      "description": "MUSCLETECH™ PLATINUM 100% Omega Fish Oil – 100 Soft Gel Capsules\nBoost your overall health with MUSCLETECH™ PLATINUM 100% Omega Fish Oil, the ultimate dietary supplement for essential omega-3 fatty acids. Each softgel capsules delivers a powerful dose of EPA and DHA, two vital omega-3s that support cardiovascular health, enhance joint function, and promote brain health. Furthermore, this omega fish oil Muscletech formula is ideal for athletes and individuals seeking to improve their overall well-being. With its easy-to-consume format, it seamlessly fits into your daily routine, ensuring you get the nutrients you need to thrive.\nWhy Choose MUSCLETECH™ PLATINUM Omega Fish Oil?\nMUSCLETECH™ PLATINUM Omega Fish Oil offers a premium source of omega-3 fatty acids, ensuring consistent support for your overall well-being. Rich in EPA and DHA, this dietary supplement helps reduce inflammation, promote heart health, and enhance cognitive function. Moreover, with 100 softgel capsules per bottle, you can conveniently maintain your health goals over an extended period.\nKey Benefits of MUSCLETECH™ PLATINUM Omega Fish Oil:\nHeart Health Support: The omega-3s EPA and DHA help promote a healthy heart, reduce triglyceride levels, and support overall cardiovascular function.\nJoint Health: Omega-3 fatty acids contribute to reducing joint inflammation, helping with joint mobility and flexibility.\nBrain Function: DHA supports brain health and may help improve cognitive performance and mood, keeping you sharp and focused.\nHigh-Quality Supplement: Each softgel is designed for optimal absorption, ensuring you get the maximum benefit from the nutrients.\nConvenient Softgel Capsules: Easy to take and gentle on your stomach, making it a perfect fit for those with busy lifestyles.\nHow to Use:\nTake 1 softgel capsule of MUSCLETECH™ PLATINUM Omega Fish Oil daily with a meal. For optimal results, integrate this dietary supplement into your routine while maintaining a balanced diet and staying consistent with regular exercise.\nWhy Omega-3s Are Important\nOmega-3 fatty acids play a crucial role in maintaining overall health, yet our bodies cannot produce them naturally. Therefore, incorporating a dietary supplement like MUSCLETECH™ PLATINUM Omega Fish Oil becomes essential. This omega fish oil Muscletech product delivers a rich source of EPA and DHA, ensuring your body receives the omega-3s it needs for optimal health. With consistent use, you can support your heart, joints, and brain, promoting better overall well-being.\nExplore our HK products on our website. There are 11 Benefits of Fish Oil – Based on science, click on this link.",
+      "images": [
+        "/products/muscletech-platinum-omega-fish-oil-1.webp",
+        "/products/muscletech-platinum-omega-fish-oil-2.webp",
+        "/products/muscletech-platinum-omega-fish-oil-3.webp"
+      ],
+      "tags": [
+        "Omega-3 & Fish Oil",
+        "MuscleTech"
+      ],
+      "basePrice": 74900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "muscletech-platinum-omega-fish-oil-22518",
+          "SKU": "",
+          "size": "100 Softgels",
+          "price": 74900,
+          "available": true,
+          "compareAtPrice": 132900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/muscletech-platinum-omega-fish-oil-softgel-capsules/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/mt-fish-oil-1.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/mt-fish-oil-2.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/mt-fish-oil-3.png"
+        ]
+      },
+      "compareAtPrice": 132900
+    },
+    {
+      "id": "optimum-nutrition-fish-oil-softgels",
+      "handle": "optimum-nutrition-fish-oil-softgels",
+      "title": "Fish Oil Softgels",
+      "brandId": "optimum-nutrition",
+      "categoryId": "c6",
+      "description": "Optimum Nutrition Fish Oil Capsules are an Omega-3 Fish Oil Supplement containing essential Omega-3 fatty acids, including EPA (Eicosapentaenoic Acid) and DHA (Docosahexaenoic Acid). The product is available in a convenient softgel format for individuals who include fish oil and Omega-3 supplements in their regular nutritional routine.\nThe supplied product information describes these capsules as enteric-coated softgels, providing a convenient format for daily supplementation. The product contains 60 capsules per pack.\nProduct Highlights\nContains Omega-3 fatty acids\nProvides EPA and DHA\nConvenient softgel capsule format\nEnteric-coated softgels, as stated in the supplied product information\n60 capsules per pack\nSuitable for individuals who include Omega-3 and Fish Oil Supplements in their regular nutrition routine\nOptimum Nutrition product\nDirections\nTake the product according to the serving and usage instructions provided on the current product packaging.\nFor complete ingredient information, nutritional values, serving size, directions, warnings and product details, please refer to the dedicated Nutritional Information, Additional Information and Directions sections on this product page.\nExplore our range of Omega-3 Supplements, Fish Oil Supplements, Multivitamins and Sports Nutrition Supplements.",
+      "images": [
+        "/products/optimum-nutrition-fish-oil-softgels-1.webp",
+        "/products/optimum-nutrition-fish-oil-softgels-2.webp"
+      ],
+      "tags": [
+        "Omega-3 & Fish Oil",
+        "Optimum Nutrition"
+      ],
+      "basePrice": 44900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "optimum-nutrition-fish-oil-softgels-23889",
+          "SKU": "",
+          "size": "60 Softgels",
+          "price": 44900,
+          "available": true,
+          "compareAtPrice": 66600
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/optimum-nutrition-fish-oil-capsules-60-capsules/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_4531.png",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/07/IMG_4532.png"
+        ]
+      },
+      "compareAtPrice": 66600
+    },
+    {
+      "id": "applied-nutrition-omega-3-essential-fatty-acids",
+      "handle": "applied-nutrition-omega-3-essential-fatty-acids",
+      "title": "Omega 3 Essential Fatty Acids",
+      "brandId": "applied-nutrition",
+      "categoryId": "c6",
+      "description": "Applied Nutrition Omega 3 Essential Fatty Acids is a fish oil dietary supplement providing a combination of EPA and DHA in a convenient softgel format. Each softgel contains 1,000mg of fish oil, including 300mg of total Omega-3 fatty acids.\nThe formula provides 180mg of EPA and 120mg of DHA per softgel, along with 4.5mg of Vitamin E (α-TE). The product contains 100 softgels, providing approximately 100 servings based on the stated serving size of one softgel.\nEPA and DHA are long-chain Omega-3 fatty acids commonly found in fish oil supplements. This product provides a convenient way to include these fatty acids in a regular dietary supplement routine alongside a varied and balanced diet.\nKey Features\n1,000mg fish oil per softgel\n300mg total Omega-3 fatty acids\n180mg EPA per softgel\n120mg DHA per softgel\n4.5mg Vitamin E (α-TE)\n100 softgels\nApproximately 100 servings\nConvenient softgel format\nContains fish\nFormula Overview\nApplied Nutrition Omega 3 Essential Fatty Acids contains fish oil as the source of EPA and DHA. The clearly stated quantities make it easy to identify the amount of total Omega-3, EPA and DHA provided per softgel.\nFor complete nutritional information, serving instructions, ingredients, allergen details and product warnings, please refer to the dedicated sections on this product page and the current product packaging.\nProduct formulation and packaging information may vary between markets or product versions. Always refer to the latest manufacturer label for the most accurate information.\nThis product is a food supplement and should be used as part of a varied, balanced diet and healthy lifestyle.",
+      "images": [
+        "/products/applied-nutrition-omega-3-essential-fatty-acids-1.webp",
+        "/products/applied-nutrition-omega-3-essential-fatty-acids-2.webp"
+      ],
+      "tags": [
+        "Omega-3 & Fish Oil",
+        "Applied Nutrition"
+      ],
+      "basePrice": 179900,
+      "currency": "INR",
+      "featured": false,
+      "bestseller": false,
+      "variants": [
+        {
+          "id": "applied-nutrition-omega-3-essential-fatty-acids-29900",
+          "SKU": "",
+          "size": "100 Softgels",
+          "price": 179900,
+          "available": true,
+          "compareAtPrice": 299900
+        }
+      ],
+      "rating": null,
+      "source": {
+        "name": "Kapoor Medical Hall",
+        "url": "https://kapoormedicalhall.com/product/applied-nutrition-omega-3-essential-fatty-acids-100-softgels/",
+        "capturedAt": "2026-10-19T13:54:14.010309+00:00",
+        "imageUrls": [
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/09/Firefly-8.webp",
+          "https://kapoormedicalhall.com/wp-content/uploads/2026/09/Omega-3-Softgels-Nutritionals-1000x1000-1.webp"
+        ]
+      },
+      "compareAtPrice": 299900
+    }
+  ]
+}

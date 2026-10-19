@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Trash2, ShoppingBag, ArrowRight } from 'lucide-react'
+import { Trash2, Lock, ArrowRight } from 'lucide-react'
 import { useCart, useUI } from '../state/store'
 import { findProduct, money } from '../data/catalog'
 import { priceCart } from '../domain/pricing'
@@ -18,7 +18,7 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
       >
         <Empty
           title="Room for good things."
-          message="Your demo bag is empty. Find a little fuel for your everyday."
+          message="Your bag is empty. Find a little fuel for your everyday."
         />
       </div>
     )
@@ -66,42 +66,41 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
         })}
       </div>
       <aside className="cart-summary">
-        <span className="eyebrow">YOUR DEMO BAG</span>
+        <span className="eyebrow">ORDER SUMMARY</span>
         <h2>A little more power.</h2>
         <div>
           <span>Subtotal</span>
           <strong>{money(totals.subtotal)}</strong>
         </div>
         <div>
-          <span>Demo combo savings</span>
+          <span>Combo savings</span>
           <strong>−{money(totals.discount)}</strong>
         </div>
         <div className="cart-total">
-          <span>Demo total</span>
+          <span>Total</span>
           <strong>{money(totals.total)}</strong>
         </div>
         {totals.savings > 0 && (
-          <p className="savings-note">{money(totals.savings)} below example compare-at pricing</p>
+          <p className="savings-note">You save {money(totals.savings)} on this order</p>
         )}
-        <div className="checkout-notice">
-          <ShoppingBag size={20} />
-          <p>
-            This is a design preview.
-            <br />
-            Checkout and payments are intentionally unavailable.
-          </p>
-        </div>
-        <Link
+        <button
           className="button full"
+          onClick={() =>
+            setUI({ toast: 'Online checkout is coming soon. Your bag is saved on this device.' })
+          }
+        >
+          <Lock size={16} />
+          Proceed to checkout
+        </button>
+        <Link
+          className="button button-outline full"
           to={drawer ? '/cart' : '/shop'}
           onClick={() => setUI({ cart: false })}
         >
-          {drawer ? 'View your bag' : 'Continue exploring'}
+          {drawer ? 'View your bag' : 'Continue shopping'}
           <ArrowRight size={16} />
         </Link>
-        <small>
-          Removing items may change combo eligibility and savings. Prices are illustrative.
-        </small>
+        <small>Inclusive of all taxes. Combo savings update as you change your bag.</small>
       </aside>
     </div>
   )
@@ -122,7 +121,7 @@ export function CartDrawer() {
   const open = useUI((s) => s.cart),
     setUI = useUI((s) => s.set)
   return open ? (
-    <Modal title="Your demo bag" close={() => setUI({ cart: false })}>
+    <Modal title="Your bag" close={() => setUI({ cart: false })}>
       <CartContents drawer />
     </Modal>
   ) : null

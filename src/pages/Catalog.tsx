@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { SlidersHorizontal, Search, Grid2X2, List, X, ArrowUpRight } from 'lucide-react'
 import { brands, categories, products, money } from '../data/catalog'
 import { ProductCard } from '../components/ProductCard'
+import { BrandLogo } from '../components/BrandLogo'
 import { Empty, IconButton, Modal } from '../components/ui'
 import { useDesign } from '../state/store'
 export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
@@ -11,7 +12,6 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
     [filters, setFilters] = useState(false),
     [list, setList] = useState(false)
   const config = useDesign((s) => s.config)
-  const importedCollection = !brandPage && handle === 'suppx-best-seller'
   const catalogMax = Math.ceil(Math.max(...products.map((p) => p.basePrice)) / 10000) * 100
   const category = !brandPage && handle ? categories.find((c) => c.handle === handle) : undefined
   const brand = brandPage && handle ? brands.find((b) => b.id === handle) : undefined
@@ -26,14 +26,13 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
     else next.delete(key)
     setParams(next)
   }
-  if (handle && !category && !brand && !importedCollection)
+  if (handle && !category && !brand)
     return (
       <Empty title="Collection not found" message="Try one of our curated collections instead." />
     )
   const filtered = products
     .filter(
       (p) =>
-        (!importedCollection || !!p.source) &&
         (!selectedBrand || p.brandId === selectedBrand) &&
         (!selectedCategory || p.categoryId === selectedCategory) &&
         `${p.title} ${brands.find((b) => b.id === p.brandId)?.name} ${p.tags.join(' ')}`
@@ -49,9 +48,8 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
           : sort === 'name'
             ? a.title.localeCompare(b.title)
             : sort === 'bestsellers'
-              ? Number(b.bestseller) - Number(a.bestseller) ||
-                Number(!!b.source) - Number(!!a.source)
-              : Number(b.featured) - Number(a.featured) || Number(!!b.source) - Number(!!a.source),
+              ? Number(b.bestseller) - Number(a.bestseller)
+              : Number(b.featured) - Number(a.featured),
     )
   const filterContent = (
     <>
@@ -110,7 +108,7 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
         ))}
       </fieldset>
       <fieldset>
-        <legend>Maximum demo price</legend>
+        <legend>Price</legend>
         <label htmlFor="price-range">Up to {money(max * 100)}</label>
         <input
           id="price-range"
@@ -133,23 +131,16 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
       <div className="breadcrumb">
         <Link to="/">Home</Link>
         <span>/</span>
-        {category?.name ??
-          brand?.name ??
-          (importedCollection ? 'SuppX Best Sellers' : 'The collection')}
+        {category?.name ?? brand?.name ?? 'Shop all'}
       </div>
       <div className="page-intro">
         <span className="eyebrow">FIND YOUR EVERYDAY POWER</span>
-        <h1>
-          {category?.name ??
-            brand?.name ??
-            (importedCollection ? 'SuppX Best Sellers' : 'Good fuel. Great possibilities.')}
-        </h1>
-        <p>Considered essentials from brands you know. Find what fits your routine.</p>
-        <small>
-          SuppX listings include captured prices, images and published product reviews. Other
-          listings are illustrative. This preview accepts no orders.{' '}
-          <Link to="/collections/suppx-best-seller">Explore all 58 SuppX bestsellers →</Link>
-        </small>
+        <h1>{category?.name ?? brand?.name ?? 'Good fuel. Great possibilities.'}</h1>
+        <p>
+          {category
+            ? `${category.tagline}. Every ${category.name.toLowerCase()} we stock, from the brands you know.`
+            : 'Supplements from the brands you know. Find what fits your routine.'}
+        </p>
       </div>
       <div className="catalog-layout">
         <aside className="filters-desktop">{filterContent}</aside>
@@ -199,7 +190,9 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
               </IconButton>
             </div>
           </div>
-          <p className="result-count">{filtered.length} thoughtfully selected products</p>
+          <p className="result-count">
+            {filtered.length} {filtered.length === 1 ? 'product' : 'products'}
+          </p>
           {filtered.length ? (
             <div
               className={`product-grid catalog-grid ${list ? 'list-view' : ''}`}
@@ -241,17 +234,19 @@ export function Brands() {
           <br />
           Great nutrition.
         </h1>
-        <p>
-          Discover a collection of recognizable names in nutrition. Demo references only; no
-          affiliation implied.
-        </p>
+        <p>The names athletes trust, from everyday essentials to imported favourites.</p>
       </div>
       <div className="brands-page-grid">
         {brands.map((b) => (
           <Link key={b.id} to={`/brands/${b.id}`}>
-            <span className="brand-monogram">{b.short}</span>
+            <span className="brand-monogram">
+              <BrandLogo brand={b} />
+            </span>
             <h2>{b.name}</h2>
-            <p>{products.filter((p) => p.brandId === b.id).length} demo products</p>
+            <p>
+              {products.filter((p) => p.brandId === b.id).length}{' '}
+              {products.filter((p) => p.brandId === b.id).length === 1 ? 'product' : 'products'}
+            </p>
             <span>
               Explore the brand <ArrowUpRight size={18} />
             </span>

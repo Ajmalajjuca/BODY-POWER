@@ -28,27 +28,21 @@ export function Information({ page }: { page: 'about' | 'contact' | 'faq' }) {
                 One everyday mission.
               </h2>
               <p>
-                Body Power Nutrition is a concept for a multi-brand nutrition store. From protein
-                and creatine to daily wellness and accessories, the collection brings your
-                essentials into one simple place.
+                Body Power Nutrition is a multi-brand nutrition store. From whey protein and
+                creatine to pre-workouts, mass gainers and daily vitamins, we bring the brands you
+                trust into one simple place.
               </p>
             </div>
             <div>
               <h2>Built around you.</h2>
               <p>
-                Explore products, create your own combinations, and use Design Studio to shape the
-                look and feel of your storefront. Every product and price is here for demonstration.
+                Shop by goal, compare sizes and flavours, and build your own combo to save up to 10%
+                on the products you use every day.
               </p>
               <Link className="button" to="/shop">
                 Explore the collection <ArrowUpRight size={17} />
               </Link>
             </div>
-          </div>
-          <div className="notice">
-            This is a client-facing prototype. Brand names are used as catalog references without
-            affiliation. SuppX listings display captured product imagery, prices, availability and
-            descriptions with source attribution; other listings are illustrative. Source claims are
-            not independently verified. No real orders or payments are accepted.
           </div>
         </>
       ) : page === 'faq' ? (
@@ -59,8 +53,8 @@ export function Information({ page }: { page: 'about' | 'contact' | 'faq' }) {
             <Mail size={30} />
             <h2>A conversation starts here.</h2>
             <p>
-              Try the contact experience. This local demo does not send messages or collect your
-              information.
+              Questions about a product, a combo or your order? Send us a note and we’ll get back to
+              you.
             </p>
             <Link className="text-link" to="/faq">
               You might find your answer here <ArrowUpRight size={17} />
@@ -86,13 +80,9 @@ export function Information({ page }: { page: 'about' | 'contact' | 'faq' }) {
               <textarea required maxLength={2000} rows={5} placeholder="Tell us a little more…" />
             </label>
             <button className="button">
-              Preview message <ArrowUpRight size={17} />
+              Send message <ArrowUpRight size={17} />
             </button>
-            <p role="status">
-              {done
-                ? 'Your demo message is ready. Nothing has been sent or stored.'
-                : 'Demo form only. Nothing will be sent.'}
-            </p>
+            <p role="status">{done ? 'Thanks for reaching out. We’ll be in touch soon.' : ''}</p>
           </form>
         </div>
       )}

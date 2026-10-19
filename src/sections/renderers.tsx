@@ -12,10 +12,11 @@ import {
   MoveUpRight,
 } from 'lucide-react'
 import { useState } from 'react'
-import { brands, categories, products, combos } from '../data/catalog'
+import { brands, categories, combos, categoryProduct, findProduct, hero } from '../data/catalog'
 import { selectProducts } from '../data/selection'
 import type { DesignConfig, Section } from '../design/config'
 import { Pack } from '../components/Pack'
+import { BrandLogo } from '../components/BrandLogo'
 import { ProductCard } from '../components/ProductCard'
 import { ComboCard } from '../pages/Combos'
 export interface SectionProps {
@@ -51,14 +52,14 @@ export function Hero({ section, config }: SectionProps) {
           <div className="stage-pedestal" />
           <img
             className="hero-pack hero-pack-back"
-            src="/products/suppx/ChatGPT Image Oct 19, 2026, 04_29_43 PM-2.png"
-            alt="PVL Gold Series Whey Gold"
+            src={hero[1].src}
+            alt={hero[1].alt}
             decoding="async"
           />
           <img
             className="hero-pack hero-pack-main"
-            src="/products/suppx/ChatGPT Image Oct 19, 2026, 04_29_41 PM-1.png"
-            alt="Belive Nutrition Mass Gainer"
+            src={hero[0].src}
+            alt={hero[0].alt}
             fetchPriority="high"
             decoding="async"
           />
@@ -90,9 +91,9 @@ export function Hero({ section, config }: SectionProps) {
           <span className="circle-arrow">
             <ArrowUpRight size={23} />
           </span>
-          <Pack product={products[5]} className="side-pack" />
+          <Pack product={categoryProduct('c2')} className="side-pack" />
           <span className="offer-label">
-            UP TO 10%<small>DEMO COMBO SAVINGS</small>
+            UP TO 10%<small>OFF EVERY COMBO</small>
           </span>
         </Link>
         <Link to="/collections/creatine" className="side-discover">
@@ -118,7 +119,7 @@ export function Trust() {
         [PackageCheck, 'Thoughtfully curated', 'Recognizable nutrition brands'],
         [Layers3, 'Made to work together', 'Mix brands in your own combo'],
         [SlidersHorizontal, 'Find your fit', 'Sizes and flavours for your routine'],
-        [Sparkles, 'Explore with confidence', 'Transparent, demo-only pricing'],
+        [Sparkles, 'Clear, honest pricing', 'Savings shown on every product'],
       ].map(([Icon, title, detail]) => {
         const I = Icon as typeof PackageCheck
         return (
@@ -144,25 +145,14 @@ export function CategoryGrid({ config, section }: SectionProps) {
       {shown.map((c, i) => (
         <Link className="category-card" to={`/collections/${c.handle}`} key={c.id}>
           <div className={`category-art cat-${i}`}>
-            <Pack product={products[i * 4]} />
+            <Pack product={categoryProduct(c.id)} />
             <span className="category-number">0{i + 1}</span>
           </div>
           <div>
             <h3>{c.name}</h3>
             <ArrowUpRight size={17} />
           </div>
-          <small>
-            {i === 0
-              ? 'Make every scoop count'
-              : [
-                  '',
-                  'Your daily essential',
-                  'Find your focus',
-                  'More in every serving',
-                  'For the in-between',
-                  'Goodness on the go',
-                ][i]}
-          </small>
+          <small>{c.tagline}</small>
         </Link>
       ))}
     </div>
@@ -171,11 +161,10 @@ export function CategoryGrid({ config, section }: SectionProps) {
 export function BrandGrid() {
   return (
     <div className="brand-grid">
-      {brands.map((b, i) => (
-        <Link className={`brand-wordmark brand-${i}`} to={`/brands/${b.id}`} key={b.id}>
-          {b.id === 'on' && <b className="on-symbol">ON</b>}
-          <strong>{b.name}</strong>
-          <span>
+      {brands.map((b) => (
+        <Link className="brand-wordmark" to={`/brands/${b.id}`} key={b.id}>
+          <BrandLogo brand={b} />
+          <span className="brand-explore">
             Explore brand <ArrowUpRight size={12} />
           </span>
         </Link>
@@ -209,9 +198,9 @@ export function ComboPromo({ section }: SectionProps) {
     <div className="combo-promotion">
       <div className="combo-art">
         <div className="combo-disc" />
-        <Pack product={products[1]} />
+        <Pack product={findProduct(combos[0].items[0])!} />
         <span className="combo-plus">+</span>
-        <Pack product={products[5]} />
+        <Pack product={findProduct(combos[0].items[1])!} />
         <span className="combo-floating">A little more, together. ↗</span>
       </div>
       <div>
@@ -226,13 +215,13 @@ export function ComboPromo({ section }: SectionProps) {
             02 <b>Make your mix</b>
           </span>
           <span>
-            03 <b>Enjoy demo savings</b>
+            03 <b>Save up to 10%</b>
           </span>
         </div>
         <Link className="button" to="/build-your-combo">
           Build your combo <ArrowUpRight size={18} />
         </Link>
-        <small>2 items: 5% · 3–8 items: 10% example savings</small>
+        <small>2 items: 5% off · 3–8 items: 10% off</small>
       </div>
     </div>
   )
@@ -252,7 +241,7 @@ export function Deals() {
             Discover whey protein <ArrowRight size={16} />
           </span>
         </div>
-        <Pack product={products[3]} />
+        <Pack product={categoryProduct('c1')} />
       </Link>
       <Link to="/combos" className="deal-card dark-deal">
         <div>
@@ -278,7 +267,7 @@ export function Goals() {
         [Dumbbell, 'Build your routine', 'whey-protein'],
         [Zap, 'Find your focus', 'pre-workout'],
         [Heart, 'Everyday wellness', 'wellness'],
-        [Layers3, 'Keep it balanced', 'amino-acids'],
+        [Layers3, 'Gain with purpose', 'mass-gainer'],
       ].map(([Icon, title, handle]) => {
         const I = Icon as typeof Dumbbell
         return (
@@ -294,24 +283,24 @@ export function Goals() {
 }
 const faqs = [
   [
-    'Is this a real store?',
-    'This is an interactive design prototype. SuppX products show captured prices and availability; other listings and combo offers are illustrative. Orders and payments are not accepted.',
+    'How do combo savings work?',
+    'Add any 2 products to a combo to save 5%, or 3 to 8 products to save 10%. Mix brands and flavours freely. Your saving updates in the bag as you change quantities.',
   ],
   [
-    'How do demo combo savings work?',
-    'Select 2 eligible units for a 5% example discount, or 3–8 for 10%. Savings apply only to grouped combo items and recalculate when quantities change.',
+    'Which brands do you stock?',
+    'Optimum Nutrition, MuscleTech, Dymatize, GNC, Rule 1, Applied Nutrition and GHOST, across whey protein, creatine, pre-workout, mass gainers, vitamins and omega-3.',
   ],
   [
-    'Are these actual product images?',
-    'Imported SuppX listings use locally saved product images from their source pages. Other listings use representative packaging illustrations. Each imported detail page links to its source and capture date.',
+    'Where can I find ingredients and nutrition information?',
+    'Each product page includes photos of the label with full nutrition, ingredient and allergen details. Always read the label before use.',
   ],
   [
-    'Can I save my design?',
-    'Yes. Open Design Studio, customise your layout and save a named version. Export a JSON file or copy a share link. Browser-local versions remain on this device.',
+    'How should I store my supplements?',
+    'Keep containers tightly closed in a cool, dry place away from direct sunlight, and use them before the best-before date printed on the pack.',
   ],
   [
     'How do I choose a supplement?',
-    'Review manufacturer ingredient and allergen information. For individual dietary or health needs, ask a qualified professional; this demo provides no personalised health advice.',
+    'Start with your goal: whey protein for recovery, creatine for strength, a mass gainer for extra calories. For specific dietary or health needs, speak to a qualified professional.',
   ],
 ]
 export function FAQSection() {
@@ -347,14 +336,12 @@ export function Newsletter({ section }: SectionProps) {
         <label htmlFor={`email-${section.id}`}>Your email address</label>
         <div>
           <input id={`email-${section.id}`} type="email" placeholder="you@example.com" required />
-          <button aria-label="Preview newsletter subscription">
+          <button aria-label="Subscribe to the newsletter">
             <ArrowRight />
           </button>
         </div>
         <small role="status">
-          {done
-            ? 'Demo complete. Your email has not been sent or subscribed.'
-            : 'Demo form only. No emails are collected or sent.'}
+          {done ? 'Thanks for signing up. Watch your inbox.' : 'No spam. Unsubscribe anytime.'}
         </small>
       </form>
     </div>

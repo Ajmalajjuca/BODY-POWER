@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ShoppingBag, Check, ArrowRight } from 'lucide-react'
-import { products, brands, money } from '../data/catalog'
+import { products, brands, categories, money } from '../data/catalog'
 import { Pack } from '../components/Pack'
 import { ProductRating } from '../components/ProductRating'
 import { Empty, Quantity } from '../components/ui'
@@ -25,40 +25,32 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
     [image, setImage] = useState(0)
   const variant = product.variants.find((v) => v.id === variantId)!,
     brand = brands.find((b) => b.id === product.brandId)!,
+    category = categories.find((c) => c.id === product.categoryId)!,
     card = useDesign((s) => s.config.card)
   return (
     <main className="container standard-page">
       <div className="breadcrumb">
         <Link to="/">Home</Link>
         <span>/</span>
-        <Link to="/shop">The collection</Link>
+        <Link to={`/collections/${category.handle}`}>{category.name}</Link>
         <span>/</span>
         {product.title}
       </div>
       <div className="product-detail">
         <div>
           <div className="detail-image">
-            <span className="product-badge">THE EVERYDAY EDIT</span>
-            <Pack product={product} back={image === 1} imageIndex={image} />
-            <small>
-              {product.source
-                ? 'Product imagery from SuppX'
-                : 'Representative packaging illustration'}
-            </small>
+            {product.bestseller && <span className="product-badge">BESTSELLER</span>}
+            <Pack product={product} imageIndex={image} />
           </div>
           <div className="thumbnails">
             {product.images.map((_, i) => (
               <button
                 key={i}
-                aria-label={
-                  product.source
-                    ? `View product image ${i + 1}`
-                    : `View ${i ? 'back' : 'front'} packaging`
-                }
+                aria-label={`View product image ${i + 1}`}
                 aria-pressed={image === i}
                 onClick={() => setImage(i)}
               >
-                <Pack product={product} back={i === 1} imageIndex={i} />
+                <Pack product={product} imageIndex={i} />
               </button>
             ))}
           </div>
@@ -68,24 +60,16 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
             {brand.name}
           </Link>
           <h1>{product.title}</h1>
-          <p className="detail-subtitle">A considered addition to your everyday routine.</p>
+          <p className="detail-subtitle">{category.tagline}.</p>
           <ProductRating product={product} />
           <div className="detail-price">
             <strong>{money(variant.price)}</strong>
             {variant.compareAtPrice && <del>{money(variant.compareAtPrice)}</del>}
             {variant.compareAtPrice && (
-              <span>
-                Save {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}%
-                {product.source ? ' · source price' : ' · demo'}
-              </span>
+              <span>Save {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}%</span>
             )}
           </div>
-          <p className="demo-label">
-            {product.source
-              ? 'Prices and availability are a SuppX snapshot, not a live offer.'
-              : 'Demo pricing.'}{' '}
-            No orders or payments are accepted.
-          </p>
+          <p className="demo-label">Inclusive of all taxes.</p>
           <fieldset className="variant-picker">
             <legend>Select size & flavour</legend>
             {product.variants.map((v) => (
@@ -97,17 +81,13 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
               >
                 {v.size}
                 {v.flavor && ` · ${v.flavor}`}
-                {!v.available && ' · Unavailable'}
+                {!v.available && ' · Sold out'}
               </button>
             ))}
           </fieldset>
           <span className="availability">
             <Check size={15} />
-            {variant.available
-              ? product.source
-                ? 'Available at source when captured'
-                : 'Available in this demo'
-              : 'Sold out at source when captured'}
+            {variant.available ? 'In stock' : 'Sold out'}
           </span>
           <div className="detail-add">
             <Quantity value={quantity} change={setQuantity} />
@@ -117,7 +97,7 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
               onClick={() => addToCart([{ productId: product.id, variantId, quantity }])}
             >
               <ShoppingBag size={18} />
-              Add to demo bag
+              Add to bag
             </button>
           </div>
           <Link className="pairing-link" to="/build-your-combo">
@@ -127,30 +107,13 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
             <summary>The details</summary>
             <p className="product-description">{product.description}</p>
             {variant.SKU && <p>SKU: {variant.SKU}</p>}
-            {product.source && (
-              <p className="source-note">
-                Product information supplied by SuppX.{' '}
-                <a href={product.source.url} target="_blank" rel="noreferrer">
-                  View original listing ↗
-                </a>
-                <br />
-                Captured{' '}
-                {new Date(product.source.capturedAt).toLocaleDateString('en-IN', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-                . Descriptions and claims are reproduced from the source and have not been
-                independently verified.
-              </p>
-            )}
           </details>
           <details className="product-accordion">
             <summary>Ingredients & suitability</summary>
             <p>
-              This prototype does not reproduce official ingredient or nutritional information.
-              Consult the current manufacturer label, including allergen and usage information,
-              before purchasing any supplement.
+              Full ingredient, nutrition and allergen information is printed on the pack. Read the
+              label before use, and speak to your doctor if you are pregnant, nursing or managing a
+              medical condition.
             </p>
           </details>
         </div>
@@ -171,9 +134,9 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
       </div>
       <div className="recommendation-strip">
         <h3>Complete your routine.</h3>
-        <p>Explore accessories and curated pairings.</p>
-        <Link to="/collections/accessories" className="text-link">
-          Shop accessories <ArrowRight size={16} />
+        <p>Save up to 10% when you pair it in a combo.</p>
+        <Link to="/combos" className="text-link">
+          Shop combos <ArrowRight size={16} />
         </Link>
       </div>
     </main>

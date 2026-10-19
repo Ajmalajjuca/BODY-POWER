@@ -13,7 +13,7 @@ export function Footer() {
             <br />
             Find your everyday power.
           </p>
-          <span className="eyebrow">A storefront concept, made for you.</span>
+          <span className="eyebrow">Many brands. One destination.</span>
         </div>
         <div>
           <h4>Find your fuel</h4>
@@ -29,24 +29,17 @@ export function Footer() {
           <Link to="/about">Our story</Link>
           <Link to="/faq">Frequently asked questions</Link>
           <Link to="/contact">Get in touch</Link>
-          <Link to="/cart">Your demo bag</Link>
+          <Link to="/cart">Your bag</Link>
         </div>
         <div>
-          <h4>Designed for possibility.</h4>
-          <p>Explore the collection and make it your own with Design Studio.</p>
-          <small>
-            SuppX prices are captured snapshots. Combo offers are examples.
-            <br />
-            No orders or payments are accepted.
-          </small>
+          <h4>Better together.</h4>
+          <p>Pair any two products and save 5%. Three or more, save 10%.</p>
+          <small>All prices are inclusive of taxes.</small>
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} Body Power Nutrition · Storefront prototype</span>
-        <span>
-          SuppX product imagery and illustrative demo artwork. Brand references do not imply
-          affiliation.
-        </span>
+        <span>© {new Date().getFullYear()} Body Power Nutrition. All rights reserved.</span>
+        <span>All trademarks belong to their respective owners.</span>
       </div>
     </footer>
   )

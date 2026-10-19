@@ -15,11 +15,7 @@ export function ProductCard({ product, style = 'detailed' }: { product: Product;
         aria-label={`View ${product.title}`}
       >
         <Pack product={product} />
-        {product.bestseller && (
-          <span className="product-badge">
-            {product.source ? 'SUPPX BESTSELLER' : 'THE ESSENTIALS'}
-          </span>
-        )}
+        {product.bestseller && <span className="product-badge">BESTSELLER</span>}
         <span className="image-arrow">
           <ArrowUpRight size={18} />
         </span>
@@ -30,14 +26,22 @@ export function ProductCard({ product, style = 'detailed' }: { product: Product;
           <h3>{product.title}</h3>
         </Link>
         <p className="variant-note">
-          {variant.size} <span>•</span> {variant.flavor ?? 'Everyday essentials'}
+          {variant.size}
+          {variant.flavor && (
+            <>
+              {' '}
+              <span>•</span> {variant.flavor}
+            </>
+          )}
         </p>
         <ProductRating product={product} />
         <div className="product-bottom">
           <div>
             <strong>{money(variant.price)}</strong>{' '}
             {variant.compareAtPrice && <del>{money(variant.compareAtPrice)}</del>}
-            <small>{product.source ? 'SuppX price snapshot' : 'Demo price'}</small>
+            {variant.compareAtPrice && (
+              <small>Save {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}%</small>
+            )}
           </div>
           <button
             className="quick-add"
