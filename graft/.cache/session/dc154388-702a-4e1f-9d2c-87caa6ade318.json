@@ -1,17 +1,20 @@
 {
-  "lastQuery": "I need not a text. I need thunder, lightning, muscle or any logo",
+  "lastQuery": "yes, remember the selected version for each page",
   "perAgentQuery": {},
   "graftReads": 0,
-  "sourceReads": 30,
+  "sourceReads": 32,
   "savedTokens": 0,
   "injectedPointers": [
     "scripts/import-suppx.py:L103-L149",
     "scripts/check-suppx.mjs",
-    "src/data/catalog.ts"
+    "src/data/catalog.ts",
+    "src/state/store.ts:L5-L10",
+    "src/pages/Catalog.tsx:L9-L226",
+    "scripts/browser-check.mjs"
   ],
   "nudges": 2,
-  "inputCostMicros": 6676109,
-  "inputTokensBilled": 11654925,
-  "lastBillingUuid": "8b4df791-6594-4b6b-ba19-cc3b033e7f7d",
+  "inputCostMicros": 9523180,
+  "inputTokensBilled": 17141653,
+  "lastBillingUuid": "acedcdfb-3878-41ca-a306-8eb7ea20d4f1",
   "host": "claude-code"
 }
