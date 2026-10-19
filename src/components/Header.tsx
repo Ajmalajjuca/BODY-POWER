@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Search, ShoppingBag, Menu, X, ChevronDown, ArrowUpRight, Layers3 } from 'lucide-react'
-import { categories, products, brands } from '../data/catalog'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Search, ShoppingBag, Menu, X, ArrowUpRight, Layers3 } from 'lucide-react'
+import { products, brands } from '../data/catalog'
 import { useCart, useUI } from '../state/store'
-import { IconButton } from './ui'
 import { LogoMark } from './LogoMark'
-export function Header({ centered = false }: { centered?: boolean }) {
+import { VersionMenu } from './VersionMenu'
+// The Product menu opens the product being viewed, or the featured whey everywhere else.
+const featuredProduct = '/products/optimum-nutrition-gold-standard-100-whey'
+export function Header() {
   const [query, setQuery] = useState(''),
-    [menu, setMenu] = useState(false),
-    [mega, setMega] = useState(false)
+    [menu, setMenu] = useState(false)
   const navigate = useNavigate(),
+    { pathname } = useLocation(),
     lines = useCart((s) => s.lines),
     setUI = useUI((s) => s.set)
   const results = query.trim()
@@ -21,6 +23,27 @@ export function Header({ centered = false }: { centered?: boolean }) {
         )
         .slice(0, 4)
     : []
+  const navItems = [
+    { label: 'Home', to: '/', page: 'home' },
+    { label: 'Shop', to: '/shop', page: 'shop' },
+    {
+      label: 'Product',
+      to: pathname.startsWith('/products/') ? pathname : featuredProduct,
+      page: 'product',
+    },
+    { label: 'Brands', to: '/brands', page: 'brands' },
+    { label: 'Combos', to: '/combos', page: 'combos' },
+    { label: 'Build', to: '/build-your-combo', page: 'build' },
+    { label: 'Cart', to: '/cart', page: 'cart' },
+    {
+      label: 'Pages',
+      group: [
+        { label: 'About', to: '/about', page: 'about' },
+        { label: 'Contact', to: '/contact', page: 'contact' },
+        { label: 'FAQ', to: '/faq', page: 'faq' },
+      ],
+    },
+  ] as const
   return (
     <>
       <div className="announcement">
@@ -29,7 +52,7 @@ export function Header({ centered = false }: { centered?: boolean }) {
           Shop combos <ArrowUpRight size={13} />
         </Link>
       </div>
-      <header className={`header ${centered ? 'header-centered' : ''}`}>
+      <header className="header">
         <div className="header-main container">
           <button
             className="mobile-menu icon-button"
@@ -97,58 +120,9 @@ export function Header({ centered = false }: { centered?: boolean }) {
           </div>
         </div>
         <nav className={`nav container ${menu ? 'nav-open' : ''}`} aria-label="Main navigation">
-          <div className="category-nav">
-            <button onClick={() => setMega(!mega)} aria-expanded={mega}>
-              <Menu size={16} /> Shop by category <ChevronDown size={13} />
-            </button>
-            {mega && (
-              <div className="mega-menu">
-                <div>
-                  <span className="eyebrow">Find your essentials</span>
-                  <h3>Good things start here.</h3>
-                  <p>Explore nutrition for every routine.</p>
-                </div>
-                <div>
-                  {categories.map((c) => (
-                    <Link
-                      to={`/collections/${c.handle}`}
-                      key={c.id}
-                      onClick={() => {
-                        setMega(false)
-                        setMenu(false)
-                      }}
-                    >
-                      {c.name}
-                      <ArrowUpRight size={14} />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-          <Link to="/shop" onClick={() => setMenu(false)}>
-            Shop all
-          </Link>
-          <Link to="/brands" onClick={() => setMenu(false)}>
-            Our brands
-          </Link>
-          <Link to="/shop?sort=bestsellers" onClick={() => setMenu(false)}>
-            Bestsellers
-          </Link>
-          <Link to="/combos" onClick={() => setMenu(false)}>
-            Combos <span className="tiny-tag">SMART SAVINGS</span>
-          </Link>
-          <Link to="/about" onClick={() => setMenu(false)}>
-            Our story
-          </Link>
-          <Link className="nav-offer" to="/shop?sort=price-low" onClick={() => setMenu(false)}>
-            The good stuff, for less <ArrowUpRight size={14} />
-          </Link>
-          {menu && (
-            <IconButton label="Close navigation" onClick={() => setMenu(false)}>
-              <X />
-            </IconButton>
-          )}
+          {navItems.map((item) => (
+            <VersionMenu key={item.label} {...item} onNavigate={() => setMenu(false)} />
+          ))}
         </nav>
       </header>
     </>

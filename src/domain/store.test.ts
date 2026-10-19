@@ -14,20 +14,13 @@ vi.hoisted(() => {
     configurable: true,
   })
 })
-import { useCart, useDesign } from '../state/store'
-import { presets } from '../design/config'
+import { useCart } from '../state/store'
 import { priceCart } from './pricing'
 import { findProduct } from '../data/catalog'
 const whey = findProduct('optimum-nutrition-gold-standard-100-whey')!,
   creatine = findProduct('optimum-nutrition-micronised-creatine-monohydrate')!
 beforeEach(() => {
   useCart.setState({ lines: [] })
-  useDesign.setState({
-    config: structuredClone(presets.marketplace),
-    past: [],
-    future: [],
-    versions: [],
-  })
 })
 describe('cart grouping and mutation', () => {
   it('rejects additions beyond the persisted line limit atomically', () => {
@@ -59,24 +52,8 @@ describe('cart grouping and mutation', () => {
     expect(useCart.getState().lines[1].quantity).toBe(8)
   })
 })
-describe('design history and snapshots', () => {
-  it('undoes, redoes and keeps named versions isolated', () => {
-    useDesign.getState().save('Original')
-    useDesign.getState().update({ ...useDesign.getState().config, accent: '#C41E3A' })
-    expect(useDesign.getState().versions[0].config.accent).toBe('#800020')
-    useDesign.getState().undo()
-    expect(useDesign.getState().config.accent).toBe('#800020')
-    useDesign.getState().redo()
-    expect(useDesign.getState().config.accent).toBe('#C41E3A')
-    useDesign.getState().undo()
-    useDesign.getState().update({ ...useDesign.getState().config, radius: 15 })
-    expect(useDesign.getState().future).toHaveLength(0)
-  })
-  it('discards null persisted entries without losing valid configuration', () => {
-    const merge = useDesign.persist.getOptions().merge!
-    const restored = merge({ config: presets.minimal, versions: [null, {}] }, useDesign.getState())
-    expect(restored.config.layout).toBe('minimal')
-    expect(restored.versions).toEqual([])
+describe('persisted cart repair', () => {
+  it('discards null and malformed persisted lines', () => {
     expect(
       useCart.persist.getOptions().merge!({ lines: [null, {}] }, useCart.getState()).lines,
     ).toEqual([])

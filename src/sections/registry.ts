@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react'
-import { makeSection, sectionNames, sectionTypes, type Section } from '../design/config'
+import { sectionNames, sectionTypes, type Section } from '../design/config'
 import {
   Hero,
   Trust,
@@ -17,50 +17,6 @@ import {
   Announcement,
   type SectionProps,
 } from './renderers'
-export interface SettingField {
-  key: Exclude<keyof Section, 'id' | 'type'>
-  label: string
-  kind: 'text' | 'select' | 'color' | 'number' | 'boolean'
-  options?: readonly string[]
-}
-export const commonFields: SettingField[] = [
-  { key: 'heading', label: 'Heading', kind: 'text' },
-  { key: 'subheading', label: 'Subheading', kind: 'text' },
-  {
-    key: 'scheme',
-    label: 'Color scheme',
-    kind: 'select',
-    options: ['default', 'ivory', 'dark', 'accent', 'custom'],
-  },
-  { key: 'background', label: 'Custom background', kind: 'color' },
-  { key: 'width', label: 'Container width', kind: 'select', options: ['wide', 'narrow'] },
-  {
-    key: 'spacing',
-    label: 'Section spacing',
-    kind: 'select',
-    options: ['compact', 'normal', 'airy'],
-  },
-  { key: 'columns', label: 'Columns', kind: 'number' },
-  {
-    key: 'card',
-    label: 'Product card style',
-    kind: 'select',
-    options: ['inherit', 'detailed', 'minimal', 'compact'],
-  },
-  { key: 'align', label: 'Heading alignment', kind: 'select', options: ['left', 'center'] },
-  {
-    key: 'mobile',
-    label: 'Mobile appearance',
-    kind: 'select',
-    options: ['grid', 'scroll', 'hidden'],
-  },
-  {
-    key: 'selection',
-    label: 'Content collection',
-    kind: 'select',
-    options: ['all', 'featured', 'bestsellers', 'whey-protein', 'creatine', 'wellness'],
-  },
-]
 const renderers: Record<Section['type'], ComponentType<SectionProps>> = {
   hero: Hero,
   announcement: Announcement,
@@ -78,29 +34,6 @@ const renderers: Record<Section['type'], ComponentType<SectionProps>> = {
   newsletter: Newsletter,
   banner: Banner,
 }
-const products = ['featured', 'bestsellers']
 export const registry = Object.fromEntries(
-  sectionTypes.map((type) => [
-    type,
-    {
-      name: sectionNames[type],
-      defaults: () => makeSection(type),
-      renderer: renderers[type],
-      fields: commonFields.filter(
-        (f) =>
-          (!(type === 'trust') || !['heading', 'subheading', 'align'].includes(f.key)) &&
-          (f.key !== 'selection' || products.includes(type) || type === 'spotlight') &&
-          (f.key !== 'card' || products.includes(type)) &&
-          (f.key !== 'columns' || products.includes(type) || type === 'categories'),
-      ),
-    },
-  ]),
-) as Record<
-  Section['type'],
-  {
-    name: string
-    defaults: () => Section
-    renderer: ComponentType<SectionProps>
-    fields: SettingField[]
-  }
->
+  sectionTypes.map((type) => [type, { name: sectionNames[type], renderer: renderers[type] }]),
+) as Record<Section['type'], { name: string; renderer: ComponentType<SectionProps> }>

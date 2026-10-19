@@ -1,91 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { configSchema, presets, type DesignConfig } from '../design/config'
 import { priceSelection, type CartLine, type Selection } from '../domain/pricing'
-export interface SavedVersion {
-  id: string
-  name: string
-  date: string
-  config: DesignConfig
-}
-interface DesignState {
-  config: DesignConfig
-  versions: SavedVersion[]
-  past: DesignConfig[]
-  future: DesignConfig[]
-  update: (config: DesignConfig) => void
-  undo: () => void
-  redo: () => void
-  save: (name: string) => void
-  deleteVersion: (id: string) => void
-}
-export const useDesign = create<DesignState>()(
-  persist(
-    (set, get) => ({
-      config: structuredClone(presets.marketplace),
-      versions: [],
-      past: [],
-      future: [],
-      update: (config) => {
-        const valid = configSchema.parse(config)
-        set((s) => ({ config: valid, past: [...s.past, s.config].slice(-40), future: [] }))
-      },
-      undo: () =>
-        set((s) =>
-          s.past.length
-            ? { config: s.past.at(-1)!, past: s.past.slice(0, -1), future: [s.config, ...s.future] }
-            : {},
-        ),
-      redo: () =>
-        set((s) =>
-          s.future.length
-            ? { config: s.future[0], past: [...s.past, s.config], future: s.future.slice(1) }
-            : {},
-        ),
-      save: (name) => {
-        if (!name.trim()) return
-        set((s) => ({
-          versions: [
-            ...s.versions,
-            {
-              id: crypto.randomUUID(),
-              name: name.trim().slice(0, 60),
-              date: new Date().toISOString(),
-              config: structuredClone(get().config),
-            },
-          ].slice(-12),
-        }))
-      },
-      deleteVersion: (id) => set((s) => ({ versions: s.versions.filter((v) => v.id !== id) })),
-    }),
-    {
-      name: 'bpn-design-v1',
-      partialize: (s) => ({ config: s.config, versions: s.versions }),
-      merge: (raw, current) => {
-        const stored = raw as Partial<DesignState> | undefined
-        return {
-          ...current,
-          config: configSchema.safeParse(stored?.config).success
-            ? configSchema.parse(stored?.config)
-            : current.config,
-          versions: Array.isArray(stored?.versions)
-            ? stored.versions
-                .filter(
-                  (v) =>
-                    v &&
-                    typeof v === 'object' &&
-                    typeof v.id === 'string' &&
-                    typeof v.name === 'string' &&
-                    typeof v.date === 'string' &&
-                    configSchema.safeParse(v.config).success,
-                )
-                .slice(-12)
-            : [],
-        }
-      },
-    },
-  ),
-)
 interface CartState {
   lines: CartLine[]
   add: (items: Selection[], groupName?: string) => boolean
@@ -156,18 +71,12 @@ export const useCart = create<CartState>()(
   ),
 )
 interface UIState {
-  studio: boolean
   cart: boolean
-  presentation: boolean
-  viewport: 'desktop' | 'tablet' | 'mobile'
   toast: string
   set: (values: Partial<Omit<UIState, 'set'>>) => void
 }
 export const useUI = create<UIState>((set) => ({
-  studio: false,
   cart: false,
-  presentation: false,
-  viewport: 'desktop',
   toast: '',
   set: (values) => set(values),
 }))

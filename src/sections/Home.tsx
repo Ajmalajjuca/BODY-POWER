@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { foreground, type DesignConfig } from '../design/config'
+import { foreground, presets } from '../design/config'
+import { usePageVersion } from '../state/versions'
 import { registry } from './registry'
-export function Home({ config }: { config: DesignConfig }) {
+// Home V1 is the marketplace layout, V2 the editorial minimal layout, V3 the bold performance layout.
+const homeVersions = { 1: presets.marketplace, 2: presets.minimal, 3: presets.performance }
+export function Home() {
+  const version = usePageVersion('home'),
+    config = homeVersions[version]
   return (
-    <div className={`home layout-${config.layout}`}>
+    <div className={`home layout-${config.layout}`} data-layout={`home-v${version}`}>
       {config.sections
         .filter((s) => s.enabled)
         .map((s) => {

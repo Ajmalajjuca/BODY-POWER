@@ -3,10 +3,12 @@ import { Trash2, Lock, ArrowRight } from 'lucide-react'
 import { useCart, useUI } from '../state/store'
 import { findProduct, money } from '../data/catalog'
 import { priceCart } from '../domain/pricing'
+import { usePageVersion } from '../state/versions'
 import { Pack } from '../components/Pack'
 import { Empty, IconButton, Modal, Quantity } from '../components/ui'
 export function CartContents({ drawer = false }: { drawer?: boolean }) {
   const { lines, change, remove } = useCart(),
+    version = usePageVersion('cart'),
     setUI = useUI((s) => s.set),
     totals = priceCart(lines)
   if (!lines.length)
@@ -23,7 +25,7 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
       </div>
     )
   return (
-    <div className={`cart-layout ${drawer ? 'cart-in-drawer' : ''}`}>
+    <div className={`cart-layout cart-v${version} ${drawer ? 'cart-in-drawer' : ''}`}>
       <div className="cart-lines">
         {lines.map((line) => {
           const p = findProduct(line.productId)!,
@@ -72,7 +74,7 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
           <span>Subtotal</span>
           <strong>{money(totals.subtotal)}</strong>
         </div>
-        <div>
+        <div className="savings-row">
           <span>Combo savings</span>
           <strong>−{money(totals.discount)}</strong>
         </div>
@@ -106,8 +108,9 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
   )
 }
 export function Cart() {
+  const version = usePageVersion('cart')
   return (
-    <main className="container standard-page">
+    <main className="container standard-page" data-layout={`cart-v${version}`}>
       <div className="page-intro">
         <span className="eyebrow">YOUR EVERYDAY ESSENTIALS</span>
         <h1>Your bag.</h1>

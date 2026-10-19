@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Plus, Trash2, Check, Layers3 } from 'lucide-react'
 import { brands, categories, products, combos, findProduct, money } from '../data/catalog'
-import { priceSelection, comboRules, type Selection } from '../domain/pricing'
+import { priceSelection, comboRules } from '../domain/pricing'
 import { Pack } from '../components/Pack'
 import { Quantity, IconButton } from '../components/ui'
 import { addToCart } from '../state/store'
+import { usePageVersion } from '../state/versions'
+import { useComboBuilder, type ComboBuilderState } from '../state/useComboBuilder'
 export function ComboCard({ combo }: { combo: (typeof combos)[number] }) {
   const items = combo.items.map((id) => ({
       productId: id,
@@ -57,9 +59,190 @@ export function ComboCard({ combo }: { combo: (typeof combos)[number] }) {
     </article>
   )
 }
-export function Combos() {
+export function BuilderSummary({ builder }: { builder: ComboBuilderState }) {
+  const { items, count, price, setQuantity, remove, reset } = builder
   return (
-    <main className="container standard-page">
+    <>
+      <span className="eyebrow">THE PERFECT MIX</span>
+      <h2>
+        Your combo{' '}
+        <span>
+          {count}/{comboRules.max}
+        </span>
+      </h2>
+      {!items.length && (
+        <div className="builder-empty">
+          <Layers3 size={40} strokeWidth={1} />
+          <p>
+            A little empty.
+            <br />A lot of possibility.
+          </p>
+          <small>Add your first favourite to begin.</small>
+        </div>
+      )}
+      {items.map((i) => {
+        const p = findProduct(i.productId)!,
+          v = p.variants.find((v) => v.id === i.variantId)!
+        return (
+          <div className="builder-line" key={i.variantId}>
+            <Pack product={p} />
+            <div>
+              <strong>{p.title}</strong>
+              <small>
+                {v.size}
+                {v.flavor && ` · ${v.flavor}`}
+              </small>
+              <Quantity
+                value={i.quantity}
+                max={8 - count + i.quantity}
+                change={(q) => setQuantity(i, q)}
+              />
+            </div>
+            <IconButton label={`Remove ${p.title} from combo`} onClick={() => remove(i)}>
+              <Trash2 size={14} />
+            </IconButton>
+          </div>
+        )
+      })}
+      <div className="discount-progress">
+        <span className={count >= 2 ? 'achieved' : ''}>2 items · 5% off</span>
+        <span className={count >= 3 ? 'achieved' : ''}>3+ items · 10% off</span>
+      </div>
+      <div className="summary-line">
+        <span>Price</span>
+        <b>{money(price.subtotal)}</b>
+      </div>
+      <div className="summary-line">
+        <span>Combo discount</span>
+        <b>−{money(price.discount)}</b>
+      </div>
+      <div className="summary-line total">
+        <span>Your combo</span>
+        <b>{money(price.total)}</b>
+      </div>
+      <button
+        className="button full"
+        disabled={!price.valid}
+        onClick={() => {
+          if (addToCart(items, 'Your custom combo')) reset()
+        }}
+      >
+        Add combo to bag <ArrowUpRight size={17} />
+      </button>
+      <small className="demo-footnote">
+        {price.valid ? 'Your saving is applied in the bag.' : price.error}
+      </small>
+    </>
+  )
+}
+export function Combos() {
+  const version = usePageVersion('combos'),
+    builder = useComboBuilder()
+  const footnote = (
+    <p className="demo-footnote">Pair any 2 products to save 5%, or 3 to 8 products to save 10%.</p>
+  )
+  if (version === 2)
+    return (
+      <main className="container standard-page combos-v2" data-layout="combos-v2">
+        <div className="page-intro">
+          <span className="eyebrow">MAKE IT YOURS</span>
+          <h1>Build your combo.</h1>
+          <p>Pick 2 to 8 favourites from any brand. Your saving updates as you go.</p>
+        </div>
+        <section className="combos-v2-builder">
+          <div className="builder-products">
+            {products
+              .filter((p) => p.featured)
+              .slice(0, 6)
+              .map((p) => (
+                <BuilderProduct
+                  key={p.id}
+                  product={p}
+                  add={builder.add}
+                  disabled={builder.count >= comboRules.max}
+                />
+              ))}
+          </div>
+          <aside className="builder-summary">
+            <BuilderSummary builder={builder} />
+          </aside>
+        </section>
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">OR START FROM OURS</span>
+            <h2>Ready-made combos.</h2>
+          </div>
+          <Link className="text-link" to="/build-your-combo">
+            Browse every product <ArrowUpRight size={16} />
+          </Link>
+        </div>
+        <div className="combo-grid">
+          {combos.map((c) => (
+            <ComboCard key={c.id} combo={c} />
+          ))}
+        </div>
+        {footnote}
+      </main>
+    )
+  if (version === 3) {
+    const [lead, ...rest] = combos,
+      items = lead.items.map((id) => ({
+        productId: id,
+        variantId: findProduct(id)!.variants[0].id,
+        quantity: 1,
+      })),
+      price = priceSelection(items, true)
+    return (
+      <main className="combos-v3" data-layout="combos-v3">
+        <section className="combo-spotlight">
+          <div className="container combo-spotlight-inner">
+            <div>
+              <span className="eyebrow">COMBO OF THE WEEK</span>
+              <h1>{lead.name}</h1>
+              <p>{lead.note}</p>
+              <div className="combo-spotlight-price">
+                <strong>{money(price.total)}</strong>
+                <del>{money(price.subtotal)}</del>
+              </div>
+              <button className="button" onClick={() => addToCart(items, lead.name)}>
+                Add combo to bag <Plus size={16} />
+              </button>
+            </div>
+            <div className="combo-spotlight-art">
+              {lead.items.map((id, i) => (
+                <Fragment key={id}>
+                  {i > 0 && <span className="combo-plus">+</span>}
+                  <Pack product={findProduct(id)!} />
+                </Fragment>
+              ))}
+              <span className="combo-spotlight-saving">
+                {price.percent}%<small>OFF</small>
+              </span>
+            </div>
+          </div>
+        </section>
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">MORE STACKS</span>
+              <h2>Keep stacking.</h2>
+            </div>
+            <Link className="text-link" to="/build-your-combo">
+              Build your own <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <div className="combo-scroller">
+            {rest.map((c) => (
+              <ComboCard key={c.id} combo={c} />
+            ))}
+          </div>
+          {footnote}
+        </div>
+      </main>
+    )
+  }
+  return (
+    <main className="container standard-page" data-layout="combos-v1">
       <div className="page-intro">
         <span className="eyebrow">GOOD THINGS COME TOGETHER</span>
         <h1>A little more, together.</h1>
@@ -73,27 +256,26 @@ export function Combos() {
           <ComboCard key={c.id} combo={c} />
         ))}
       </div>
-      <p className="demo-footnote">
-        Pair any 2 products to save 5%, or 3 to 8 products to save 10%.
-      </p>
+      {footnote}
     </main>
   )
 }
 export function ComboBuilder() {
-  const [items, setItems] = useState<Selection[]>([]),
+  const builder = useComboBuilder(),
+    { items, price, count, add, reset } = builder,
     [category, setCategory] = useState(''),
     [brand, setBrand] = useState(''),
-    [query, setQuery] = useState('')
-  const price = priceSelection(items, true),
-    count = items.reduce((n, i) => n + i.quantity, 0)
-  const add = (productId: string, variantId: string) =>
-    setItems((current) => {
-      if (count >= comboRules.max) return current
-      const existing = current.find((i) => i.variantId === variantId)
-      return existing
-        ? current.map((i) => (i === existing ? { ...i, quantity: i.quantity + 1 } : i))
-        : [...current, { productId, variantId, quantity: 1 }]
-    })
+    [query, setQuery] = useState(''),
+    version = usePageVersion('build')
+  const addCombo = () => {
+    if (addToCart(items, 'Your custom combo')) reset()
+  }
+  const tier =
+    count >= 3
+      ? '10% off unlocked'
+      : count === 2
+        ? '5% off unlocked · add 1 more for 10%'
+        : `Add ${2 - count} more to unlock 5%`
   const filtered = products.filter(
     (p) =>
       (!category || p.categoryId === category) &&
@@ -101,7 +283,10 @@ export function ComboBuilder() {
       p.title.toLowerCase().includes(query.toLowerCase()),
   )
   return (
-    <main className="container standard-page builder-page">
+    <main
+      className={`container standard-page builder-page build-v${version}`}
+      data-layout={`build-v${version}`}
+    >
       <div className="page-intro">
         <span className="eyebrow">YOUR BRANDS. YOUR RULES.</span>
         <h1>Build your better together.</h1>
@@ -176,97 +361,50 @@ export function ComboBuilder() {
             </div>
           )}
         </div>
-        <aside className="builder-summary">
-          <span className="eyebrow">THE PERFECT MIX</span>
-          <h2>
-            Your combo{' '}
-            <span>
-              {count}/{comboRules.max}
-            </span>
-          </h2>
-          {!items.length && (
-            <div className="builder-empty">
-              <Layers3 size={40} strokeWidth={1} />
-              <p>
-                A little empty.
-                <br />A lot of possibility.
-              </p>
-              <small>Add your first favourite to begin.</small>
-            </div>
-          )}
-          {items.map((i) => {
-            const p = findProduct(i.productId)!,
-              v = p.variants.find((v) => v.id === i.variantId)!
-            return (
-              <div className="builder-line" key={i.variantId}>
-                <Pack product={p} />
-                <div>
-                  <strong>{p.title}</strong>
-                  <small>
-                    {v.size}
-                    {v.flavor && ` · ${v.flavor}`}
-                  </small>
-                  <Quantity
-                    value={i.quantity}
-                    max={8 - count + i.quantity}
-                    change={(q) =>
-                      setItems(items.map((j) => (j === i ? { ...j, quantity: q } : j)))
-                    }
-                  />
-                </div>
-                <IconButton
-                  label={`Remove ${p.title} from combo`}
-                  onClick={() => setItems(items.filter((j) => j !== i))}
+        {version !== 3 && (
+          <aside className="builder-summary">
+            <BuilderSummary builder={builder} />
+          </aside>
+        )}
+      </div>
+      {version === 3 ? (
+        <div className="build-v3-bar" role="region" aria-label="Your combo">
+          <div className="build-v3-items">
+            {items.map((i) => {
+              const p = findProduct(i.productId)!
+              return (
+                <button
+                  key={i.variantId}
+                  aria-label={`Remove ${p.title} from combo`}
+                  onClick={() => builder.remove(i)}
                 >
-                  <Trash2 size={14} />
-                </IconButton>
-              </div>
-            )
-          })}
-          <div className="discount-progress">
-            <span className={count >= 2 ? 'achieved' : ''}>2 items · 5% off</span>
-            <span className={count >= 3 ? 'achieved' : ''}>3+ items · 10% off</span>
+                  <Pack product={p} />
+                  {i.quantity > 1 && <b>{i.quantity}</b>}
+                </button>
+              )
+            })}
+            {!items.length && <span className="build-v3-hint">Your picks appear here</span>}
           </div>
-          <div className="summary-line">
-            <span>Price</span>
-            <b>{money(price.subtotal)}</b>
+          <div className="build-v3-total">
+            <small>
+              {count}/{comboRules.max} · {tier}
+            </small>
+            <strong>{money(price.total)}</strong>
           </div>
-          <div className="summary-line">
-            <span>Combo discount</span>
-            <b>−{money(price.discount)}</b>
-          </div>
-          <div className="summary-line total">
-            <span>Your combo</span>
-            <b>{money(price.total)}</b>
-          </div>
-          <button
-            className="button full"
-            disabled={!price.valid}
-            onClick={() => {
-              if (addToCart(items, 'Your custom combo')) setItems([])
-            }}
-          >
-            Add combo to bag <ArrowUpRight size={17} />
+          <button className="button" disabled={!price.valid} onClick={addCombo}>
+            Add combo <Plus size={16} />
           </button>
-          <small className="demo-footnote">
-            {price.valid ? 'Your saving is applied in the bag.' : price.error}
-          </small>
-        </aside>
-      </div>
-      <div className="mobile-combo-bar">
-        <span>
-          {count} items · <strong>{money(price.total)}</strong>
-        </span>
-        <button
-          className="button"
-          disabled={!price.valid}
-          onClick={() => {
-            if (addToCart(items, 'Your custom combo')) setItems([])
-          }}
-        >
-          Add combo <Plus size={16} />
-        </button>
-      </div>
+        </div>
+      ) : (
+        <div className="mobile-combo-bar">
+          <span>
+            {count} items · <strong>{money(price.total)}</strong>
+          </span>
+          <button className="button" disabled={!price.valid} onClick={addCombo}>
+            Add combo <Plus size={16} />
+          </button>
+        </div>
+      )}
     </main>
   )
 }
