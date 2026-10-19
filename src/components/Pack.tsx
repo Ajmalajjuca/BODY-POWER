@@ -1,9 +1,14 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { brands, categories, type Product } from '../data/catalog'
-export function Pack({ product, back = false, className = '' }: { product: Product; back?: boolean; className?: string }) {
+export function Pack({ product, back = false, imageIndex, className = '' }: { product: Product; back?: boolean; imageIndex?: number; className?: string }) {
+  const [failed, setFailed] = useState<string | null>(null)
   const id = useId().replace(/:/g, ''), brand = brands.find(b => b.id === product.brandId)!, category = categories.find(c => c.id === product.categoryId)!
   const gold = product.brandId === 'on', yellow = product.brandId === 'mb', light = product.brandId === 'dym'
   const color = gold ? '#a78a46' : brand.color, body = light ? '#eceeee' : '#222428'
+  if (product.source) {
+    const src = product.images[imageIndex ?? (back ? 1 : 0)] ?? product.images[0]
+    return failed === src ? <span className={`pack product-photo photo-unavailable ${className}`} role="img" aria-label={`${product.title}: image unavailable`}>Image unavailable</span> : <img className={`pack product-photo ${className}`} src={src} alt={`${product.title} — product image ${(imageIndex ?? (back ? 1 : 0)) + 1}`} loading="lazy" decoding="async" onError={() => setFailed(src)}/>
+  }
   return <svg viewBox="0 0 240 300" className={`pack ${className}`} role="img" aria-label={`${product.title} — illustrative ${back ? 'back' : 'front'} packaging`}>
     <defs><linearGradient id={`${id}body`}><stop stopColor={body}/><stop offset=".3" stopColor={light ? '#fff' : '#45464a'}/><stop offset=".7" stopColor={body}/><stop offset="1" stopColor={light ? '#c0c5c5' : '#101113'}/></linearGradient><linearGradient id={`${id}lid`} x2="0" y2="1"><stop stopColor="#404145"/><stop offset=".4" stopColor="#18191c"/><stop offset="1" stopColor="#363639"/></linearGradient><linearGradient id={`${id}label`}><stop stopColor={color}/><stop offset=".45" stopColor={gold ? '#d1b574' : color}/><stop offset="1" stopColor={gold ? '#876c34' : color}/></linearGradient><filter id={`${id}shadow`}><feGaussianBlur stdDeviation="6"/></filter></defs>
     <ellipse cx="121" cy="282" rx="77" ry="8" fill="#000" opacity=".16" filter={`url(#${id}shadow)`}/>

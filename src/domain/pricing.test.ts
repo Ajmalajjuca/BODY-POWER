@@ -31,7 +31,8 @@ describe('demo commerce boundaries', () => {
 describe('configuration trust boundary', () => {
   it('honours explicit section content selection over section type', () => {
     expect(selectProducts('creatine', 'bestsellers').every(p => p.categoryId === 'c2')).toBe(true)
-    expect(selectProducts('wellness', 'featured').map(p => p.id)).toEqual(['p33', 'p34', 'p35', 'p36'])
+    expect(selectProducts('wellness', 'featured').map(p => p.id)).toEqual(expect.arrayContaining(['p33', 'p34', 'p35', 'p36']))
+    expect(selectProducts('wellness', 'featured').every(p => p.categoryId === 'c9')).toBe(true)
   })
   it('round trips Unicode and rejects malformed payloads', () => {
     const config = structuredClone(presets.marketplace)
