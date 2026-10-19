@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { SlidersHorizontal, Search, Grid2X2, List, X, ArrowUpRight } from 'lucide-react'
-import { brands, categories, products, money } from '../data/catalog'
+import { brands, categories, categoryProduct, hero, products, money } from '../data/catalog'
 import { ProductCard } from '../components/ProductCard'
 import { BrandLogo } from '../components/BrandLogo'
 import { Empty, IconButton, Modal } from '../components/ui'
-import { useDesign } from '../state/store'
+import { usePageVersion } from '../state/versions'
 export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
   const { handle } = useParams(),
     [params, setParams] = useSearchParams(),
     [filters, setFilters] = useState(false),
-    [list, setList] = useState(false)
-  const config = useDesign((s) => s.config)
+    [list, setList] = useState(false),
+    version = usePageVersion('shop')
+  const config = { card: 'detailed' }
   const catalogMax = Math.ceil(Math.max(...products.map((p) => p.basePrice)) / 10000) * 100
   const category = !brandPage && handle ? categories.find((c) => c.handle === handle) : undefined
   const brand = brandPage && handle ? brands.find((b) => b.id === handle) : undefined
@@ -126,8 +127,176 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
       </fieldset>
     </>
   )
+  const title = category?.name ?? brand?.name
+  const intro = category
+    ? `${category.tagline}. Every ${category.name.toLowerCase()} we stock, from the brands you know.`
+    : 'Supplements from the brands you know. Find what fits your routine.'
+  const searchBox = (
+    <div className="catalog-search">
+      <Search size={16} />
+      <input
+        aria-label="Search collection"
+        placeholder="Search the collection"
+        value={query}
+        onChange={(e) => change('q', e.target.value)}
+      />
+      {query && (
+        <IconButton label="Clear search" onClick={() => change('q', '')}>
+          <X size={14} />
+        </IconButton>
+      )}
+    </div>
+  )
+  const sortSelect = (
+    <label className="sort-label">
+      Sort by{' '}
+      <select
+        aria-label="Sort products"
+        value={sort}
+        onChange={(e) => change('sort', e.target.value)}
+      >
+        <option value="featured">Featured</option>
+        <option value="bestsellers">Bestsellers</option>
+        <option value="price-low">Price: low to high</option>
+        <option value="price-high">Price: high to low</option>
+        <option value="name">Name: A–Z</option>
+      </select>
+    </label>
+  )
+  const count = (
+    <p className="result-count">
+      {filtered.length} {filtered.length === 1 ? 'product' : 'products'}
+    </p>
+  )
+  const results = (gridClass: string, card: string) =>
+    filtered.length ? (
+      <div className={`product-grid catalog-grid ${gridClass}`}>
+        {filtered.map((p) => (
+          <ProductCard key={p.id} product={p} style={card} />
+        ))}
+      </div>
+    ) : (
+      <div className="empty">
+        <h2>No matches, just yet.</h2>
+        <p>Try another search or adjust your filters.</p>
+        <button className="button" onClick={() => setParams({})}>
+          Reset filters
+        </button>
+      </div>
+    )
+  const brandChips = !brand && (
+    <div className="shop-chips" role="group" aria-label="Filter by brand">
+      <button aria-pressed={!selectedBrand} onClick={() => change('brand', '')}>
+        All brands
+      </button>
+      {brands.map((b) => (
+        <button
+          key={b.id}
+          aria-pressed={selectedBrand === b.id}
+          onClick={() => change('brand', b.id)}
+        >
+          {b.name}
+        </button>
+      ))}
+    </div>
+  )
+  const categoryLinks = (className: string, label: string) => (
+    <nav className={className} aria-label={label}>
+      <Link to="/shop" aria-current={!category ? 'page' : undefined}>
+        All
+      </Link>
+      {categories.map((c) => (
+        <Link
+          key={c.id}
+          to={`/collections/${c.handle}`}
+          aria-current={category?.id === c.id ? 'page' : undefined}
+        >
+          {c.name}
+        </Link>
+      ))}
+    </nav>
+  )
+  if (version === 2) {
+    const banner = category
+      ? categoryProduct(category.id).images[0]
+      : brand
+        ? products.find((p) => p.brandId === brand.id)!.images[0]
+        : hero[0].src
+    return (
+      <main className="container catalog-page shop-v2" data-layout="shop-v2">
+        <section className="shop-banner">
+          <div>
+            <span className="eyebrow">THE COLLECTION</span>
+            <h1>{title ?? 'Good fuel. Great possibilities.'}</h1>
+            <p>{intro}</p>
+          </div>
+          {brand ? (
+            <span className="shop-banner-logo">
+              <BrandLogo brand={brand} />
+            </span>
+          ) : (
+            <img src={banner} alt="" />
+          )}
+        </section>
+        {categoryLinks('shop-chips', 'Categories')}
+        {brandChips}
+        <div className="catalog-toolbar shop-toolbar">
+          {searchBox}
+          <label className="shop-price">
+            Up to {money(max * 100)}
+            <input
+              type="range"
+              aria-label="Maximum price"
+              min="300"
+              max={catalogMax}
+              step="100"
+              value={max}
+              onChange={(e) => change('max', e.target.value)}
+            />
+          </label>
+          {sortSelect}
+        </div>
+        {count}
+        {results('shop-grid-2', 'minimal')}
+      </main>
+    )
+  }
+  if (version === 3) {
+    return (
+      <main className="catalog-page shop-v3" data-layout="shop-v3">
+        <div className="container shop-v3-head">
+          <span className="eyebrow">SHOP · {filtered.length} PRODUCTS</span>
+          <h1>{title ?? 'All products'}</h1>
+        </div>
+        {categoryLinks('shop-tabs', 'Categories')}
+        <div className="container">
+          <div className="catalog-toolbar shop-toolbar">
+            {searchBox}
+            <label className="sort-label">
+              Brand{' '}
+              <select
+                aria-label="Filter by brand"
+                value={selectedBrand}
+                disabled={!!brand}
+                onChange={(e) => change('brand', e.target.value)}
+              >
+                <option value="">All brands</option>
+                {brands.map((b) => (
+                  <option key={b.id} value={b.id}>
+                    {b.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {sortSelect}
+          </div>
+          {results('shop-grid-4', 'compact')}
+        </div>
+      </main>
+    )
+  }
   return (
-    <main className="container catalog-page">
+    <main className="container catalog-page" data-layout="shop-v1">
       <div className="breadcrumb">
         <Link to="/">Home</Link>
         <span>/</span>
@@ -153,34 +322,8 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
               <SlidersHorizontal size={16} />
               Filters
             </button>
-            <div className="catalog-search">
-              <Search size={16} />
-              <input
-                aria-label="Search collection"
-                placeholder="Search the collection"
-                value={query}
-                onChange={(e) => change('q', e.target.value)}
-              />
-              {query && (
-                <IconButton label="Clear search" onClick={() => change('q', '')}>
-                  <X size={14} />
-                </IconButton>
-              )}
-            </div>
-            <label className="sort-label">
-              Sort by{' '}
-              <select
-                aria-label="Sort products"
-                value={sort}
-                onChange={(e) => change('sort', e.target.value)}
-              >
-                <option value="featured">Featured</option>
-                <option value="bestsellers">Bestsellers</option>
-                <option value="price-low">Price: low to high</option>
-                <option value="price-high">Price: high to low</option>
-                <option value="name">Name: A–Z</option>
-              </select>
-            </label>
+            {searchBox}
+            {sortSelect}
             <div className="view-switch">
               <IconButton label="Grid view" onClick={() => setList(false)} disabled={!list}>
                 <Grid2X2 size={17} />
@@ -190,27 +333,8 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
               </IconButton>
             </div>
           </div>
-          <p className="result-count">
-            {filtered.length} {filtered.length === 1 ? 'product' : 'products'}
-          </p>
-          {filtered.length ? (
-            <div
-              className={`product-grid catalog-grid ${list ? 'list-view' : ''}`}
-              style={{ '--columns': config.columns } as React.CSSProperties}
-            >
-              {filtered.map((p) => (
-                <ProductCard key={p.id} product={p} style={list ? 'compact' : config.card} />
-              ))}
-            </div>
-          ) : (
-            <div className="empty">
-              <h2>No matches, just yet.</h2>
-              <p>Try another search or adjust your filters.</p>
-              <button className="button" onClick={() => setParams({})}>
-                Reset filters
-              </button>
-            </div>
-          )}
+          {count}
+          {results(list ? 'list-view' : '', list ? 'compact' : config.card)}
         </div>
       </div>
       {filters && (
@@ -224,18 +348,74 @@ export function Catalog({ brandPage = false }: { brandPage?: boolean }) {
     </main>
   )
 }
+const brandProducts = (id: string) => products.filter((p) => p.brandId === id)
+const productCount = (id: string) => {
+  const n = brandProducts(id).length
+  return `${n} ${n === 1 ? 'product' : 'products'}`
+}
 export function Brands() {
+  const version = usePageVersion('brands')
+  const intro = (
+    <div className="page-intro">
+      <span className="eyebrow">MANY BRANDS. ONE DESTINATION.</span>
+      <h1>
+        Good company.
+        <br />
+        Great nutrition.
+      </h1>
+      <p>The names athletes trust, from everyday essentials to imported favourites.</p>
+    </div>
+  )
+  if (version === 2)
+    return (
+      <main className="container standard-page brands-v2" data-layout="brands-v2">
+        {intro}
+        <div className="brand-rows">
+          {brands.map((b) => (
+            <Link key={b.id} to={`/brands/${b.id}`} className="brand-row">
+              <span className="brand-monogram">
+                <BrandLogo brand={b} />
+              </span>
+              <span className="brand-row-copy">
+                <h2>{b.name}</h2>
+                <p>{productCount(b.id)}</p>
+                <span className="text-link">
+                  Explore the brand <ArrowUpRight size={16} />
+                </span>
+              </span>
+              <span className="brand-row-products">
+                {brandProducts(b.id)
+                  .slice(0, 3)
+                  .map((p) => (
+                    <img key={p.id} src={p.images[0]} alt={p.title} loading="lazy" />
+                  ))}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </main>
+    )
+  if (version === 3)
+    return (
+      <main className="container standard-page brands-v3" data-layout="brands-v3">
+        <div className="page-intro">
+          <span className="eyebrow">{brands.length} BRANDS</span>
+          <h1>The brand wall.</h1>
+          <p>Seven names athletes trust. Pick one to see everything we stock.</p>
+        </div>
+        <div className="brand-wall">
+          {brands.map((b) => (
+            <Link key={b.id} to={`/brands/${b.id}`}>
+              <BrandLogo brand={b} />
+              <span>{productCount(b.id)}</span>
+            </Link>
+          ))}
+        </div>
+      </main>
+    )
   return (
-    <main className="container standard-page">
-      <div className="page-intro">
-        <span className="eyebrow">MANY BRANDS. ONE DESTINATION.</span>
-        <h1>
-          Good company.
-          <br />
-          Great nutrition.
-        </h1>
-        <p>The names athletes trust, from everyday essentials to imported favourites.</p>
-      </div>
+    <main className="container standard-page" data-layout="brands-v1">
+      {intro}
       <div className="brands-page-grid">
         {brands.map((b) => (
           <Link key={b.id} to={`/brands/${b.id}`}>
@@ -243,10 +423,7 @@ export function Brands() {
               <BrandLogo brand={b} />
             </span>
             <h2>{b.name}</h2>
-            <p>
-              {products.filter((p) => p.brandId === b.id).length}{' '}
-              {products.filter((p) => p.brandId === b.id).length === 1 ? 'product' : 'products'}
-            </p>
+            <p>{productCount(b.id)}</p>
             <span>
               Explore the brand <ArrowUpRight size={18} />
             </span>

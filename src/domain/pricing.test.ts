@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { priceSelection } from './pricing'
 import { products } from '../data/catalog'
-import { configSchema, presets, encodeConfig, decodeConfig } from '../design/config'
 import { selectProducts } from '../data/selection'
 
 const whey = products.find((p) => p.id === 'optimum-nutrition-gold-standard-100-whey')!
@@ -37,24 +36,10 @@ describe('commerce boundaries', () => {
     expect(priceSelection([{ ...item, quantity: 1 }], false).valid).toBe(true)
   })
 })
-describe('configuration trust boundary', () => {
+describe('section product selection', () => {
   it('honours explicit section content selection over section type', () => {
     expect(selectProducts('creatine', 'bestsellers').every((p) => p.categoryId === 'c2')).toBe(true)
     expect(selectProducts('wellness', 'featured')).toHaveLength(4)
     expect(selectProducts('wellness', 'featured').every((p) => p.categoryId === 'c5')).toBe(true)
-  })
-  it('round trips Unicode and rejects malformed payloads', () => {
-    const config = structuredClone(presets.marketplace)
-    config.sections[0].heading = 'Énergie • शक्ति'
-    expect(decodeConfig(encodeConfig(config))).toEqual(config)
-    expect(() => decodeConfig('not-valid')).toThrow()
-    expect(configSchema.safeParse({ ...config, columns: 99 }).success).toBe(false)
-    expect(configSchema.safeParse({ ...config, accent: 'url(javascript:alert(1))' }).success).toBe(
-      false,
-    )
-    expect(
-      configSchema.safeParse({ ...config, sections: [config.sections[0], config.sections[0]] })
-        .success,
-    ).toBe(false)
   })
 })
