@@ -13,7 +13,7 @@ import { Information } from './pages/Information'
 import { Empty, IconButton } from './components/ui'
 import { useUI } from './state/store'
 import { VersionFrame } from './design/VersionFrame'
-import { pageForPath, parseVersion, usePageVersion, useVersions } from './state/versions'
+import { applyVersionParam, pageForPath, usePageVersion } from './state/versions'
 function Storefront() {
   const ui = useUI(),
     location = useLocation(),
@@ -21,16 +21,11 @@ function Storefront() {
     page = pageForPath(location.pathname),
     version = usePageVersion(page ?? 'home'),
     cartVersion = usePageVersion('cart')
-  // `?v=2` on any page selects and remembers that page's version, then drops out of the URL.
+  // `?v=` on in-app navigation; first loads are handled in main.tsx before render.
   useEffect(() => {
-    const params = new URLSearchParams(location.search)
-    if (!params.has('v')) return
-    const chosen = parseVersion(params.get('v'))
-    if (chosen && page) useVersions.getState().choose(page, chosen)
-    params.delete('v')
-    const rest = params.toString()
-    navigate(location.pathname + (rest ? `?${rest}` : '') + location.hash, { replace: true })
-  }, [location.search, location.pathname, location.hash, page, navigate])
+    const search = applyVersionParam(location.pathname, location.search)
+    if (search !== null) navigate(location.pathname + search + location.hash, { replace: true })
+  }, [location.search, location.pathname, location.hash, navigate])
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.title = `${location.pathname === '/' ? 'Find your everyday power' : location.pathname.split('/').filter(Boolean).at(-1)?.replaceAll('-', ' ')} · Body Power Nutrition`

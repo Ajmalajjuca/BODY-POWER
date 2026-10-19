@@ -16,12 +16,12 @@ The catalog holds 25 real products across 6 categories and 7 brands, captured fr
 
 ## Checks
 
-Run `npm test`, `npm run lint` and `npm run build`. With the dev server at `http://localhost:5173` and Chrome installed at `/usr/bin/google-chrome`, run `node scripts/browser-check.mjs`. It checks eight routes at five widths, product images and cart workflows. `node scripts/versions-check.mjs --extra --nav` checks every page in all three versions at five widths, plus the version menus, `?v=` links and remembered choices. Screenshots and report are saved to `/tmp/bpn-*`.
+Run `npm test`, `npm run lint` and `npm run build`. With the dev server at `http://localhost:5173` and Chrome installed at `/usr/bin/google-chrome`, run `node scripts/browser-check.mjs`. It checks eight routes at five widths, product images and cart workflows. `node scripts/versions-check.mjs --extra --nav --review` checks every page in all three versions at five widths, plus the version menus, `?v=` links, remembered choices, the cart flow in each version and contrast and layout regressions. Screenshots and report are saved to `/tmp/bpn-*`.
 
 ## Deployment and limitations
 
 Build output is in `dist/`. Configure static hosting to serve `index.html` for application routes. `npm run preview` serves the production build locally.
 
-This prototype has no backend, authentication, checkout, payments, email delivery or live Shopify integration. Checkout shows a coming-soon notice and the newsletter and contact forms send nothing. Prices and availability are a captured snapshot, and product photos and descriptions belong to their brands and source retailers: license or replace them before a public launch. Cart and designs persist in this browser only; export JSON for a portable copy. Selection summaries do not constitute client approval.
+This prototype has no backend, authentication, checkout, payments, email delivery or live Shopify integration. Checkout shows a coming-soon notice and the newsletter and contact forms send nothing. Prices and availability are a captured snapshot, and product photos and descriptions belong to their brands and source retailers: license or replace them before a public launch. The bag and each page's chosen version persist in this browser only.
 
 The build reports a main JavaScript chunk above 500 KB. See [PLAN.md](PLAN.md) for architecture and Shopify handoff guidance.

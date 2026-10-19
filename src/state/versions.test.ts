@@ -14,7 +14,7 @@ vi.hoisted(() => {
     configurable: true,
   })
 })
-import { pageForPath, pageKeys, parseVersion, useVersions } from './versions'
+import { applyVersionParam, pageForPath, pageKeys, parseVersion, useVersions } from './versions'
 
 beforeEach(() => {
   useVersions.setState({
@@ -71,5 +71,17 @@ describe('page versions', () => {
       faq: 1,
     })
     expect(merge(undefined, useVersions.getState()).versions.home).toBe(1)
+  })
+  it('applies a ?v= link before render and strips only v', () => {
+    expect(applyVersionParam('/shop', '?q=whey&v=3')).toBe('?q=whey')
+    expect(useVersions.getState().versions.shop).toBe(3)
+    expect(applyVersionParam('/about', '?v=2')).toBe('')
+    expect(useVersions.getState().versions.about).toBe(2)
+  })
+  it('ignores invalid ?v= values and unknown pages but still strips v', () => {
+    for (const bad of ['?v=7', '?v=abc', '?v=']) expect(applyVersionParam('/cart', bad)).toBe('')
+    expect(applyVersionParam('/nope', '?v=2')).toBe('')
+    expect(useVersions.getState().versions.cart).toBe(1)
+    expect(applyVersionParam('/shop', '?q=whey')).toBeNull()
   })
 })

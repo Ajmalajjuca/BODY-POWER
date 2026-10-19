@@ -41,6 +41,7 @@ async function freshPage(width = 1440) {
   const context = await browser.newContext({ viewport: { width, height: 900 } })
   const page = await context.newPage()
   page.setDefaultTimeout(5000)
+  page.setDefaultNavigationTimeout(30000)
   page.errors = []
   page.on('pageerror', (e) => page.errors.push(e.message))
   return page
@@ -127,6 +128,132 @@ if (args.includes('--extra')) {
     fail(`/shop?v=abc should end at /shop, got ${fresh.url()}`)
   if (!(await fresh.locator('.page-frame.version-1').count())) fail('/shop?v=abc should stay V1')
   console.log('checked extra')
+}
+
+if (args.includes('--review')) {
+  const check = async (label, fn) => {
+    try {
+      await fn()
+    } catch (e) {
+      fail(`review: ${label}: ${e.message.split('\n')[0]}`)
+    }
+  }
+  const ratio = (fg, bg) => {
+    const lum = (c) => {
+      const [r, g, b] = c
+        .match(/\d+(\.\d+)?/g)
+        .slice(0, 3)
+        .map(Number)
+      const ch = (v) => ((v /= 255) <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)
+      return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b)
+    }
+    const [a, b] = [lum(fg), lum(bg)].sort((x, y) => y - x)
+    return (a + 0.05) / (b + 0.05)
+  }
+  await check('V3 product card brand label meets AA', async () => {
+    const page = await freshPage()
+    await page.goto(`${BASE}/shop?v=3`)
+    await settle(page)
+    const { fg, bg } = await page.evaluate(() => {
+      const el = document.querySelector('.product-brand')
+      return {
+        fg: getComputedStyle(el).color,
+        bg: getComputedStyle(el.closest('.product-card')).backgroundColor,
+      }
+    })
+    if (ratio(fg, bg) < 4.5) throw new Error(`${ratio(fg, bg).toFixed(2)}:1 (${fg} on ${bg})`)
+  })
+  for (const [route, width] of [
+    ['/build-your-combo', 1440],
+    ['/build-your-combo', 390],
+    [routes.product, 768],
+  ])
+    await check(`fixed bar leaves the footer visible on ${route} V3 @${width}`, async () => {
+      const page = await freshPage(width)
+      await page.goto(`${BASE}${route}?v=3`)
+      await settle(page)
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+      await page.waitForTimeout(150)
+      const { bar, text } = await page.evaluate(() => {
+        const bar = document.querySelector('.build-v3-bar, .product-sticky-bar')
+        const last = document.querySelector('.footer-bottom')
+        return { bar: bar.getBoundingClientRect().top, text: last.getBoundingClientRect().bottom }
+      })
+      if (bar < text) throw new Error(`bar top ${bar} covers footer bottom ${text}`)
+    })
+  await check('Cart V3 puts the total band above the lines', async () => {
+    const page = await freshPage()
+    await addToBag(page)
+    await page.goto(`${BASE}/cart?v=3`)
+    await settle(page)
+    const { summary, lines } = await page.evaluate(() => ({
+      summary: document.querySelector('.cart-summary').getBoundingClientRect().top,
+      lines: document.querySelector('.cart-lines').getBoundingClientRect().top,
+    }))
+    if (summary >= lines) throw new Error(`summary at ${summary}, lines at ${lines}`)
+  })
+  await check('Cart V3 band stays readable on phones (summary first, no overlap)', async () => {
+    const page = await freshPage(390)
+    await addToBag(page)
+    await page.goto(`${BASE}/cart?v=3`)
+    await settle(page)
+    const r = await page.evaluate(() => {
+      const box = (s) => document.querySelector(s).getBoundingClientRect()
+      return {
+        summary: box('.cart-summary').top,
+        lines: box('.cart-lines').top,
+        h2: box('.cart-summary h2'),
+        total: box('.cart-summary .cart-total'),
+      }
+    })
+    if (r.summary >= r.lines) throw new Error(`summary at ${r.summary}, lines at ${r.lines}`)
+    const overlap = !(r.h2.bottom <= r.total.top || r.total.bottom <= r.h2.top)
+    if (overlap) throw new Error('summary heading overlaps the total')
+  })
+  for (const v of [1, 2, 3])
+    await check(`cart add, persist, drawer and remove in V${v}`, async () => {
+      const page = await freshPage()
+      await page.goto(`${BASE}/cart?v=${v}`)
+      await settle(page)
+      await page.goto(`${BASE}${routes.product}`)
+      await page.getByRole('button', { name: 'Add to bag' }).click()
+      const drawer = page.getByRole('dialog')
+      await drawer.waitFor()
+      const frame = await drawer.evaluate((el) => el.closest('.theme-frame').className)
+      if (!frame.includes(`version-${v}`)) throw new Error(`drawer frame is "${frame}"`)
+      await page.keyboard.press('Escape')
+      await page.goto(`${BASE}/cart`)
+      await page.reload()
+      await page.locator(`.page-frame.version-${v}`).waitFor()
+      await page.getByRole('button', { name: 'Remove Gold Standard 100% Whey' }).click()
+      await page.getByText('Room for good things.').waitFor()
+    })
+  await check('?v= link paints the chosen version from the first frame', async () => {
+    const page = await freshPage()
+    await page.addInitScript(() => {
+      window.__frames = []
+      new MutationObserver(() => {
+        const f = document.querySelector('.page-frame')
+        if (f && window.__frames.at(-1) !== f.className) window.__frames.push(f.className)
+      }).observe(document, { subtree: true, childList: true, attributes: true })
+    })
+    await page.goto(`${BASE}/about?v=3`)
+    await settle(page)
+    const frames = await page.evaluate(() => window.__frames)
+    if (!frames[0]?.includes('version-3')) throw new Error(`first frames: ${frames.join(' → ')}`)
+  })
+  await check('dark page fills a tall viewport (no light strip)', async () => {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 1600 } })
+    const page = await context.newPage()
+    await page.goto(`${BASE}/products/nope?v=3`)
+    await settle(page)
+    const bottom = await page.evaluate(
+      () => document.querySelector('.page-frame').getBoundingClientRect().bottom,
+    )
+    if (bottom < 1599) throw new Error(`page frame ends at ${bottom}px of 1600`)
+    await context.close()
+  })
+  console.log('checked review')
 }
 
 if (args.includes('--nav')) {

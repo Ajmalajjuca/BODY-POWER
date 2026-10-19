@@ -62,3 +62,15 @@ export const useVersions = create<VersionState>()(
   ),
 )
 export const usePageVersion = (page: PageKey) => useVersions((s) => s.versions[page])
+// Applies a `?v=` link to the store and returns the search string without `v`, or null when the
+// URL has no `v`. main.tsx runs this before the first render so shared links paint correctly.
+export function applyVersionParam(pathname: string, search: string): string | null {
+  const params = new URLSearchParams(search)
+  if (!params.has('v')) return null
+  const page = pageForPath(pathname),
+    version = parseVersion(params.get('v'))
+  if (page && version) useVersions.getState().choose(page, version)
+  params.delete('v')
+  const rest = params.toString()
+  return rest ? `?${rest}` : ''
+}

@@ -1,8 +1,8 @@
 {
-  "lastQuery": "<task-notification>\n<task-id>bn3k6jadw</task-id>\n<tool-use-id>toolu_01AswYenKfpHd6C8AsfWyRXe</tool-use-id>\n<output-file>/tmp/claude-1000/-home-ajmal-p-Body-Power-Nutrition/dc154388-702a-4e1f-9d2c-87caa6ade318/tasks/bn3k6jadw.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run the full verification gate\" completed (exit code 0)</summary>\n</task-notification>",
+  "lastQuery": "<task-notification>\n<task-id>b5xca31yi</task-id>\n<tool-use-id>toolu_01Bem1WxFYtRjFoV3CDmymWM</tool-use-id>\n<output-file>/tmp/claude-1000/-home-ajmal-p-Body-Power-Nutrition/dc154388-702a-4e1f-9d2c-87caa6ade318/tasks/b5xca31yi.output</output-file>\n<status>completed</status>\n<summary>Background command \"Update README; rerun the full gate after fixes\" completed (exit code 0)</summary>\n</task-notification>",
   "perAgentQuery": {},
-  "graftReads": 0,
-  "sourceReads": 54,
+  "graftReads": 1,
+  "sourceReads": 62,
   "savedTokens": 0,
   "injectedPointers": [
     "scripts/import-suppx.py:L103-L149",
@@ -13,8 +13,11 @@
     "scripts/browser-check.mjs"
   ],
   "nudges": 2,
-  "inputCostMicros": 14822937,
-  "inputTokensBilled": 27200117,
-  "lastBillingUuid": "bb005a91-2bdb-4842-a536-d05ffce2ddd7",
-  "host": "claude-code"
+  "inputCostMicros": 17875344,
+  "inputTokensBilled": 33166135,
+  "lastBillingUuid": "01db21cf-af3e-42e6-8d11-cdefa629fab1",
+  "host": "claude-code",
+  "turnUsedGraft": false,
+  "graftTurns": 1,
+  "lastTallyUuid": "01db21cf-af3e-42e6-8d11-cdefa629fab1"
 }
