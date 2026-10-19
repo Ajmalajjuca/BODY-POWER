@@ -4,6 +4,7 @@ import { Search, ShoppingBag, Menu, X, ChevronDown, ArrowUpRight, Layers3 } from
 import { categories, products, brands } from '../data/catalog'
 import { useCart, useUI } from '../state/store'
 import { IconButton } from './ui'
+import { LogoMark } from './LogoMark'
 export function Header({ centered = false }: { centered?: boolean }) {
   const [query, setQuery] = useState(''),
     [menu, setMenu] = useState(false),
@@ -38,10 +39,7 @@ export function Header({ centered = false }: { centered?: boolean }) {
             {menu ? <X /> : <Menu />}
           </button>
           <Link className="logo" to="/" aria-label="Body Power Nutrition home">
-            <span className="logo-mark">
-              b<span>p</span>
-              <i />
-            </span>
+            <LogoMark />
             <span className="logo-words">
               BODY POWER<small>N U T R I T I O N</small>
             </span>
