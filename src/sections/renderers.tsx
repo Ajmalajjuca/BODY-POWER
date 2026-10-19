@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import {
   ArrowUpRight,
   ArrowRight,
@@ -10,22 +10,17 @@ import {
   Heart,
   Zap,
   MoveUpRight,
-} from "lucide-react";
-import { useState } from "react";
-import {
-  brands,
-  categories,
-  products,
-  combos,
-} from "../data/catalog";
-import { selectProducts } from "../data/selection";
-import type { DesignConfig, Section } from "../design/config";
-import { Pack } from "../components/Pack";
-import { ProductCard } from "../components/ProductCard";
-import { ComboCard } from "../pages/Combos";
+} from 'lucide-react'
+import { useState } from 'react'
+import { brands, categories, products, combos } from '../data/catalog'
+import { selectProducts } from '../data/selection'
+import type { DesignConfig, Section } from '../design/config'
+import { Pack } from '../components/Pack'
+import { ProductCard } from '../components/ProductCard'
+import { ComboCard } from '../pages/Combos'
 export interface SectionProps {
-  section: Section;
-  config: DesignConfig;
+  section: Section
+  config: DesignConfig
 }
 export function Hero({ section, config }: SectionProps) {
   return (
@@ -37,7 +32,7 @@ export function Hero({ section, config }: SectionProps) {
             <span /> FUEL YOUR EVERYDAY EXTRAORDINARY
           </span>
           <h1>
-            {section.heading.split("\n").map((line, i) => (
+            {section.heading.split('\n').map((line, i) => (
               <span key={i}>{line}</span>
             ))}
           </h1>
@@ -114,22 +109,18 @@ export function Hero({ section, config }: SectionProps) {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 export function Trust() {
   return (
     <div className="trust-row">
       {[
-        [PackageCheck, "Thoughtfully curated", "Recognizable nutrition brands"],
-        [Layers3, "Made to work together", "Mix brands in your own combo"],
-        [
-          SlidersHorizontal,
-          "Find your fit",
-          "Sizes and flavours for your routine",
-        ],
-        [Sparkles, "Explore with confidence", "Transparent, demo-only pricing"],
+        [PackageCheck, 'Thoughtfully curated', 'Recognizable nutrition brands'],
+        [Layers3, 'Made to work together', 'Mix brands in your own combo'],
+        [SlidersHorizontal, 'Find your fit', 'Sizes and flavours for your routine'],
+        [Sparkles, 'Explore with confidence', 'Transparent, demo-only pricing'],
       ].map(([Icon, title, detail]) => {
-        const I = Icon as typeof PackageCheck;
+        const I = Icon as typeof PackageCheck
         return (
           <div key={String(title)}>
             <I size={25} />
@@ -138,27 +129,20 @@ export function Trust() {
               <small>{String(detail)}</small>
             </span>
           </div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 export function CategoryGrid({ config, section }: SectionProps) {
-  const shown =
-    config.layout === "performance"
-      ? categories.slice(0, 4)
-      : categories.slice(0, 6);
+  const shown = config.layout === 'performance' ? categories.slice(0, 4) : categories.slice(0, 6)
   return (
     <div
-      className={`category-grid ${config.layout === "performance" ? "category-large" : ""}`}
-      style={{ "--section-columns": section.columns } as React.CSSProperties}
+      className={`category-grid ${config.layout === 'performance' ? 'category-large' : ''}`}
+      style={{ '--section-columns': section.columns } as React.CSSProperties}
     >
       {shown.map((c, i) => (
-        <Link
-          className="category-card"
-          to={`/collections/${c.handle}`}
-          key={c.id}
-        >
+        <Link className="category-card" to={`/collections/${c.handle}`} key={c.id}>
           <div className={`category-art cat-${i}`}>
             <Pack product={products[i * 4]} />
             <span className="category-number">0{i + 1}</span>
@@ -169,31 +153,27 @@ export function CategoryGrid({ config, section }: SectionProps) {
           </div>
           <small>
             {i === 0
-              ? "Make every scoop count"
+              ? 'Make every scoop count'
               : [
-                  "",
-                  "Your daily essential",
-                  "Find your focus",
-                  "More in every serving",
-                  "For the in-between",
-                  "Goodness on the go",
+                  '',
+                  'Your daily essential',
+                  'Find your focus',
+                  'More in every serving',
+                  'For the in-between',
+                  'Goodness on the go',
                 ][i]}
           </small>
         </Link>
       ))}
     </div>
-  );
+  )
 }
 export function BrandGrid() {
   return (
     <div className="brand-grid">
       {brands.map((b, i) => (
-        <Link
-          className={`brand-wordmark brand-${i}`}
-          to={`/brands/${b.id}`}
-          key={b.id}
-        >
-          {b.id === "on" && <b className="on-symbol">ON</b>}
+        <Link className={`brand-wordmark brand-${i}`} to={`/brands/${b.id}`} key={b.id}>
+          {b.id === 'on' && <b className="on-symbol">ON</b>}
           <strong>{b.name}</strong>
           <span>
             Explore brand <ArrowUpRight size={12} />
@@ -201,16 +181,16 @@ export function BrandGrid() {
         </Link>
       ))}
     </div>
-  );
+  )
 }
 export function ProductSection({ section, config }: SectionProps) {
-  const list = selectProducts(section.selection, section.type);
+  const list = selectProducts(section.selection, section.type)
   return (
     <div
       className="product-grid"
       style={
         {
-          "--columns": section.columns || config.columns,
+          '--columns': section.columns || config.columns,
         } as React.CSSProperties
       }
     >
@@ -218,11 +198,11 @@ export function ProductSection({ section, config }: SectionProps) {
         <ProductCard
           key={p.id}
           product={p}
-          style={section.card === "inherit" ? config.card : section.card}
+          style={section.card === 'inherit' ? config.card : section.card}
         />
       ))}
     </div>
-  );
+  )
 }
 export function ComboPromo({ section }: SectionProps) {
   return (
@@ -255,7 +235,7 @@ export function ComboPromo({ section }: SectionProps) {
         <small>2 items: 5% · 3–8 items: 10% example savings</small>
       </div>
     </div>
-  );
+  )
 }
 export function Deals() {
   return (
@@ -289,51 +269,51 @@ export function Deals() {
         <Layers3 className="deal-icon" strokeWidth={0.6} />
       </Link>
     </div>
-  );
+  )
 }
 export function Goals() {
   return (
     <div className="goals-grid">
       {[
-        [Dumbbell, "Build your routine", "whey-protein"],
-        [Zap, "Find your focus", "pre-workout"],
-        [Heart, "Everyday wellness", "wellness"],
-        [Layers3, "Keep it balanced", "amino-acids"],
+        [Dumbbell, 'Build your routine', 'whey-protein'],
+        [Zap, 'Find your focus', 'pre-workout'],
+        [Heart, 'Everyday wellness', 'wellness'],
+        [Layers3, 'Keep it balanced', 'amino-acids'],
       ].map(([Icon, title, handle]) => {
-        const I = Icon as typeof Dumbbell;
+        const I = Icon as typeof Dumbbell
         return (
           <Link to={`/collections/${handle}`} key={String(title)}>
             <I size={30} strokeWidth={1.2} />
             <h3>{String(title)}</h3>
             <MoveUpRight size={19} />
           </Link>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 const faqs = [
   [
-    "Is this a real store?",
-    "This is an interactive design prototype. SuppX products show captured prices and availability; other listings and combo offers are illustrative. Orders and payments are not accepted.",
+    'Is this a real store?',
+    'This is an interactive design prototype. SuppX products show captured prices and availability; other listings and combo offers are illustrative. Orders and payments are not accepted.',
   ],
   [
-    "How do demo combo savings work?",
-    "Select 2 eligible units for a 5% example discount, or 3–8 for 10%. Savings apply only to grouped combo items and recalculate when quantities change.",
+    'How do demo combo savings work?',
+    'Select 2 eligible units for a 5% example discount, or 3–8 for 10%. Savings apply only to grouped combo items and recalculate when quantities change.',
   ],
   [
-    "Are these actual product images?",
-    "Imported SuppX listings use locally saved product images from their source pages. Other listings use representative packaging illustrations. Each imported detail page links to its source and capture date.",
+    'Are these actual product images?',
+    'Imported SuppX listings use locally saved product images from their source pages. Other listings use representative packaging illustrations. Each imported detail page links to its source and capture date.',
   ],
   [
-    "Can I save my design?",
-    "Yes. Open Design Studio, customise your layout and save a named version. Export a JSON file or copy a share link. Browser-local versions remain on this device.",
+    'Can I save my design?',
+    'Yes. Open Design Studio, customise your layout and save a named version. Export a JSON file or copy a share link. Browser-local versions remain on this device.',
   ],
   [
-    "How do I choose a supplement?",
-    "Review manufacturer ingredient and allergen information. For individual dietary or health needs, ask a qualified professional; this demo provides no personalised health advice.",
+    'How do I choose a supplement?',
+    'Review manufacturer ingredient and allergen information. For individual dietary or health needs, ask a qualified professional; this demo provides no personalised health advice.',
   ],
-];
+]
 export function FAQSection() {
   return (
     <div className="faq-list">
@@ -347,10 +327,10 @@ export function FAQSection() {
         </details>
       ))}
     </div>
-  );
+  )
 }
 export function Newsletter({ section }: SectionProps) {
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(false)
   return (
     <div className="newsletter">
       <div>
@@ -360,40 +340,33 @@ export function Newsletter({ section }: SectionProps) {
       </div>
       <form
         onSubmit={(e) => {
-          e.preventDefault();
-          setDone(true);
+          e.preventDefault()
+          setDone(true)
         }}
       >
         <label htmlFor={`email-${section.id}`}>Your email address</label>
         <div>
-          <input
-            id={`email-${section.id}`}
-            type="email"
-            placeholder="you@example.com"
-            required
-          />
+          <input id={`email-${section.id}`} type="email" placeholder="you@example.com" required />
           <button aria-label="Preview newsletter subscription">
             <ArrowRight />
           </button>
         </div>
         <small role="status">
           {done
-            ? "Demo complete. Your email has not been sent or subscribed."
-            : "Demo form only. No emails are collected or sent."}
+            ? 'Demo complete. Your email has not been sent or subscribed.'
+            : 'Demo form only. No emails are collected or sent.'}
         </small>
       </form>
     </div>
-  );
+  )
 }
 export function Spotlight({ section }: SectionProps) {
-  const p = selectProducts(section.selection, section.type)[0];
+  const p = selectProducts(section.selection, section.type)[0]
   return (
     <div className="spotlight">
       <div>
         <span className="eyebrow">IN THE SPOTLIGHT</span>
-        <h2>
-          {section.heading === "Product spotlight" ? p.title : section.heading}
-        </h2>
+        <h2>{section.heading === 'Product spotlight' ? p.title : section.heading}</h2>
         <p>{section.subheading || p.description}</p>
         <Link className="button" to={`/products/${p.handle}`}>
           Discover the details <ArrowUpRight size={18} />
@@ -401,7 +374,7 @@ export function Spotlight({ section }: SectionProps) {
       </div>
       <Pack product={p} />
     </div>
-  );
+  )
 }
 export function FeaturedCombos() {
   return (
@@ -410,22 +383,19 @@ export function FeaturedCombos() {
         <ComboCard key={combo.id} combo={combo} />
       ))}
     </div>
-  );
+  )
 }
 export function Banner({ section }: SectionProps) {
   return (
     <div className="promo-banner">
       <span className="eyebrow">YOUR EVERYDAY, ELEVATED</span>
       <h2>{section.heading}</h2>
-      <p>
-        {section.subheading ||
-          "A considered collection. A world of possibilities."}
-      </p>
+      <p>{section.subheading || 'A considered collection. A world of possibilities.'}</p>
       <Link className="button" to="/shop">
         Explore the collection <ArrowUpRight size={18} />
       </Link>
     </div>
-  );
+  )
 }
 export function Announcement({ section }: SectionProps) {
   return (
@@ -436,5 +406,5 @@ export function Announcement({ section }: SectionProps) {
         Explore <ArrowUpRight size={14} />
       </Link>
     </div>
-  );
+  )
 }

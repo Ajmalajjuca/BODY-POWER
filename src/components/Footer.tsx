@@ -1,3 +1,53 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-export function Footer() { return <footer><div className="container footer-grid"><div><Link className="footer-logo" to="/">BODY POWER<span>NUTRITION</span></Link><p>Good nutrition. Great possibilities.<br/>Find your everyday power.</p><span className="eyebrow">A storefront concept, made for you.</span></div><div><h4>Find your fuel</h4><Link to="/shop">Shop all products</Link><Link to="/brands">Explore brands</Link><Link to="/combos">Ready-made combos</Link><Link to="/build-your-combo">Build your combo <ArrowUpRight size={12}/></Link></div><div><h4>A little guidance</h4><Link to="/about">Our story</Link><Link to="/faq">Frequently asked questions</Link><Link to="/contact">Get in touch</Link><Link to="/cart">Your demo bag</Link></div><div><h4>Designed for possibility.</h4><p>Explore the collection and make it your own with Design Studio.</p><small>SuppX prices are captured snapshots. Combo offers are examples.<br/>No orders or payments are accepted.</small></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Body Power Nutrition · Storefront prototype</span><span>SuppX product imagery and illustrative demo artwork. Brand references do not imply affiliation.</span></div></footer> }
+export function Footer() {
+  return (
+    <footer>
+      <div className="container footer-grid">
+        <div>
+          <Link className="footer-logo" to="/">
+            BODY POWER<span>NUTRITION</span>
+          </Link>
+          <p>
+            Good nutrition. Great possibilities.
+            <br />
+            Find your everyday power.
+          </p>
+          <span className="eyebrow">A storefront concept, made for you.</span>
+        </div>
+        <div>
+          <h4>Find your fuel</h4>
+          <Link to="/shop">Shop all products</Link>
+          <Link to="/brands">Explore brands</Link>
+          <Link to="/combos">Ready-made combos</Link>
+          <Link to="/build-your-combo">
+            Build your combo <ArrowUpRight size={12} />
+          </Link>
+        </div>
+        <div>
+          <h4>A little guidance</h4>
+          <Link to="/about">Our story</Link>
+          <Link to="/faq">Frequently asked questions</Link>
+          <Link to="/contact">Get in touch</Link>
+          <Link to="/cart">Your demo bag</Link>
+        </div>
+        <div>
+          <h4>Designed for possibility.</h4>
+          <p>Explore the collection and make it your own with Design Studio.</p>
+          <small>
+            SuppX prices are captured snapshots. Combo offers are examples.
+            <br />
+            No orders or payments are accepted.
+          </small>
+        </div>
+      </div>
+      <div className="container footer-bottom">
+        <span>© {new Date().getFullYear()} Body Power Nutrition · Storefront prototype</span>
+        <span>
+          SuppX product imagery and illustrative demo artwork. Brand references do not imply
+          affiliation.
+        </span>
+      </div>
+    </footer>
+  )
+}

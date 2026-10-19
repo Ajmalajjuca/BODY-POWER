@@ -5,8 +5,154 @@ import { categories, products, brands } from '../data/catalog'
 import { useCart, useUI } from '../state/store'
 import { IconButton } from './ui'
 export function Header({ centered = false }: { centered?: boolean }) {
-  const [query, setQuery] = useState(''), [menu, setMenu] = useState(false), [mega, setMega] = useState(false)
-  const navigate = useNavigate(), lines = useCart(s => s.lines), setUI = useUI(s => s.set)
-  const results = query.trim() ? products.filter(p => `${p.title} ${brands.find(b => b.id === p.brandId)?.name}`.toLowerCase().includes(query.toLowerCase())).slice(0, 4) : []
-  return <><div className="announcement"><span>A little more power. A little more possibility.</span><Link to="/combos">Explore demo combos <ArrowUpRight size={13}/></Link></div><header className={`header ${centered ? 'header-centered' : ''}`}><div className="header-main container"><button className="mobile-menu icon-button" aria-label="Open navigation" onClick={() => setMenu(!menu)}>{menu ? <X/> : <Menu/>}</button><Link className="logo" to="/" aria-label="Body Power Nutrition home"><span className="logo-mark">b<span>p</span><i/></span><span className="logo-words">BODY POWER<small>N U T R I T I O N</small></span></Link><div className="search-wrap"><form onSubmit={e => { e.preventDefault(); navigate(`/shop?q=${encodeURIComponent(query)}`); setQuery('') }}><Search size={18}/><input aria-label="Search products" placeholder="Find your next everyday essential…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Escape') setQuery('') }}/><kbd>↵</kbd></form>{query && <div className="search-results"><strong>Discover your fuel</strong>{results.map(p => <Link key={p.id} onClick={() => setQuery('')} to={`/products/${p.handle}`}>{p.title}<ArrowUpRight size={14}/></Link>)}{!results.length && <p>No matching products.</p>}<Link to={`/shop?q=${encodeURIComponent(query)}`} onClick={() => setQuery('')}>View all results</Link></div>}</div><div className="header-actions"><Link className="header-combo" to="/build-your-combo"><Layers3 size={19}/><span>Build a combo</span></Link><button className="cart-trigger" onClick={() => setUI({ cart: true })} aria-label={`Open cart, ${lines.reduce((n, l) => n + l.quantity, 0)} items`}><ShoppingBag size={21}/><span>My bag</span><b>{lines.reduce((n, l) => n + l.quantity, 0)}</b></button></div></div><nav className={`nav container ${menu ? 'nav-open' : ''}`} aria-label="Main navigation"><div className="category-nav"><button onClick={() => setMega(!mega)} aria-expanded={mega}><Menu size={16}/> Shop by category <ChevronDown size={13}/></button>{mega && <div className="mega-menu"><div><span className="eyebrow">Find your essentials</span><h3>Good things start here.</h3><p>Explore nutrition for every routine.</p></div><div>{categories.map(c => <Link to={`/collections/${c.handle}`} key={c.id} onClick={() => { setMega(false); setMenu(false) }}>{c.name}<ArrowUpRight size={14}/></Link>)}</div></div>}</div><Link to="/shop" onClick={() => setMenu(false)}>Shop all</Link><Link to="/brands" onClick={() => setMenu(false)}>Our brands</Link><Link to="/collections/suppx-best-seller" onClick={() => setMenu(false)}>Bestsellers</Link><Link to="/combos" onClick={() => setMenu(false)}>Combos <span className="tiny-tag">SMART SAVINGS</span></Link><Link to="/about" onClick={() => setMenu(false)}>Our story</Link><Link className="nav-offer" to="/shop?sort=price-low" onClick={() => setMenu(false)}>The good stuff, for less <ArrowUpRight size={14}/></Link>{menu && <IconButton label="Close navigation" onClick={() => setMenu(false)}><X/></IconButton>}</nav></header></>
+  const [query, setQuery] = useState(''),
+    [menu, setMenu] = useState(false),
+    [mega, setMega] = useState(false)
+  const navigate = useNavigate(),
+    lines = useCart((s) => s.lines),
+    setUI = useUI((s) => s.set)
+  const results = query.trim()
+    ? products
+        .filter((p) =>
+          `${p.title} ${brands.find((b) => b.id === p.brandId)?.name}`
+            .toLowerCase()
+            .includes(query.toLowerCase()),
+        )
+        .slice(0, 4)
+    : []
+  return (
+    <>
+      <div className="announcement">
+        <span>A little more power. A little more possibility.</span>
+        <Link to="/combos">
+          Explore demo combos <ArrowUpRight size={13} />
+        </Link>
+      </div>
+      <header className={`header ${centered ? 'header-centered' : ''}`}>
+        <div className="header-main container">
+          <button
+            className="mobile-menu icon-button"
+            aria-label="Open navigation"
+            onClick={() => setMenu(!menu)}
+          >
+            {menu ? <X /> : <Menu />}
+          </button>
+          <Link className="logo" to="/" aria-label="Body Power Nutrition home">
+            <span className="logo-mark">
+              b<span>p</span>
+              <i />
+            </span>
+            <span className="logo-words">
+              BODY POWER<small>N U T R I T I O N</small>
+            </span>
+          </Link>
+          <div className="search-wrap">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault()
+                navigate(`/shop?q=${encodeURIComponent(query)}`)
+                setQuery('')
+              }}
+            >
+              <Search size={18} />
+              <input
+                aria-label="Search products"
+                placeholder="Find your next everyday essential…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') setQuery('')
+                }}
+              />
+              <kbd>↵</kbd>
+            </form>
+            {query && (
+              <div className="search-results">
+                <strong>Discover your fuel</strong>
+                {results.map((p) => (
+                  <Link key={p.id} onClick={() => setQuery('')} to={`/products/${p.handle}`}>
+                    {p.title}
+                    <ArrowUpRight size={14} />
+                  </Link>
+                ))}
+                {!results.length && <p>No matching products.</p>}
+                <Link to={`/shop?q=${encodeURIComponent(query)}`} onClick={() => setQuery('')}>
+                  View all results
+                </Link>
+              </div>
+            )}
+          </div>
+          <div className="header-actions">
+            <Link className="header-combo" to="/build-your-combo">
+              <Layers3 size={19} />
+              <span>Build a combo</span>
+            </Link>
+            <button
+              className="cart-trigger"
+              onClick={() => setUI({ cart: true })}
+              aria-label={`Open cart, ${lines.reduce((n, l) => n + l.quantity, 0)} items`}
+            >
+              <ShoppingBag size={21} />
+              <span>My bag</span>
+              <b>{lines.reduce((n, l) => n + l.quantity, 0)}</b>
+            </button>
+          </div>
+        </div>
+        <nav className={`nav container ${menu ? 'nav-open' : ''}`} aria-label="Main navigation">
+          <div className="category-nav">
+            <button onClick={() => setMega(!mega)} aria-expanded={mega}>
+              <Menu size={16} /> Shop by category <ChevronDown size={13} />
+            </button>
+            {mega && (
+              <div className="mega-menu">
+                <div>
+                  <span className="eyebrow">Find your essentials</span>
+                  <h3>Good things start here.</h3>
+                  <p>Explore nutrition for every routine.</p>
+                </div>
+                <div>
+                  {categories.map((c) => (
+                    <Link
+                      to={`/collections/${c.handle}`}
+                      key={c.id}
+                      onClick={() => {
+                        setMega(false)
+                        setMenu(false)
+                      }}
+                    >
+                      {c.name}
+                      <ArrowUpRight size={14} />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <Link to="/shop" onClick={() => setMenu(false)}>
+            Shop all
+          </Link>
+          <Link to="/brands" onClick={() => setMenu(false)}>
+            Our brands
+          </Link>
+          <Link to="/collections/suppx-best-seller" onClick={() => setMenu(false)}>
+            Bestsellers
+          </Link>
+          <Link to="/combos" onClick={() => setMenu(false)}>
+            Combos <span className="tiny-tag">SMART SAVINGS</span>
+          </Link>
+          <Link to="/about" onClick={() => setMenu(false)}>
+            Our story
+          </Link>
+          <Link className="nav-offer" to="/shop?sort=price-low" onClick={() => setMenu(false)}>
+            The good stuff, for less <ArrowUpRight size={14} />
+          </Link>
+          {menu && (
+            <IconButton label="Close navigation" onClick={() => setMenu(false)}>
+              <X />
+            </IconButton>
+          )}
+        </nav>
+      </header>
+    </>
+  )
 }

@@ -12,9 +12,12 @@ describe('demo commerce boundaries', () => {
     expect(priceSelection([item], false).discount).toBe(0)
   })
   it('rejects invalid quantities and unknown or unavailable variants', () => {
-    for (const quantity of [0, -1, 1.5, 100, NaN]) expect(priceSelection([{ ...item, quantity }], true).valid).toBe(false)
+    for (const quantity of [0, -1, 1.5, 100, NaN])
+      expect(priceSelection([{ ...item, quantity }], true).valid).toBe(false)
     expect(priceSelection([{ ...item, variantId: 'missing' }], true).valid).toBe(false)
-    expect(priceSelection([{ productId: 'p4', variantId: 'p4-v3', quantity: 2 }], true).valid).toBe(false)
+    expect(priceSelection([{ productId: 'p4', variantId: 'p4-v3', quantity: 2 }], true).valid).toBe(
+      false,
+    )
   })
   it('recalculates from current catalog prices', () => {
     const original = products[0].variants[0].price
@@ -30,9 +33,11 @@ describe('demo commerce boundaries', () => {
 })
 describe('configuration trust boundary', () => {
   it('honours explicit section content selection over section type', () => {
-    expect(selectProducts('creatine', 'bestsellers').every(p => p.categoryId === 'c2')).toBe(true)
-    expect(selectProducts('wellness', 'featured').map(p => p.id)).toEqual(expect.arrayContaining(['p33', 'p34', 'p35', 'p36']))
-    expect(selectProducts('wellness', 'featured').every(p => p.categoryId === 'c9')).toBe(true)
+    expect(selectProducts('creatine', 'bestsellers').every((p) => p.categoryId === 'c2')).toBe(true)
+    expect(selectProducts('wellness', 'featured').map((p) => p.id)).toEqual(
+      expect.arrayContaining(['p33', 'p34', 'p35', 'p36']),
+    )
+    expect(selectProducts('wellness', 'featured').every((p) => p.categoryId === 'c9')).toBe(true)
   })
   it('round trips Unicode and rejects malformed payloads', () => {
     const config = structuredClone(presets.marketplace)
@@ -40,7 +45,12 @@ describe('configuration trust boundary', () => {
     expect(decodeConfig(encodeConfig(config))).toEqual(config)
     expect(() => decodeConfig('not-valid')).toThrow()
     expect(configSchema.safeParse({ ...config, columns: 99 }).success).toBe(false)
-    expect(configSchema.safeParse({ ...config, accent: 'url(javascript:alert(1))' }).success).toBe(false)
-    expect(configSchema.safeParse({ ...config, sections: [config.sections[0], config.sections[0]] }).success).toBe(false)
+    expect(configSchema.safeParse({ ...config, accent: 'url(javascript:alert(1))' }).success).toBe(
+      false,
+    )
+    expect(
+      configSchema.safeParse({ ...config, sections: [config.sections[0], config.sections[0]] })
+        .success,
+    ).toBe(false)
   })
 })

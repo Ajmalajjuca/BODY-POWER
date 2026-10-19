@@ -1,0 +1,12 @@
+{
+  "lastQuery": "Format the codebase with Prettier",
+  "perAgentQuery": {},
+  "graftReads": 0,
+  "sourceReads": 0,
+  "savedTokens": 0,
+  "injectedPointers": [],
+  "nudges": 0,
+  "inputCostMicros": 776536,
+  "inputTokensBilled": 980187,
+  "lastBillingUuid": "15219f62-8302-4d7f-b919-e1e387e103bb"
+}
