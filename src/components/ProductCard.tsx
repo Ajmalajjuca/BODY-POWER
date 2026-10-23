@@ -22,7 +22,7 @@ export function ProductCard({ product, style = 'detailed' }: { product: Product;
       </Link>
       <div className="product-info">
         <span className="product-brand">{brand.name}</span>
-        <Link to={`/products/${product.handle}`}>
+        <Link className="product-title" title={product.title} to={`/products/${product.handle}`}>
           <h3>{product.title}</h3>
         </Link>
         <p className="variant-note">
@@ -34,15 +34,21 @@ export function ProductCard({ product, style = 'detailed' }: { product: Product;
             </>
           )}
         </p>
-        <ProductRating product={product} />
+        <div className="product-rating-slot">
+          <ProductRating product={product} />
+        </div>
         <div className="product-bottom">
           <div>
             <strong>{money(variant.price)}</strong>{' '}
-            {variant.compareAtPrice && <del>{money(variant.compareAtPrice)}</del>}
-            {variant.compareAtPrice && (
-              <small>Save {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}%</small>
+            {variant.compareAtPrice && variant.compareAtPrice > variant.price && (
+              <del>{money(variant.compareAtPrice)}</del>
             )}
           </div>
+          {variant.compareAtPrice && variant.compareAtPrice > variant.price && (
+            <span className="card-saving">
+              {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}% off
+            </span>
+          )}
         </div>
         <PurchaseActions product={product} />
       </div>

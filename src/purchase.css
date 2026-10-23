@@ -30,7 +30,7 @@
 }
 .purchase-actions {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: 16px;
 }
@@ -43,7 +43,8 @@
   width: 100%;
 }
 .purchase-actions .button-outline {
-  border-color: var(--accent);
+  border-color: transparent;
+  background: color-mix(in srgb, var(--surface-text) 5%, var(--surface));
   color: var(--surface-text);
 }
 .product-info {
@@ -58,8 +59,99 @@
   flex-direction: column;
 }
 .product-card:not(.card-compact) .purchase-actions {
+  margin-top: 0;
+  padding-top: 14px;
+}
+.product-card .product-info {
+  padding: 18px;
+}
+.product-card .product-title {
+  display: block;
+  margin: 7px 0 10px;
+}
+.product-card .product-title h3 {
+  margin: 0;
+  height: 2.8em;
+  min-height: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.product-card .variant-note {
+  height: 3em;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.product-rating-slot {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.product-rating-slot .product-rating {
+  margin: 0;
+}
+.product-card .product-bottom {
   margin-top: auto;
-  padding-top: 16px;
+  min-height: 48px;
+  padding-top: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.product-card .product-bottom > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+}
+.product-card .product-bottom strong {
+  font-size: 22px;
+  letter-spacing: -0.7px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+.card-saving {
+  color: var(--surface-text);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 650;
+  padding: 4px 6px;
+  white-space: nowrap;
+}
+.purchase-actions .card-buy {
+  gap: 10px;
+  font-weight: 600;
+}
+.purchase-actions .card-add {
+  font-weight: 600;
+  gap: 6px;
+}
+.purchase-actions .card-buy:hover:not(:disabled) svg {
+  transform: translateX(3px);
+}
+.purchase-actions .card-add:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+  box-shadow: none;
+}
+.purchase-actions svg {
+  transition: transform 0.18s;
+}
+.card-compact .purchase-actions {
+  grid-template-columns: 1fr;
+}
+@container (min-width:601px) and (max-width:1150px) {
+  .purchase-actions {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .purchase-actions .card-add {
+    background: transparent;
+  }
 }
 .cart-line h3 {
   font-size: 15px;
@@ -174,6 +266,27 @@
   height: 44px;
 }
 @container (max-width:600px) {
+  .product-card .product-info {
+    padding: 13px 11px;
+  }
+  .product-card .product-bottom {
+    min-height: 70px;
+    align-content: start;
+    gap: 5px;
+  }
+  .product-card .product-bottom strong {
+    font-size: 20px;
+  }
+  .purchase-actions {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .purchase-actions .card-add {
+    background: transparent;
+  }
+  .product-card:not(.card-compact) .purchase-actions {
+    padding-top: 10px;
+  }
   .product-info h3,
   .catalog-grid .product-info h3,
   .card-compact .product-info h3 {

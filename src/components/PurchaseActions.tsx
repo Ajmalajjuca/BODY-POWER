@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Plus, ArrowRight } from 'lucide-react'
+import { ShoppingBag, ArrowRight, Check } from 'lucide-react'
 import { money, type Product } from '../data/catalog'
-import { addToCart } from '../state/store'
+import { addToCart, useCart } from '../state/store'
 import { purchaseUrl } from '../domain/purchase'
 import { Modal } from './ui'
 
@@ -11,21 +11,22 @@ export function PurchaseActions({ product }: { product: Product }) {
   const [choosing, setChoosing] = useState(false)
   const [variantId, setVariantId] = useState(variant.id)
   const selected = product.variants.find((v) => v.id === variantId)!
+  const inCart = useCart((s) => s.lines.some((line) => line.variantId === variant.id))
   const navigate = useNavigate()
   const buy = () => navigate(purchaseUrl({ productId: product.id, variantId, quantity: 1 }))
   return (
     <>
       <div className="purchase-actions">
         <button
-          className="button"
+          className="button card-buy"
           aria-label={`Buy ${product.title} now`}
           disabled={!variant.available}
           onClick={() => (product.variants.length > 1 ? setChoosing(true) : buy())}
         >
-          Buy Now
+          Buy now <ArrowRight size={15} aria-hidden="true" />
         </button>
         <button
-          className="button button-outline"
+          className="button button-outline card-add"
           aria-label={`Add ${product.title} to cart`}
           disabled={!variant.available}
           onClick={() =>
@@ -36,8 +37,12 @@ export function PurchaseActions({ product }: { product: Product }) {
             )
           }
         >
-          <Plus size={16} />
-          Add to Cart
+          {inCart ? (
+            <Check size={16} aria-hidden="true" />
+          ) : (
+            <ShoppingBag size={16} aria-hidden="true" />
+          )}
+          {inCart ? 'Add another' : 'Add to cart'}
         </button>
       </div>
       {choosing && (

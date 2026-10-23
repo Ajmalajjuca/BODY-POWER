@@ -40,4 +40,10 @@ Keep the existing storefront composition, imagery, palette and design presets. I
 
 ## Handoff
 
+## Card refinement after client screenshot
+
+Implemented consistent two-line title and variant slots, reserved review space (empty when unrated), and a bottom-anchored price row. Discounts now sit beside the price as quiet badges. Desktop purchase controls share a single row; narrower cards use a primary Buy now button with a lighter Add to cart action. Existing cart items show a check icon and Add another feedback without disabling further purchases. Long titles retain their full accessible text and product-detail link.
+
+Verification: all 18 tests, production build and lint pass. `scripts/card-layout-check.mjs` measured every catalog row at 360, 390, 768 and 1440px: price/action coordinates aligned within 2px and no horizontal overflow. Existing end-to-end purchase checks passed, including 44px minimum button heights and cart isolation.
+
 Shopify replaces the demo summary with platform checkout. Add to Cart maps to Ajax Cart. Direct purchase needs an explicit policy for existing-cart handling; this prototype isolates that selection. No client approval is inferred. Existing uncommitted package-lock changes are preserved.
