@@ -11,7 +11,7 @@ Keep the existing storefront composition, imagery, palette and design presets. I
 - Buy Now: for multi-variant cards, show a labelled variant picker before continuing. Single-variant cards proceed immediately. Product pages use the currently selected variant and quantity.
 - Direct purchase opens `/checkout?product=…&variant=…&quantity=…`. Resolve IDs and prices from fixtures, reject unavailable/invalid selections, and preserve the existing cart untouched. URL parameters make refresh reliable without storing duplicate totals.
 - Purchase summary: show product, variant, editable quantity, price and total. Add more items transfers the direct selection to the existing cart exactly once, then opens the catalog. Explicitly disclose that no payment or order is submitted.
-- Cart popup/page: Proceed to checkout opens `/checkout`, showing existing grouped cart items with recalculated discounts. Keep quantity/remove controls and an Add more items link.
+- Cart popup/page: Proceed to Pay opens `/checkout`, showing existing grouped cart items with recalculated discounts. Keep quantity/remove controls and an Add more items link.
 - Typography: strengthen titles, prices, subtotal/total and action labels; increase size/variant text. Stack card actions on mobile and compact cards to avoid crowding.
 
 ## Architecture and files

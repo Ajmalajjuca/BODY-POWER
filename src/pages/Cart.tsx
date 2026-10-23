@@ -91,7 +91,7 @@ export function CartContents({
         )}
         {!checkout && (
           <Link className="button full" to="/checkout" onClick={() => setUI({ cart: false })}>
-            Proceed to checkout
+            Proceed to Pay
             <ArrowRight size={16} />
           </Link>
         )}

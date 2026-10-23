@@ -35,6 +35,8 @@
   margin-top: 16px;
 }
 .purchase-actions .button {
+  min-width: 0;
+  white-space: nowrap;
   min-height: 44px;
   padding: 10px 8px;
   font-size: 13px;

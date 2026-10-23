@@ -33,7 +33,7 @@ try {
   )
   expect(lines[0].quantity).toBe(3)
   await page.getByRole('button', { name: /Open cart/ }).click()
-  await page.getByRole('dialog').getByRole('link', { name: 'Proceed to checkout' }).click()
+  await page.getByRole('dialog').getByRole('link', { name: 'Proceed to Pay' }).click()
   await expect(page).toHaveURL(base + '/checkout')
   await expect(page.locator('dialog[open]')).toHaveCount(0)
   await expect(page.locator('.cart-line')).toHaveCount(1)

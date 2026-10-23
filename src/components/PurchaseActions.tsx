@@ -42,7 +42,7 @@ export function PurchaseActions({ product }: { product: Product }) {
           ) : (
             <ShoppingBag size={16} aria-hidden="true" />
           )}
-          {inCart ? 'Add another' : 'Add to cart'}
+          Add to cart
         </button>
       </div>
       {choosing && (
