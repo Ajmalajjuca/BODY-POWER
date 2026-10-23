@@ -171,11 +171,14 @@ export const useUI = create<UIState>((set) => ({
   toast: '',
   set: (values) => set(values),
 }))
-export function addToCart(items: Selection[], groupName?: string) {
+export function addToCart(items: Selection[], groupName?: string, openDrawer = true) {
   const success = useCart.getState().add(items, groupName)
   useUI.getState().set(
     success
-      ? { cart: true, toast: '' }
+      ? {
+          cart: openDrawer,
+          toast: openDrawer ? '' : 'Added to cart. Keep browsing or open your bag to review.',
+        }
       : {
           toast:
             'Please select available items. Limits: 20 per variant, 8 units per combo and 100 bag lines.',

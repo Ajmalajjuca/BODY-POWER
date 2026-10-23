@@ -8,6 +8,7 @@ import { Home } from './sections/Home'
 import { Catalog, Brands } from './pages/Catalog'
 import { Product } from './pages/Product'
 import { Cart, CartDrawer } from './pages/Cart'
+import { Checkout } from './pages/Checkout'
 import { Combos, ComboBuilder } from './pages/Combos'
 import { Information } from './pages/Information'
 import { Empty, IconButton } from './components/ui'
@@ -15,6 +16,7 @@ const Studio = lazy(() => import('./studio/Studio').then((module) => ({ default:
 import { useDesign, useUI } from './state/store'
 import { ThemeFrame } from './design/ThemeFrame'
 import { decodeConfig } from './design/config'
+import './purchase.css'
 function Storefront() {
   const config = useDesign((s) => s.config),
     ui = useUI(),
@@ -77,6 +79,7 @@ function Storefront() {
               <Route path="/combos" element={<Combos />} />
               <Route path="/build-your-combo" element={<ComboBuilder />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/about" element={<Information page="about" />} />
               <Route path="/contact" element={<Information page="contact" />} />
               <Route path="/faq" element={<Information page="faq" />} />

@@ -1,0 +1,222 @@
+/* Purchase clarity without changing the storefront composition. */
+.product-info h3,
+.catalog-grid .product-info h3,
+.card-compact .product-info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.product-brand {
+  font-size: 10px;
+  font-weight: 700;
+}
+.variant-note,
+.catalog-grid .variant-note {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.product-bottom strong,
+.catalog-grid .product-bottom strong {
+  font-size: 20px;
+  font-weight: 750;
+}
+.product-bottom del,
+.catalog-grid .product-bottom del {
+  font-size: 12px;
+}
+.product-bottom small {
+  font-size: 11px;
+  font-weight: 600;
+}
+.purchase-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+.purchase-actions .button {
+  min-height: 44px;
+  padding: 10px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 7px;
+  width: 100%;
+}
+.purchase-actions .button-outline {
+  border-color: var(--accent);
+  color: var(--surface-text);
+}
+.product-info {
+  flex: 1;
+}
+.product-card:not(.card-compact) {
+  display: flex;
+  flex-direction: column;
+}
+.product-card:not(.card-compact) .product-info {
+  display: flex;
+  flex-direction: column;
+}
+.product-card:not(.card-compact) .purchase-actions {
+  margin-top: auto;
+  padding-top: 16px;
+}
+.cart-line h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.cart-line p {
+  font-size: 12px;
+}
+.cart-line-price {
+  font-size: 16px;
+}
+.cart-summary > div:not(.checkout-notice) {
+  font-size: 14px;
+}
+.cart-summary .cart-total {
+  font-size: 21px !important;
+  font-weight: 700;
+}
+.cart-summary > .button {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+  min-height: 46px;
+}
+.cart-summary > small,
+.demo-label {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.detail-price strong {
+  font-size: 32px;
+  font-weight: 750;
+}
+.variant-picker legend {
+  font-size: 14px;
+  font-weight: 700;
+}
+.variant-picker button {
+  font-size: 13px;
+  min-height: 44px;
+}
+.detail-add {
+  flex-wrap: wrap;
+}
+.detail-add > .button {
+  min-width: 125px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.purchase-picker h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.purchase-picker label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.purchase-picker select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--surface-text);
+  border-radius: var(--radius);
+}
+.purchase-picker > strong {
+  font-size: 26px;
+}
+.purchase-picker p,
+.purchase-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 16px 0;
+  line-height: 1.7;
+}
+.purchase-disclosure {
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--surface-text);
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+}
+.purchase-disclosure strong {
+  font-size: 15px;
+}
+.purchase-disclosure p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.direct-purchase .cart-line h2 {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.direct-purchase .cart-line {
+  padding-top: 0;
+}
+.direct-purchase .text-link {
+  margin-top: 20px;
+}
+.purchase-summary-page .quantity .icon-button {
+  width: 40px;
+  height: 40px;
+}
+.purchase-summary-page .quantity {
+  height: 44px;
+}
+@container (max-width:600px) {
+  .product-info h3,
+  .catalog-grid .product-info h3,
+  .card-compact .product-info h3 {
+    font-size: 13px;
+    min-height: 36px;
+  }
+  .product-brand {
+    font-size: 9px;
+  }
+  .variant-note,
+  .catalog-grid .variant-note {
+    font-size: 11px;
+  }
+  .product-bottom strong,
+  .catalog-grid .product-bottom strong {
+    font-size: 18px;
+  }
+  .product-bottom del,
+  .catalog-grid .product-bottom del {
+    font-size: 10px;
+  }
+  .purchase-actions .button {
+    font-size: 12px;
+  }
+  .detail-add .quantity {
+    flex-basis: 100%;
+    width: max-content;
+    justify-content: flex-start;
+    border: 0;
+  }
+  .cart-in-drawer .cart-line h3 {
+    font-size: 13px;
+  }
+  .cart-in-drawer .cart-line p {
+    font-size: 11px;
+  }
+  .cart-in-drawer .cart-line-price {
+    font-size: 14px;
+  }
+  .direct-purchase .cart-line h2 {
+    font-size: 19px;
+  }
+  .purchase-summary-page .page-intro h1 {
+    font-size: 33px;
+  }
+}

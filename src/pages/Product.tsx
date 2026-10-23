@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { purchaseUrl } from '../domain/purchase'
 import { ShoppingBag, Check, ArrowRight } from 'lucide-react'
 import { products, brands, categories, money } from '../data/catalog'
 import { Pack } from '../components/Pack'
@@ -20,6 +21,7 @@ export function Product() {
   return <ProductDetail key={product.id} product={product} />
 }
 function ProductDetail({ product }: { product: (typeof products)[number] }) {
+  const navigate = useNavigate()
   const [variantId, setVariantId] = useState(product.variants[0].id),
     [quantity, setQuantity] = useState(1),
     [image, setImage] = useState(0)
@@ -92,12 +94,21 @@ function ProductDetail({ product }: { product: (typeof products)[number] }) {
           <div className="detail-add">
             <Quantity value={quantity} change={setQuantity} />
             <button
-              className="button"
+              className="button button-outline"
               disabled={!variant.available}
-              onClick={() => addToCart([{ productId: product.id, variantId, quantity }])}
+              onClick={() =>
+                addToCart([{ productId: product.id, variantId, quantity }], undefined, false)
+              }
             >
               <ShoppingBag size={18} />
-              Add to bag
+              Add to Cart
+            </button>
+            <button
+              className="button"
+              disabled={!variant.available}
+              onClick={() => navigate(purchaseUrl({ productId: product.id, variantId, quantity }))}
+            >
+              Buy Now
             </button>
           </div>
           <Link className="pairing-link" to="/build-your-combo">

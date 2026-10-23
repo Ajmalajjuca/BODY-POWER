@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Plus, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { brands, money, type Product } from '../data/catalog'
 import { Pack } from './Pack'
 import { ProductRating } from './ProductRating'
-import { addToCart } from '../state/store'
+import { PurchaseActions } from './PurchaseActions'
 export function ProductCard({ product, style = 'detailed' }: { product: Product; style?: string }) {
-  const variant = product.variants[0],
+  const variant = product.variants.find((v) => v.available) ?? product.variants[0],
     brand = brands.find((b) => b.id === product.brandId)!
   return (
     <article className={`product-card card-${style}`}>
@@ -43,17 +43,8 @@ export function ProductCard({ product, style = 'detailed' }: { product: Product;
               <small>Save {Math.round((1 - variant.price / variant.compareAtPrice) * 100)}%</small>
             )}
           </div>
-          <button
-            className="quick-add"
-            aria-label={`Add ${product.title} to cart`}
-            onClick={() =>
-              addToCart([{ productId: product.id, variantId: variant.id, quantity: 1 }])
-            }
-            disabled={!variant.available}
-          >
-            <Plus size={19} />
-          </button>
         </div>
+        <PurchaseActions product={product} />
       </div>
     </article>
   )

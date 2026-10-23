@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom'
-import { Trash2, Lock, ArrowRight } from 'lucide-react'
+import { Trash2, ArrowRight } from 'lucide-react'
 import { useCart, useUI } from '../state/store'
 import { findProduct, money } from '../data/catalog'
 import { priceCart } from '../domain/pricing'
 import { Pack } from '../components/Pack'
 import { Empty, IconButton, Modal, Quantity } from '../components/ui'
-export function CartContents({ drawer = false }: { drawer?: boolean }) {
+export function CartContents({
+  drawer = false,
+  checkout = false,
+}: {
+  drawer?: boolean
+  checkout?: boolean
+}) {
   const { lines, change, remove } = useCart(),
     setUI = useUI((s) => s.set),
     totals = priceCart(lines)
@@ -83,24 +89,27 @@ export function CartContents({ drawer = false }: { drawer?: boolean }) {
         {totals.savings > 0 && (
           <p className="savings-note">You save {money(totals.savings)} on this order</p>
         )}
-        <button
-          className="button full"
-          onClick={() =>
-            setUI({ toast: 'Online checkout is coming soon. Your bag is saved on this device.' })
-          }
-        >
-          <Lock size={16} />
-          Proceed to checkout
-        </button>
+        {!checkout && (
+          <Link className="button full" to="/checkout" onClick={() => setUI({ cart: false })}>
+            Proceed to checkout
+            <ArrowRight size={16} />
+          </Link>
+        )}
         <Link
           className="button button-outline full"
           to={drawer ? '/cart' : '/shop'}
           onClick={() => setUI({ cart: false })}
         >
-          {drawer ? 'View your bag' : 'Continue shopping'}
+          {drawer ? 'View your bag' : 'Add more items'}
           <ArrowRight size={16} />
         </Link>
-        <small>Inclusive of all taxes. Combo savings update as you change your bag.</small>
+        <small>
+          Demo pricing.{' '}
+          {checkout
+            ? 'No payment is collected or order placed.'
+            : 'Next: review your items in the checkout preview.'}{' '}
+          Combo savings update as you change your bag.
+        </small>
       </aside>
     </div>
   )
