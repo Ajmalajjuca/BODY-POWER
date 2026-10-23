@@ -133,6 +133,20 @@
   font-weight: 600;
   gap: 6px;
 }
+.card-add-label {
+  display: inline-grid;
+  text-align: center;
+}
+.card-add-label > span {
+  grid-area: 1 / 1;
+}
+.card-add-label > span[aria-hidden='true'] {
+  visibility: hidden;
+}
+.purchase-actions .card-add[data-added='true'] {
+  color: var(--surface-text);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+}
 .purchase-actions .card-buy:hover:not(:disabled) svg {
   transform: translateX(3px);
 }
