@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Trash2, ArrowRight } from 'lucide-react'
+import { Trash2, ArrowRight, House } from 'lucide-react'
 import { useCart, useUI } from '../state/store'
 import { findProduct, money } from '../data/catalog'
 import { priceCart } from '../domain/pricing'
@@ -26,6 +26,10 @@ export function CartContents({
           title="Room for good things."
           message="Your bag is empty. Find a little fuel for your everyday."
         />
+        <Link className="button button-outline full" to="/">
+          <House size={16} aria-hidden="true" />
+          Back to Home
+        </Link>
       </div>
     )
   return (
@@ -102,6 +106,10 @@ export function CartContents({
         >
           {drawer ? 'View your bag' : 'Add more items'}
           <ArrowRight size={16} />
+        </Link>
+        <Link className="button button-outline full" to="/" onClick={() => setUI({ cart: false })}>
+          <House size={16} aria-hidden="true" />
+          Back to Home
         </Link>
         <small>
           Demo pricing.{' '}
